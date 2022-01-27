@@ -1,0 +1,44 @@
+<app-navbar class="navbar"></app-navbar>
+
+
+<div class="main container" (window:resized)="onResize($event)">
+
+    <p-panel header="Categorias de Despesas">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="w-2" style="float: right;">
+                    <p-button 
+                    label="Nova Categoria" 
+                    icon="pi pi-plus"
+                    styleClass="p-button-sm p-button-raised p-button-success p-mr-2" 
+                    title="Adicionar nova Categoria"
+                    (click)="onSelectionRouterLink()"
+                ></p-button>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <app-table-grid 
+            [items]="items" 
+            [cols]="cols" 
+            (eventEdit)="editItem($event)" 
+            (eventDelete)="deleteItem($event)"
+            (itemsSelected)="selection($event)" 
+            [rowsPerPageOptions]="[5,10,20]"
+            [rows]="5"
+        >   
+        </app-table-grid>
+    </p-panel>
+</div>
+
+<app-loading [display]="displayLoading"></app-loading>
+
+<app-modal-alerts-message 
+    [display]="displayAlertMessage" 
+    (eventEmmiterConfirm)="eventEmmiterConfirm()" 
+    (eventEmmiterConfirmYes)="eventEmmiterConfirmYes()" 
+    (eventEmmiterDanger)="eventEmmiterNotConfirm()" 
+    [alertMesssage]="alertMesssage"
+></app-modal-alerts-message>

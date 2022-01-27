@@ -1,0 +1,104 @@
+<div class="card" (window:resized)="onResize($event)">
+
+    <div class="modal-content" *ngIf="items.length == 0;else tableGrid ">
+        
+        <div class="modal-body text-center">
+            <p>Não há dados para exibição.</p>
+        </div>
+       
+    </div>
+
+    <ng-template #tableGrid>
+        <p-table 
+            #dt1 
+            [columns]="cols" 
+            [value]="items" 
+            [paginator]="true" 
+            [rows]="rows" 
+            [showCurrentPageReport]="true"
+            currentPageReportTemplate="{first} de {last} no total de {totalRecords} item(s)"
+            [rowsPerPageOptions]="rowsPerPageOptions" 
+            sortMode="multiple" 
+            (sortFunction)="customSort($event)"
+            [customSort]="true" 
+            styleClass="p-datatable-customers"
+            responsiveLayout="stack" 
+            [responsive]="true"
+            styleClass="p-datatable-sm" 
+            [(selection)]="selected" 
+            selectionMode="single"
+        >
+            <ng-template pTemplate="caption">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5" style="float: right;">
+                            <div class="p-fluid">
+                                <div class="p-field">
+                                    <span class="p-input-icon-left">
+                                        <i class="pi pi-search"></i>
+                                        <input class="p-inputtext-sm"
+                                            (input)="dt1.filterGlobal($any($event.target).value, 'contains')" pInputText
+                                            placeholder="{{'Busca de ' +  placeholderSearch}}">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+
+            <br>
+
+            <ng-template pTemplate="header" let-columns>
+                <tr>
+                    <th style="width: 3rem">
+                        <p-tableHeaderCheckbox (click)="selection(columns)"></p-tableHeaderCheckbox>
+                    </th>
+                    <th *ngFor="let col of columns">
+                        <div [pSortableColumn]="col.field" *ngIf="col.field !== 'color'; else color">
+                            <p-sortIcon [field]="col.field"></p-sortIcon>
+                            {{col.header}}
+                        </div>
+                        <ng-template #color>
+                            {{col.header}}
+                        </ng-template>
+
+                    </th>
+                    <th>Ação</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-rowData let-columns="columns">
+                <tr>
+                    <td>
+                        <p-tableCheckbox [value]="rowData" (click)="selection(rowData)"></p-tableCheckbox>
+                    </td>
+                    <td *ngFor="let col of columns">
+                        <div *ngIf="col.field !== 'color'; else color">
+                            <span *ngIf="mobile" class="p-column-title">{{col.header + ": "}}</span>
+                            {{rowData[col.field]}}
+                        </div>
+
+                        <ng-template #color>
+                            <span class="p-column-title">Cor: </span>
+                            <p-avatar styleClass="mr-2" [style]="{'background-color': rowData[col.field]}" shape="circle">
+                            </p-avatar>
+                        </ng-template>
+                    </td>
+                    <td>
+                        <button pButton pRipple icon="pi pi-pencil"
+                            class="p-button-sm p-button-rounded p-button-text p-button-success p-mr-2"
+                            (click)="editItem(rowData)" title="Editar"></button>
+                        <button pButton pRipple icon="pi pi-trash" title="Excluír"
+                            class="p-button-sm p-button-rounded p-button-text p-button-danger"
+                            (click)="deleteItem(rowData)"></button>
+                    </td>
+                </tr>
+            </ng-template>
+
+
+            <ng-template pTemplate="paginatorleft">
+
+            </ng-template>
+        </p-table>
+    </ng-template>
+</div>

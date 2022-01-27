@@ -1,0 +1,21 @@
+@import "../../../../variablesCSS/variables";
+.modal-body {
+  word-wrap: break-word;
+}
+
+:host {
+  ::ng-deep .p-dialog .p-dialog-header {
+    font-family: $custom-title-header;
+  }
+
+  ::ng-deep .error  {
+    color: $danger;
+  }
+
+  ::ng-deep .normal  {
+    color: $primary;
+    text-align: center;
+  }
+
+  
+}

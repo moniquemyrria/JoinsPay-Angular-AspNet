@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~primeicons/primeicons.css";
+@import "~primeng/resources/themes/lara-light-indigo/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif, “Apple Color Emoji”,
+    “Segoe UI Emoji”, “Segoe UI Symbol”;
+}
+
+
+.main{
+  position: relative;
+  top: 4em
+}
