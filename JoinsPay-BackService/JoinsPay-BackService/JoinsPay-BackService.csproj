@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>aspnet-JoinsPay_BackService-4C0C8DCB-D213-4D5C-A570-C970AB45C5CC</UserSecretsId>
+    <RootNamespace>JoinsPay_BackService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20220125130530_initial.cs" />
+    <Compile Remove="Data\Migrations\20220125130530_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220125130631_initial.cs" />
+    <Compile Remove="Data\Migrations\20220125130631_initial.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220125144235_revenue_category.cs" />
+    <Compile Remove="Data\Migrations\20220125144235_revenue_category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220125152701_revenue_Category.cs" />
+    <Compile Remove="Data\Migrations\20220125152701_revenue_Category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220126182838_expense_Category2.cs" />
+    <Compile Remove="Data\Migrations\20220126182838_expense_Category2.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.13" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.21">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+</Project>

@@ -1,3 +1,8 @@
+# dependencies
+*/node_modules/*
+/node_modules
+**/node_modules
+
 # Prerequisites
 *.d
 
@@ -50,3 +55,4 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
