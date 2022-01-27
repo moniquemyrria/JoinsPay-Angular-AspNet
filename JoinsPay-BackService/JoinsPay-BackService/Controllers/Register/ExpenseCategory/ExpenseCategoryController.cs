@@ -138,7 +138,7 @@ namespace JoinsPay_BackService.Controllers.Register.ExpenseCategory
 
             try
             {
-                expenseCategoryDTO.deleted = "S";
+                expenseCategoryDTO.deleted = "Y";
                 _context.Entry(expenseCategoryDTO).State = EntityState.Modified;
 
                 iContractResponse.success = true;

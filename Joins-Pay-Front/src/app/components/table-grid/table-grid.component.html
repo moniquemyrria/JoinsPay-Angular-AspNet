@@ -85,10 +85,10 @@
                         </ng-template>
                     </td>
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil"
+                        <button pButton pRipple icon="pi pi-pencil" [disabled]="rowData.standard == 'Y'"
                             class="p-button-sm p-button-rounded p-button-text p-button-success p-mr-2"
-                            (click)="editItem(rowData)" title="Editar"></button>
-                        <button pButton pRipple icon="pi pi-trash" title="Excluír"
+                            (click)="editItem(rowData)" [title]="rowData.standard == 'Y' ? 'Não é permitido editar dados padrões do sistema' : 'Editar'"></button>
+                        <button pButton pRipple icon="pi pi-trash" [title]="rowData.standard == 'Y' ? 'Não é permitido excluír dados padrões do sistema' : 'Excluír'" [disabled]="rowData.standard == 'Y'"
                             class="p-button-sm p-button-rounded p-button-text p-button-danger"
                             (click)="deleteItem(rowData)"></button>
                     </td>

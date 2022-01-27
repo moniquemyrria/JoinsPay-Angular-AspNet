@@ -67,7 +67,7 @@ namespace JoinsPay_BackService.Controllers.Register.AccountCategory
                 iContractResponse.success = true;
                 iContractResponse.data = expenseCategoryDTO;
                 iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
-                iContractResponse.message = "Categoria de Conta alterada com sucesso.";
+                iContractResponse.message = "Tipo de Conta alterada com sucesso.";
 
                 await _context.SaveChangesAsync();
             }
@@ -138,12 +138,12 @@ namespace JoinsPay_BackService.Controllers.Register.AccountCategory
 
             try
             {
-                expenseCategoryDTO.deleted = "S";
+                expenseCategoryDTO.deleted = "Y";
                 _context.Entry(expenseCategoryDTO).State = EntityState.Modified;
 
                 iContractResponse.success = true;
                 iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
-                iContractResponse.message = "Categoria de Conta excluída com sucesso.";
+                iContractResponse.message = "Tipo de Conta excluída com sucesso.";
 
                 await _context.SaveChangesAsync();
             }

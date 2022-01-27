@@ -6,12 +6,12 @@
         <ng-template pTemplate="header">
             <div class="row">
                 <div class="col-12">
-                    <span><b>Categoria de Receitas</b></span>
+                    <span><b>Tipos de Contas</b></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <span> {{ this.revenueCategory.id == undefined ? 'Cadastro de Nova Categoria de Receitas' : "Edição de dados da Categoria de Receita"}} </span>
+                    <span> {{ this.accountCategory.id == undefined ? 'Cadastro de Novo tipo de Conta' : "Edição de dados do Tipo de Conta"}} </span>
                 </div>
             </div>
         </ng-template>
@@ -25,20 +25,8 @@
                         <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                             <span [class]="!mobile ? 'input-group-text' : ''" id="sigla">Sigla *</span>
                         </div>
-                        <input type="text" class="form-control" [(ngModel)]="revenueCategory.initials" required [placeholder]="mobile ? 'Sigla da Categoria' : ''" maxlength="6">
+                        <input type="text" class="form-control" [(ngModel)]="accountCategory.initials" required [placeholder]="mobile ? 'Sigla da Conta' : ''" maxlength="6">
 
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Cor da Categria</span>
-                        </div>
-
-                        <p-colorPicker [style]="{'position': 'relative', 'top': '2px', 'left': '5px'}"
-                            title="Defina a cor para a Categoria" [(ngModel)]="revenueCategory.color">
-                        </p-colorPicker>
                     </div>
                 </div>
             </div>
@@ -49,7 +37,7 @@
                         <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                             <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Descrição *</span>
                         </div>
-                        <input type="text" class="form-control" [(ngModel)]="revenueCategory.description" required [placeholder]="mobile ? 'Descrição da Categoria' : ''" maxlength="30">
+                        <input type="text" class="form-control" [(ngModel)]="accountCategory.description" required [placeholder]="mobile ? 'Descrição da Conta' : ''" maxlength="30">
 
                     </div>
                 </div>
@@ -60,7 +48,7 @@
         <div class="modal-footer">
             <div *ngIf="!mobile; else noDesk">
                 <p-button [style]="{'width': '150px', 'height': '50px'}" class="mx-2"
-                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkRevenueCategoryList()"></p-button>
+                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkAccountCategoryList()"></p-button>
 
                 <p-button [style]="{'width': '150px', 'height': '50px'}"
                     styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()"></p-button>
@@ -70,7 +58,7 @@
                     styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()"></p-button>
 
                 <p-button [style]="{'width': '100%', 'height': '50px'}" class="w-100"
-                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkRevenueCategoryList()"></p-button>
+                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkAccountCategoryList()"></p-button>
 
             </ng-template>
         </div>
