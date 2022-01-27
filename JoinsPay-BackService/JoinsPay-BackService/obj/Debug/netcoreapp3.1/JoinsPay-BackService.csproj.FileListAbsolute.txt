@@ -1,0 +1,504 @@
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\appsettings.json
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.StaticWebAssets.xml
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.exe
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.deps.json
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.runtimeconfig.json
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.runtimeconfig.dev.json
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.Views.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.Views.pdb
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfoInputs.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfo.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CoreCompileInputs.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.MvcApplicationPartsAssemblyInfo.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.MvcApplicationPartsAssemblyInfo.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorAssemblyInfo.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorAssemblyInfo.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\staticwebassets\JoinsPay-BackService.StaticWebAssets.Manifest.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\staticwebassets\JoinsPay-BackService.StaticWebAssets.xml
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\scopedcss\bundle\JoinsPay-BackService.styles.css
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.TagHelpers.input.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.TagHelpers.output.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorCoreGenerate.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorTargetAssemblyInfo.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorTargetAssemblyInfo.cs
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.Views.pdb
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CopyComplete
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.genruntimeconfig.cache
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\Template\Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csprojAssemblyReference.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\appsettings.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.StaticWebAssets.xml
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.exe
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.deps.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.runtimeconfig.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.runtimeconfig.dev.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.Views.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.Views.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csprojAssemblyReference.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfoInputs.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CoreCompileInputs.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.MvcApplicationPartsAssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.MvcApplicationPartsAssemblyInfo.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorAssemblyInfo.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorAssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\staticwebassets\JoinsPay-BackService.StaticWebAssets.Manifest.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\staticwebassets\JoinsPay-BackService.StaticWebAssets.xml
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\scopedcss\bundle\JoinsPay-BackService.styles.css
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.TagHelpers.input.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.TagHelpers.output.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorCoreGenerate.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorTargetAssemblyInfo.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorTargetAssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.Views.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CopyComplete
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay - Back\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.genruntimeconfig.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\appsettings.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.StaticWebAssets.xml
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.exe
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.deps.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.runtimeconfig.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.runtimeconfig.dev.json
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.Views.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\JoinsPay-BackService.Views.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V3.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.UI.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Workspaces.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Contracts.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Core.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\dotnet-aspnet-codegenerator-design.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.EntityFrameworkCore.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Templating.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.AttributedModel.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Convention.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Hosting.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.Runtime.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Composition.TypedParts.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Runtime.Caching.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\System.Security.Cryptography.ProtectedData.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\Microsoft.Data.SqlClient.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csprojAssemblyReference.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfoInputs.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CoreCompileInputs.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.MvcApplicationPartsAssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.MvcApplicationPartsAssemblyInfo.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorAssemblyInfo.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorAssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\staticwebassets\JoinsPay-BackService.StaticWebAssets.Manifest.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\staticwebassets\JoinsPay-BackService.StaticWebAssets.xml
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\scopedcss\bundle\JoinsPay-BackService.styles.css
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.TagHelpers.input.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.TagHelpers.output.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorCoreGenerate.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorTargetAssemblyInfo.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.RazorTargetAssemblyInfo.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.Views.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CopyComplete
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.dll
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.genruntimeconfig.cache
