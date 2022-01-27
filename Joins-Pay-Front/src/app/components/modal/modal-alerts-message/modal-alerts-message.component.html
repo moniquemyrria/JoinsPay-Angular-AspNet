@@ -1,0 +1,26 @@
+<p-dialog [(visible)]="display" [modal]="true" [style]="{width: '500px'}" (onHide)="closedAlertMessage()"
+  [responsive]="true" [class]="'error'">
+
+  <p-header [ngClass]="alertMesssage.errorTitleShow ? 'error' : 'normal'">
+    <span style="text-align: center; align-items: center;"> {{alertMesssage.title}}</span>
+  </p-header>
+
+  <div class="modal-body text-center">
+    <p>{{ alertMesssage.text }}</p>
+  </div>
+  <ng-template pTemplate="footer">
+
+    <p-button *ngIf="alertMesssage.confirmButtonShow; else dangerButton" [style]="{'width':'120px', 'height': '40px'}"
+      styleClass="p-size-teste p-button-raised p-button-sm p-button-info" label="{{alertMesssage.confirmButtonText}}"
+      (onClick)="actionConfirm()"></p-button>
+
+    <ng-template #dangerButton>
+
+      <p-button [style]="{'width':'100px', 'height': '40px'}" styleClass="p-button-raised p-button-sm p-button-danger"
+        label="{{alertMesssage.dangerButtonText}}" (onClick)="actionDanger()"></p-button>
+
+      <p-button [style]="{'width':'100px', 'height': '40px'}" styleClass="p-button-raised p-button-sm p-button-info"
+        label="{{alertMesssage.confirmButtonText}}" (onClick)="actionConfirmYes()"></p-button>
+    </ng-template>
+  </ng-template>
+</p-dialog>
