@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
-namespace JoinsPay_BackService.Models.Register.AccountCategory
+namespace JoinsPay_BackService.Models.Register.Account
 {
     public class AccountCategoryDTO
     {
@@ -13,6 +12,9 @@ namespace JoinsPay_BackService.Models.Register.AccountCategory
         public string deleted { get; set; }
         public string standard { get; set; }
         public DateTime dateCreated { get; set; }
+
+        [JsonIgnore]
+        public List<AccountDTO> Account { get; set; }
     }
 
 

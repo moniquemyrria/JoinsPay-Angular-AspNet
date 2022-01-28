@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
+﻿
 namespace JoinsPay_BackService.Models.ContractResponse
 {
     public class IContractResponse<T>: IContractResponse

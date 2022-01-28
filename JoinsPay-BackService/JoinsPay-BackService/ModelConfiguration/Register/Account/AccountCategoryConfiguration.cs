@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using JoinsPay_BackService.Models.Register.AccountCategory;
+using JoinsPay_BackService.Models.Register.Account;
 
-namespace JoinsPay_BackService.ModelConfiguration.Register.AccountCategory
+namespace JoinsPay_BackService.ModelConfiguration.Register.Account
 {
     public class AccountCategoryConfiguration
     {

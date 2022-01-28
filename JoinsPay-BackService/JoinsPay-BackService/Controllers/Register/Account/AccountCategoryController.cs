@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using JoinsPay_BackService.Data;
 using JoinsPay_BackService.Models.ContractResponse;
-using JoinsPay_BackService.Models.Register.AccountCategory;
+using JoinsPay_BackService.Models.Register.Account;
 
 namespace JoinsPay_BackService.Controllers.Register.AccountCategory
 {
@@ -105,7 +104,7 @@ namespace JoinsPay_BackService.Controllers.Register.AccountCategory
                 iContractResponse.success = true;
                 iContractResponse.data = expenseCategoryDTO;
                 iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
-                iContractResponse.message = "Nova categoria de Conta cadastrada com sucesso.";
+                iContractResponse.message = "Novo Tipo de Conta cadastrada com sucesso.";
 
             }
             catch (Exception e)

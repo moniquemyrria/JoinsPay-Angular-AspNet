@@ -1,9 +1,9 @@
 ﻿using JoinsPay_BackService.ModelConfiguration.Register.ExpenseCategory;
 using JoinsPay_BackService.ModelConfiguration.Register.RevenueCategory;
-using JoinsPay_BackService.ModelConfiguration.Register.AccountCategory;
+using JoinsPay_BackService.ModelConfiguration.Register.Account;
 using JoinsPay_BackService.Models.Register.ExpenseCategory;
 using JoinsPay_BackService.Models.Register.RevenueCategory;
-using JoinsPay_BackService.Models.Register.AccountCategory;
+using JoinsPay_BackService.Models.Register.Account;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -29,8 +29,11 @@ namespace JoinsPay_BackService.Data
                 _ = new RevenueCategoryConfiguration(modelBuilder.Entity<RevenueCategoryDTO>());
                 
                 _ = new ExpenseCategoryConfiguration(modelBuilder.Entity<ExpenseCategoryDTO>());
-                
+
                 _ = new AccountCategoryConfiguration(modelBuilder.Entity<AccountCategoryDTO>());
+
+                _ = new AccountConfiguration(modelBuilder.Entity<AccountDTO>());
+
 
             }
         }
@@ -40,5 +43,7 @@ namespace JoinsPay_BackService.Data
         public DbSet<ExpenseCategoryDTO> ExpenseCategories { get; set; }
         
         public DbSet<AccountCategoryDTO> AccountCategories { get; set; }
+        
+        public DbSet<AccountDTO> Accounts { get; set; }
     }
 }
