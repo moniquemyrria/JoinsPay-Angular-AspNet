@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using JoinsPay_BackService.Data;
@@ -138,7 +137,7 @@ namespace JoinsPay_BackService.Controllers.Register.RevenueCategory
 
             try
             {
-                revenueCategoryDTO.deleted = "S";
+                revenueCategoryDTO.deleted = "Y";
                 _context.Entry(revenueCategoryDTO).State = EntityState.Modified;
 
                 iContractResponse.success = true;

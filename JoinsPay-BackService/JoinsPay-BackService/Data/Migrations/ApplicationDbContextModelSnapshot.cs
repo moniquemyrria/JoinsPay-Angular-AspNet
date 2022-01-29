@@ -19,7 +19,138 @@ namespace JoinsPay_BackService.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("JoinsPay_BackService.Models.Register.RevenueCategory.ExpenseCategoryDTO", b =>
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Account.AccountCategoryDTO", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("dateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("deleted")
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.Property<string>("initials")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(6)")
+                        .HasMaxLength(6);
+
+                    b.Property<string>("standard")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.HasKey("id");
+
+                    b.ToTable("Register.Account_Category");
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Account.AccountDTO", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("accountNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("agency")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<string>("code")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
+                    b.Property<DateTime>("dateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("deleted")
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.Property<long>("idAccountCategory")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("id");
+
+                    b.HasIndex("idAccountCategory");
+
+                    b.ToTable("Register.Account");
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Department.DepartmentCategoryDTO", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("dateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("deleted")
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.Property<string>("description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
+
+                    b.HasKey("id");
+
+                    b.ToTable("Register.Department_Category");
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Department.DepartmentDTO", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("dateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("deleted")
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.Property<long>("idDepartamentCategory")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
+
+                    b.HasKey("id");
+
+                    b.HasIndex("idDepartamentCategory");
+
+                    b.ToTable("Register.Department");
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.ExpenseCategory.ExpenseCategoryDTO", b =>
                 {
                     b.Property<long>("id")
                         .ValueGeneratedOnAdd()
@@ -283,6 +414,24 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Account.AccountDTO", b =>
+                {
+                    b.HasOne("JoinsPay_BackService.Models.Register.Account.AccountCategoryDTO", "accountCategory")
+                        .WithMany("Account")
+                        .HasForeignKey("idAccountCategory")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Department.DepartmentDTO", b =>
+                {
+                    b.HasOne("JoinsPay_BackService.Models.Register.Department.DepartmentCategoryDTO", "departmentCategory")
+                        .WithMany("Departments")
+                        .HasForeignKey("idDepartamentCategory")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
