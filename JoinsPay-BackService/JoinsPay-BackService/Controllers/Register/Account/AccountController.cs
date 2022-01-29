@@ -23,12 +23,38 @@ namespace JoinsPay_BackService.Controllers.Register.Account
 
         // GET: api/Account
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<AccountDTO>>> GetAccounts()
+        public async Task<List<AccountModelView>> GetAccounts()
         {
-            return await _context.Accounts
-                            .Where(t => t.deleted == "N")
-                            .Include(t => t.AccountCategory)
-                            .ToListAsync();
+            var accounts = await _context.Accounts
+                                    .Where(t => t.deleted == "N")
+                                    .Include(t => t.accountCategory)
+                                    .ToListAsync();
+
+            List<AccountModelView> accountModelView = new List<AccountModelView>();
+
+
+            if (accounts != null)
+            {
+                foreach (var account in accounts)
+                {
+                    accountModelView.Add(
+                        new AccountModelView
+                        {
+                            id                  = account.id,
+                            idAccountCategory   = account.idAccountCategory,
+                            code                = account.code,
+                            name                = account.name,
+                            agency              = account.agency,
+                            accountNumber       = account.accountNumber,
+                            deleted             = account.deleted,
+                            dateCreated         = account.dateCreated,
+                            accountCategory     = account.accountCategory.initials + " - " + account.accountCategory.description
+                        }
+                    ); ;
+                }
+            }
+
+            return accountModelView;
         }
 
         // GET: api/Account/5
@@ -70,7 +96,7 @@ namespace JoinsPay_BackService.Controllers.Register.Account
                     accountDTO.name             = accountDTO.name.ToUpper();
                     accountDTO.agency           = accountDTO.agency.ToUpper();
                     accountDTO.accountNumber    = accountDTO.accountNumber.ToUpper();
-                    accountDTO.AccountCategory  = accountCategory;
+                    accountDTO.accountCategory  = accountCategory;
                     _context.Entry(accountDTO).State = EntityState.Modified;
 
                     iContractResponse.success = true;
@@ -122,7 +148,7 @@ namespace JoinsPay_BackService.Controllers.Register.Account
                     accountDTO.name             = accountDTO.name.ToUpper();
                     accountDTO.agency           = accountDTO.agency.ToUpper();
                     accountDTO.accountNumber    = accountDTO.accountNumber.ToUpper();
-                    accountDTO.AccountCategory  = accountCategory;
+                    accountDTO.accountCategory  = accountCategory;
                     _context.Accounts.Add(accountDTO);
                     await _context.SaveChangesAsync();
 
@@ -199,5 +225,20 @@ namespace JoinsPay_BackService.Controllers.Register.Account
         {
             return _context.Accounts.Any(e => e.id == id);
         }
+    }
+
+    public class AccountModelView
+    {
+        public long id { get; set; }
+        public long idAccountCategory { get; set; }
+        public string code { get; set; }
+        public string name { get; set; }
+        public string agency { get; set; }
+        public string accountNumber { get; set; }
+        public string deleted { get; set; }
+        public DateTime dateCreated { get; set; }
+
+        public string accountCategory { get; set; }
+
     }
 }

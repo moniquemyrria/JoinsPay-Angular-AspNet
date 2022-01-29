@@ -13,7 +13,7 @@ namespace JoinsPay_BackService.Models.Register.Account
         public string deleted { get; set; }
         public DateTime dateCreated { get; set; }
 
-        public AccountCategoryDTO AccountCategory { get; set; }
+        public AccountCategoryDTO accountCategory { get; set; }
     }
 
 

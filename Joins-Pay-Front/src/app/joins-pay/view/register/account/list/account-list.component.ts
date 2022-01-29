@@ -133,11 +133,6 @@ export class AccountListComponent implements OnInit {
       .GetListAccount()
       .subscribe((response: IAccount[]) => {
         this.items = response;
-
-        this.items.forEach((element: any) => {
-          element.accountCategoryG = element.accountCategory.initials + ' - ' + element.accountCategory.description
-        });
-
         this.displayLoading = false
       }, (error) => {
         this.alertMesssage = GetAlertMessage(
@@ -165,7 +160,7 @@ export class AccountListComponent implements OnInit {
       { field: 'name', header: 'Nome' },
       { field: 'agency', header: 'Agência' },
       { field: 'accountNumber', header: 'Conta' },
-      { field: 'accountCategoryG', header: 'Tipo de Conta' },
+      { field: 'accountCategory', header: 'Tipo de Conta' },
     ];
 
   }

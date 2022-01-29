@@ -25,7 +25,7 @@ namespace JoinsPay_BackService.ModelConfiguration.Register.Account
                 entity.Property(t => t.dateCreated);
 
                 //FK - Account Category
-                entity.HasOne(t => t.AccountCategory).WithMany(t => t.Account).HasForeignKey(t => t.idAccountCategory).HasPrincipalKey(t => t.id);
+                entity.HasOne(t => t.accountCategory).WithMany(t => t.Account).HasForeignKey(t => t.idAccountCategory).HasPrincipalKey(t => t.id);
 
 
 
