@@ -79,4 +79,9 @@
 
 <app-loading [display]="displayLoading"></app-loading>
 
-<app-modal-alerts-message [display]="displayAlertMessage" (eventEmmiter)="eventEmmiter($event)" [alertMesssage]="alertMesssage"></app-modal-alerts-message>
+<app-modal-alerts-message 
+    [display]="displayAlertMessage" 
+    (eventEmmiter)="eventEmmiter($event)" 
+    [alertMesssage]="alertMesssage"
+    (eventEmmiterConfirm)="closeAlertMessage()"
+></app-modal-alerts-message>

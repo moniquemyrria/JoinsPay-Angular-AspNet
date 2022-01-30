@@ -39,6 +39,10 @@ export class AccountCategoryFormComponent implements OnInit {
     }
   }
 
+  closeAlertMessage(){
+    this.displayAlertMessage = false
+  }
+
   openSnackBar(message: string, action: string) {
     let snackBarRef = this._snackBar.open(message, action);
     snackBarRef.afterDismissed().subscribe(() => { });
@@ -70,9 +74,19 @@ export class AccountCategoryFormComponent implements OnInit {
                 "Ok",
                 { routerLink: '/joinspay/accountcategory' }
               )
-              this.displayLoading = false
-              this.displayAlertMessage = true
+            }else {
+              this.alertMesssage = GetAlertMessage(
+                "Erro ao cadastrar Nova Categoria",
+                response.message,
+                false,
+                true,
+                undefined,
+                true,
+                "Ok"
+              )
             }
+            this.displayLoading = false
+            this.displayAlertMessage = true
 
           }, (error) => {
             this.alertMesssage = GetAlertMessage(
@@ -101,9 +115,19 @@ export class AccountCategoryFormComponent implements OnInit {
                 "Ok",
                 { routerLink: '/joinspay/accountcategory' }
               )
-              this.displayLoading = false
-              this.displayAlertMessage = true
+            }else {
+              this.alertMesssage = GetAlertMessage(
+                "Erro ao Alterar os dados da Categoria",
+                response.message,
+                false,
+                true,
+                undefined,
+                true,
+                "Ok"
+              )
             }
+            this.displayLoading = false
+            this.displayAlertMessage = true
 
           }, (error) => {
             this.alertMesssage = GetAlertMessage(

@@ -6,12 +6,12 @@
         <ng-template pTemplate="header">
             <div class="row">
                 <div class="col-12">
-                    <span><b>Tipos de Contas</b></span>
+                    <span><b>{{ descriptionTitle }}</b></span>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <span> {{ this.accountCategory.id == undefined ? 'Cadastro de Novo tipo de Conta' : "Edição de dados do Tipo de Conta"}} </span>
+                    <span> {{ descriptionSubTitle }} </span>
                 </div>
             </div>
         </ng-template>
@@ -20,35 +20,21 @@
 
 
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="sigla">Sigla *</span>
-                        </div>
-                        <input type="text" class="form-control" [(ngModel)]="accountCategory.initials" required [placeholder]="mobile ? 'Sigla da Conta' : ''" maxlength="6">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2">
                     <div class="input-group">
                         <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Descrição *</span>
+                            <span [class]="!mobile ? 'input-group-text' : ''" id="nome">Nome *</span>
                         </div>
-                        <input type="text" class="form-control" [(ngModel)]="accountCategory.description" required [placeholder]="mobile ? 'Descrição da Conta' : ''" maxlength="30">
+                        <input type="text" class="form-control" [(ngModel)]="department.name" required [placeholder]="mobile ? 'Informe o Nome ' : ''" maxlength="50">
 
                     </div>
                 </div>
             </div>
-            <br>
-
         </div>
         <div class="modal-footer">
             <div *ngIf="!mobile; else noDesk">
                 <p-button [style]="{'width': '150px', 'height': '50px'}" class="mx-2"
-                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkAccountCategoryList()"></p-button>
+                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkDepartmentList()"></p-button>
 
                 <p-button [style]="{'width': '150px', 'height': '50px'}"
                     styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()"></p-button>
@@ -58,7 +44,7 @@
                     styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()"></p-button>
 
                 <p-button [style]="{'width': '100%', 'height': '50px'}" class="w-100"
-                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkAccountCategoryList()"></p-button>
+                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar" (click)="onRouterLinkDepartmentList()"></p-button>
 
             </ng-template>
         </div>
@@ -70,6 +56,6 @@
 <app-modal-alerts-message 
     [display]="displayAlertMessage" 
     (eventEmmiter)="eventEmmiter($event)" 
-    [alertMesssage]="alertMesssage"
     (eventEmmiterConfirm)="closeAlertMessage()"
+    [alertMesssage]="alertMesssage"
 ></app-modal-alerts-message>

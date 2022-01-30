@@ -26,6 +26,9 @@ export class NavbarComponent implements OnInit {
         { icon: "bi bi-ui-radios", text: "Categoria de Despesa", routerLink: '/joinspay/expensecategory' },
         { icon: "bi bi-collection", text: "Tipo de Conta", routerLink: '/joinspay/accountcategory' },
         { icon: "bi bi-collection-fill", text: "Conta", routerLink: '/joinspay/account' },
+        { icon: "bi bi-shop", text: "Loja", routerLink: '/joinspay/department/store' },
+        { icon: "bi bi-building", text: "Empresa", routerLink: '/joinspay/department/company' },
+        { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
       ]
     },
     {

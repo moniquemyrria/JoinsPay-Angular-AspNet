@@ -7,22 +7,23 @@ import { AlertMessageModel } from 'src/app/components/modal/modal-alerts-message
 import { IContractResponse } from 'src/app/contract-response/contract-response';
 import { RegisterService } from 'src/app/joins-pay/services/register/register.service';
 import { Validation, ValidationSchema } from 'src/app/validation-fields/validation';
-import { IAccountCategory } from '../../account-category/account-category-model';
-import { IAccount } from '../account-model';
+import { IDepartment } from '../department-model';
 
 @Component({
-  selector: 'app-account-form',
-  templateUrl: './account-form.component.html',
-  styleUrls: ['./account-form.component.scss']
+  selector: 'app-expense-category-form',
+  templateUrl: './department-form.component.html',
+  styleUrls: ['./department-form.component.scss']
 })
-export class AccountFormComponent implements OnInit {
+export class DepartmentFormComponent implements OnInit {
 
-  account: IAccount = {} as IAccount
+  department: IDepartment = {} as IDepartment
   alertMesssage: AlertMessageModel = {} as AlertMessageModel
   mobile: boolean = false;
   displayLoading: boolean = false
   displayAlertMessage: boolean = false;
-  itemsAccountCategory: IAccountCategory[] = [] as IAccountCategory[]
+  descriptionTitle: string = ""
+  descriptionSubTitle: string = ""
+  routerName: string | undefined = ""
 
   constructor(
     private router: Router,
@@ -41,49 +42,47 @@ export class AccountFormComponent implements OnInit {
     }
   }
 
-  closeAlertMessage() {
-    this.displayAlertMessage = false
-  }
-
   openSnackBar(message: string, action: string) {
     let snackBarRef = this._snackBar.open(message, action);
     snackBarRef.afterDismissed().subscribe(() => { });
     snackBarRef.onAction().subscribe(() => { })
   }
 
-  onRouterLinkAccountList() {
-    this.router.navigateByUrl('/joinspay/account');
+  onRouterLinkDepartmentList() {
+    this.router.navigateByUrl('/joinspay/department/' + this.routerName);
   }
 
   onSubmit() {
-    console.log(this.account)
     if (!this.checkValidationFields()) {
-      if (this.account.id == undefined) {
+      if (this.department.id == undefined) {
         this.displayLoading = true
-        this.account.deleted = "N"
-        this.account.dateCreated = new Date()
+        this.department.deleted = "N"
+        this.department.departmentCategory = this.routerName
+        this.department.dateCreated = new Date()
         this.registerService
-          .PostAccount(this.account)
+          .PostDepartment(this.department)
           .subscribe((response: IContractResponse) => {
             if (response.success) {
               this.alertMesssage = GetAlertMessage(
-                "Nova Conta",
+                "Novo Cadastro",
                 response.message,
                 true,
                 true,
                 undefined,
                 false,
                 "Ok",
-                { routerLink: '/joinspay/account' }
+                { routerLink: '/joinspay/department/' + this.routerName }
               )
+
             } else {
               this.alertMesssage = GetAlertMessage(
-                "Erro ao cadastrar Nova Conta",
+                "Erro ao Alterar o Cadastro",
                 response.message,
                 false,
                 true,
                 undefined,
-                true
+                true,
+                "Ok"
               )
             }
             this.displayLoading = false
@@ -102,22 +101,22 @@ export class AccountFormComponent implements OnInit {
           );
       } else {
         this.registerService
-          .PutAccount(this.account)
+          .PutDepartment(this.department)
           .subscribe((response: IContractResponse) => {
             if (response.success) {
               this.alertMesssage = GetAlertMessage(
-                "Alteração de Tipo de Conta",
+                "Alteração de Cadastro",
                 response.message,
                 true,
                 true,
                 undefined,
                 false,
                 "Ok",
-                { routerLink: '/joinspay/account' }
+                { routerLink: '/joinspay/department/' + this.routerName }
               )
             } else {
               this.alertMesssage = GetAlertMessage(
-                "Erro ao alterar o Tipo de Conta",
+                "Erro ao Alterar o Cadastro",
                 response.message,
                 false,
                 true,
@@ -145,16 +144,22 @@ export class AccountFormComponent implements OnInit {
 
   }
 
+  closeAlertMessage(){
+    this.displayAlertMessage = false
+  }
+
   initEdit() {
     let routerId: any = this.activeRoute.snapshot.params
-    this.account.id = routerId.id;
+    this.department.id = routerId.id;
 
-    if (this.account.id !== undefined) {
+    this.checkRouterName(this.department.id, this.routerName)
+
+    if (this.department.id !== undefined) {
       this.displayLoading = true
       this.registerService
-        .GetIdAccount(this.account.id)
-        .subscribe((response: IAccount) => {
-          this.account = response;
+        .GetIdDepartment(this.department.id)
+        .subscribe((response: IDepartment) => {
+          this.department = response;
           this.displayLoading = false
         }, (error) => {
           this.alertMesssage = GetAlertMessage(
@@ -175,12 +180,8 @@ export class AccountFormComponent implements OnInit {
     let schema: ValidationSchema[] = [];
 
     schema.push(new ValidationSchema("name", "Nome", "string", true, 50));
-    schema.push(new ValidationSchema("code", "Código", "string", true, 10));
-    schema.push(new ValidationSchema("agency", "Agência", "string", true, 10));
-    schema.push(new ValidationSchema("accountNumber", "Número da Conta", "string", true, 10));
-    schema.push(new ValidationSchema("idAccountCategory", "Tipo de Conta", "number", true, 10));
 
-    let result = new Validation().ValidSchema(schema, this.account);
+    let result = new Validation().ValidSchema(schema, this.department);
 
     if (!result.success) {
       this.openSnackBar(result.message, "Ok")
@@ -195,33 +196,29 @@ export class AccountFormComponent implements OnInit {
     this.displayAlertMessage = false
   }
 
-  getListAccountCategory() {
-    this.displayLoading = true
-    this.registerService
-      .GetListAccountCategory()
-      .subscribe((response: IAccountCategory[]) => {
-        this.itemsAccountCategory = response;
-        this.displayLoading = false
-      }, (error) => {
-        this.alertMesssage = GetAlertMessage(
-          "Erro de Conexão",
-          "Não foi possível carregar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
-          false,
-          true,
-          500
-        )
-        this.displayLoading = false
-        this.displayAlertMessage = true
-      }
-      );
+  checkRouterName(id?: number, routerName?: string) {
 
+    switch (this.routerName) {
+      case 'store':
+        this.descriptionTitle = "Loja";
+        this.descriptionSubTitle = id !== undefined ? "Edição de dados da Loja" : "Cadastro de Nova Loja";
+        break;
+      case 'company':
+        this.descriptionTitle = "Empresa";
+        this.descriptionSubTitle = id !== undefined ? "Edição de dados da Empresa" : "Cadastro de Nova Empresa";
+        break;
+      case 'people':
+        this.descriptionTitle = "Terceiros (Pessoa Física)";
+        this.descriptionSubTitle = id !== undefined ? "Edição de dados da Pessoa Física" : "Cadastro de Nova Pessoa Física";
+        break;
+    }
   }
 
 
   ngOnInit(): void {
+    this.routerName = this.activeRoute.routeConfig?.path?.split("/", 1)[0]
     this.initEdit()
     this.mobile = CheckMobile()
-    this.getListAccountCategory()
   }
 
 }
