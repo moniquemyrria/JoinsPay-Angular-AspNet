@@ -6,12 +6,10 @@ using JoinsPay_BackService.Models.Register.ExpenseCategory;
 using JoinsPay_BackService.Models.Register.RevenueCategory;
 using JoinsPay_BackService.Models.Register.Account;
 using JoinsPay_BackService.Models.Register.Department;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using JoinsPay_BackService.ModelConfiguration.Revenue;
+using JoinsPay_BackService.Models.Register.Revenue;
 
 namespace JoinsPay_BackService.Data
 {
@@ -40,6 +38,7 @@ namespace JoinsPay_BackService.Data
                 
                 _ = new DepartmentConfiguration(modelBuilder.Entity<DepartmentDTO>());
 
+                _ = new RevenueConfiguration(modelBuilder.Entity<RevenueDTO>());
 
             }
         }
@@ -55,5 +54,7 @@ namespace JoinsPay_BackService.Data
         public DbSet<DepartmentCategoryDTO> DepartmentCategories { get; set; }
         
         public DbSet<DepartmentDTO> Departments { get; set; }
+        
+        public DbSet<RevenueDTO> Incomes { get; set; }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using JoinsPay_BackService.Models.Register.Revenue;
+using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace JoinsPay_BackService.Models.Register.Account
 {
@@ -14,6 +17,9 @@ namespace JoinsPay_BackService.Models.Register.Account
         public DateTime dateCreated { get; set; }
 
         public AccountCategoryDTO accountCategory { get; set; }
+
+        [JsonIgnore]
+        public List<RevenueDTO> Income { get; set; }
     }
 
 
