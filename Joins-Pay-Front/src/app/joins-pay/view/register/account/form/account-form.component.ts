@@ -41,6 +41,10 @@ export class AccountFormComponent implements OnInit {
     }
   }
 
+  closeAlertMessage() {
+    this.displayAlertMessage = false
+  }
+
   openSnackBar(message: string, action: string) {
     let snackBarRef = this._snackBar.open(message, action);
     snackBarRef.afterDismissed().subscribe(() => { });
@@ -63,7 +67,7 @@ export class AccountFormComponent implements OnInit {
           .subscribe((response: IContractResponse) => {
             if (response.success) {
               this.alertMesssage = GetAlertMessage(
-                "Nova Categoria",
+                "Nova Conta",
                 response.message,
                 true,
                 true,
@@ -72,10 +76,18 @@ export class AccountFormComponent implements OnInit {
                 "Ok",
                 { routerLink: '/joinspay/account' }
               )
-              this.displayLoading = false
-              this.displayAlertMessage = true
+            } else {
+              this.alertMesssage = GetAlertMessage(
+                "Erro ao cadastrar Nova Conta",
+                response.message,
+                false,
+                true,
+                undefined,
+                true
+              )
             }
-
+            this.displayLoading = false
+            this.displayAlertMessage = true
           }, (error) => {
             this.alertMesssage = GetAlertMessage(
               "Erro de Conexão",
@@ -103,10 +115,18 @@ export class AccountFormComponent implements OnInit {
                 "Ok",
                 { routerLink: '/joinspay/account' }
               )
-              this.displayLoading = false
-              this.displayAlertMessage = true
+            } else {
+              this.alertMesssage = GetAlertMessage(
+                "Erro ao alterar o Tipo de Conta",
+                response.message,
+                false,
+                true,
+                undefined,
+                true
+              )
             }
-
+            this.displayLoading = false
+            this.displayAlertMessage = true
           }, (error) => {
             this.alertMesssage = GetAlertMessage(
               "Erro de Conexão",
