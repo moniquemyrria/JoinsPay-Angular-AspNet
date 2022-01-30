@@ -25,9 +25,12 @@ namespace JoinsPay_BackService.Controllers.Register.Department
         [HttpGet]
         public async Task<List<DepartmentModelView>> GetDepartments()
         {
+
+            var departmentCategory = HttpContext.Request.Headers["departmentCategory"];
+
             var departments = await _context.Departments
-                                    .Where(t => t.deleted == "N")
                                     .Include(t => t.departmentCategory)
+                                    .Where(t => t.deleted == "N" && t.departmentCategory.description.ToLower() == departmentCategory.ToString().ToLower())
                                     .ToListAsync();
 
             List<DepartmentModelView> departmentModelView = new List<DepartmentModelView>();
@@ -51,6 +54,7 @@ namespace JoinsPay_BackService.Controllers.Register.Department
                 }
             }
 
+
             return departmentModelView;
         }
 
@@ -73,13 +77,13 @@ namespace JoinsPay_BackService.Controllers.Register.Department
             string departamentType = "";
             switch (departamentCategory)
             {
-                case "LOJA":
+                case "STORE":
                     departamentType = type == "edit" ? "Dados da Loja alterado com sucesso." : type == "delete" ? "Loja excluída com sucesso." : "Dados da Nova Loja cadastrada com sucesso.";
                     break;
-                case "EMPRESA":
+                case "COMPANY":
                     departamentType = type == "edit" ? "Dados da Empresa alterado com sucesso." : type == "delete" ? "Empresa excluída com sucesso." : "Dados da Nova Empresa cadastrada com sucesso.";
                     break;
-                case "PESSOA":
+                case "PEOPLE":
                     departamentType = type == "edit" ? "Dados de " + peopleName + " alterado com sucesso." : type == "delete" ? "Dadode de " + peopleName +" excluído com sucesso." : "Dados de " + peopleName + " cadastrado com sucesso.";
                     break;
             };
@@ -146,19 +150,22 @@ namespace JoinsPay_BackService.Controllers.Register.Department
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<IContractResponse> PostDepartmentDTO(DepartmentDTO departmentDTO)
+        public async Task<IContractResponse> PostDepartmentDTO(DepartmentModelView departmentModelView)
         {
             var iContractResponse = new IContractResponse<DepartmentDTO>();
 
             try
             {
-                var departmentCategory = _context.DepartmentCategories.FirstOrDefault(t => t.id == departmentDTO.idDepartamentCategory);
+                var departmentCategory = _context.DepartmentCategories.FirstOrDefault(t => t.description.ToUpper() == departmentModelView.departmentCategory.ToUpper());
 
 
                 if (departmentCategory != null)
                 {
-                  
-                    departmentDTO.name                  = departmentDTO.name.ToUpper();
+                    DepartmentDTO departmentDTO = new DepartmentDTO();
+
+                    departmentDTO.name                  = departmentModelView.name.ToUpper();
+                    departmentDTO.deleted               = departmentModelView.deleted;
+                    departmentDTO.dateCreated           = departmentModelView.dateCreated;
                     departmentDTO.departmentCategory    = departmentCategory;
                     _context.Departments.Add(departmentDTO);
                     await _context.SaveChangesAsync();
@@ -166,7 +173,7 @@ namespace JoinsPay_BackService.Controllers.Register.Department
                     iContractResponse.success = true;
                     iContractResponse.data = departmentDTO;
                     iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
-                    iContractResponse.message = checkMessageDepartamentCategory("new", departmentCategory.description, departmentDTO.name); ;
+                    iContractResponse.message = checkMessageDepartamentCategory("new", departmentCategory.description, departmentModelView.name); ;
                    
                 }
                 else

@@ -5,6 +5,8 @@ import { IContractResponse } from 'src/app/contract-response/contract-response';
 import { environment } from 'src/environments/environment';
 import { IAccountCategory } from '../../view/register/account-category/account-category-model';
 import { IAccount } from '../../view/register/account/account-model';
+import { IDepartmentCategory } from '../../view/register/department/department-category-model';
+import { IDepartment } from '../../view/register/department/department-model';
 import { IExpenseCategory } from '../../view/register/expense-category/expense-category-model';
 import { IRevenueCategory } from '../../view/register/revenue-category/revenue-category-model';
 
@@ -103,4 +105,34 @@ export class RegisterService {
   DeleteAccount(id: number): Observable<IContractResponse>  {
     return this.httpClient.delete<IContractResponse>(`${environment.baseURL}Account/` + id, this.httpOptions);
   }
+
+   //department
+   GetListDepartment(departmentCategory: string): Observable<IDepartment[]>  {
+
+    let httpOptionsGetListDepartment = {
+      headers: new HttpHeaders({
+        'Content-Type'                : 'application/json',
+        'departmentCategory'          : departmentCategory,
+      })
+    };
+
+    return this.httpClient.get<IDepartment[]>(`${environment.baseURL}Department/`, httpOptionsGetListDepartment);
+  }
+
+  GetIdDepartment(id: number): Observable<IDepartment>  {
+    return this.httpClient.get<IDepartment>(`${environment.baseURL}Department/` + id, this.httpOptions);
+  }
+
+  PostDepartment(department: IDepartment): Observable<IContractResponse>  {
+    return this.httpClient.post<IContractResponse>(`${environment.baseURL}Department`, department, this.httpOptions);
+  }
+
+  PutDepartment(department: IDepartment): Observable<IContractResponse>  {
+    return this.httpClient.put<IContractResponse>(`${environment.baseURL}Department/` + department.id, department, this.httpOptions);
+  }
+
+  DeleteDepartment(id: number): Observable<IContractResponse>  {
+    return this.httpClient.delete<IContractResponse>(`${environment.baseURL}Department/` + id, this.httpOptions);
+  }
+
 }
