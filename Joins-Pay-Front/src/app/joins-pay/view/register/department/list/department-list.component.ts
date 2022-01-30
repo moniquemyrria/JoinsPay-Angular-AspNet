@@ -149,11 +149,11 @@ export class DepartmentListComponent implements OnInit {
     
     switch (routerName) {
       case 'store':
-        this.descriptionTitle = "Loja";
+        this.descriptionTitle = "Lojas";
         this.titleButtonNew = "Nova Loja";
         break;
       case 'company':
-        this.descriptionTitle = "Empresa";
+        this.descriptionTitle = "Empresas";
         this.titleButtonNew = "Nova Empresa";
         break;
       case 'people':
