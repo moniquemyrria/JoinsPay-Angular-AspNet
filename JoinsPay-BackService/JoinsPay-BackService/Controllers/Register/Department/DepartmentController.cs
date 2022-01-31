@@ -21,9 +21,82 @@ namespace JoinsPay_BackService.Controllers.Register.Department
             _context = context;
         }
 
+        static string checkMessageDepartamentCategory(string type, string departamentCategory, string? peopleName)
+        {
+            string departamentType = "";
+            switch (departamentCategory)
+            {
+                case "STORE":
+                    departamentType = type == "edit" ? "Dados da Loja alterado com sucesso." : type == "delete" ? "Loja excluída com sucesso." : "Dados da Nova Loja cadastrada com sucesso.";
+                    break;
+                case "COMPANY":
+                    departamentType = type == "edit" ? "Dados da Empresa alterado com sucesso." : type == "delete" ? "Empresa excluída com sucesso." : "Dados da Nova Empresa cadastrada com sucesso.";
+                    break;
+                case "PEOPLE":
+                    departamentType = type == "edit" ? "Dados de " + peopleName + " alterado com sucesso." : type == "delete" ? "Dadode de " + peopleName + " excluído com sucesso." : "Dados de " + peopleName + " cadastrado com sucesso.";
+                    break;
+            };
+            return departamentType;
+        }
+
+        static string checkDepartamentCategory(string departamentCategory)
+        {
+            string departamentType = "";
+            switch (departamentCategory)
+            {
+                case "STORE":
+                    departamentType = "LOJA";
+                    break;
+                case "COMPANY":
+                    departamentType = "EMPRESA";
+                    break;
+                case "PEOPLE":
+                    departamentType = "TERCEIRO";
+                    break;
+            };
+            return departamentType;
+        }
+
+
+        // GET: api/Department/Departments
+        [HttpGet("Departments")]
+        public async Task<List<DepartmentModelView>> GetDepartments()
+        {
+
+            var departments = await _context.Departments
+                                    .Include(t => t.departmentCategory)
+                                    .Where(t => t.deleted == "N")
+                                    .ToListAsync();
+
+            List<DepartmentModelView> departmentModelView = new List<DepartmentModelView>();
+
+
+            if (departments != null)
+            {
+                foreach (var department in departments)
+                {
+                    departmentModelView.Add(
+                        new DepartmentModelView
+                        {
+                            id                      = department.id,
+                            idDepartmentCategory    = department.idDepartamentCategory,
+                            name                    = department.name,
+                            deleted                 = department.deleted,
+                            dateCreated             = department.dateCreated,
+                            departmentCategory      = checkDepartamentCategory(department.departmentCategory.description)
+                        }
+                    ); ;
+                }
+            }
+
+
+            return departmentModelView;
+        }
+
+
         // GET: api/Department
         [HttpGet]
-        public async Task<List<DepartmentModelView>> GetDepartments()
+        public async Task<List<DepartmentModelView>> GetDepartmentsForCategory()
         {
 
             var departmentCategory = HttpContext.Request.Headers["departmentCategory"];
@@ -72,24 +145,7 @@ namespace JoinsPay_BackService.Controllers.Register.Department
             return departmentDTO;
         }
 
-        static string checkMessageDepartamentCategory(string type, string departamentCategory, string? peopleName)
-        {
-            string departamentType = "";
-            switch (departamentCategory)
-            {
-                case "STORE":
-                    departamentType = type == "edit" ? "Dados da Loja alterado com sucesso." : type == "delete" ? "Loja excluída com sucesso." : "Dados da Nova Loja cadastrada com sucesso.";
-                    break;
-                case "COMPANY":
-                    departamentType = type == "edit" ? "Dados da Empresa alterado com sucesso." : type == "delete" ? "Empresa excluída com sucesso." : "Dados da Nova Empresa cadastrada com sucesso.";
-                    break;
-                case "PEOPLE":
-                    departamentType = type == "edit" ? "Dados de " + peopleName + " alterado com sucesso." : type == "delete" ? "Dadode de " + peopleName +" excluído com sucesso." : "Dados de " + peopleName + " cadastrado com sucesso.";
-                    break;
-            };
-            return departamentType;
-        }
-
+       
         // PUT: api/Department/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

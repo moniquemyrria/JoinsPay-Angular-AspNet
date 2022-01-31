@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using JoinsPay_BackService.Data;
 using JoinsPay_BackService.Models.ContractResponse;
 using JoinsPay_BackService.Models.Register.Revenue;
+using System.Globalization;
 
 namespace JoinsPay_BackService.Controllers.Register.Revenue
 {
@@ -48,6 +49,7 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
                             idAccount           = income.idAccount,
                             idDepartment        = income.idDepartment,
                             amount              = income.amount,
+                            amountFormatted     = income.amount.ToString("C", CultureInfo.CurrentCulture),
                             description         = income.description,
                             deleted             = income.deleted,
                             dateCreated         = income.dateCreated,
@@ -55,7 +57,7 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
                             account             = income.account.name + " - Ag." + income.account.agency + " / Conta: " + income.account.accountNumber,
                             department          = income.department.name
                         }
-                    ); ;
+                    );; ;
                 }
             }
 
@@ -151,7 +153,7 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
 
                 if (revenueCategory != null && account != null && department != null)
                 {
-                    revenueDTO.description = revenueDTO.description.ToUpper();
+                    revenueDTO.description = revenueDTO.description != null ? revenueDTO.description.ToUpper() : "";
                     revenueDTO.revenueCategory = revenueCategory;
                     revenueDTO.department = department;
                     _context.Incomes.Add(revenueDTO);
@@ -206,7 +208,7 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
 
                 iContractResponse.success = true;
                 iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
-                iContractResponse.message = "Receita excluída com sucesso.";
+                iContractResponse.message = "Receita cancelada com sucesso.";
 
                 await _context.SaveChangesAsync();
             }
@@ -239,6 +241,7 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
         public long idAccount { get; set; }
         public long idDepartment { get; set; }
         public Double amount { get; set; }
+        public string amountFormatted { get; set; }
         public string description { get; set; }
         public string deleted { get; set; }
         public DateTime dateCreated { get; set; }

@@ -14,7 +14,7 @@ namespace JoinsPay_BackService.ModelConfiguration.Revenue
 
                 entity.Property(t => t.amount).IsRequired();
                 
-                entity.Property(t => t.description).HasMaxLength(200).IsRequired();
+                entity.Property(t => t.description).HasMaxLength(200);
                 
                 entity.Property(t => t.deleted).HasMaxLength(1);
 

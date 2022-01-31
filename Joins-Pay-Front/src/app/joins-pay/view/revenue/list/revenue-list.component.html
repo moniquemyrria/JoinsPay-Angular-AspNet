@@ -3,16 +3,16 @@
 
 <div class="main container" (window:resized)="onResize($event)">
 
-    <p-panel header="Categorias de Despesas">
+    <p-panel header="Receitas Pessoais">
 
         <div class="row">
             <div class="col-12">
                 <div class="w-2" style="float: right;">
                     <p-button 
-                    label="Nova Categoria" 
+                    label="Nova Receita" 
                     icon="pi pi-plus"
                     styleClass="p-button-sm p-button-raised p-button-success p-mr-2" 
-                    title="Adicionar nova Categoria"
+                    title="Nova Receita"
                     (click)="onSelectionRouterLink()"
                 ></p-button>
                 </div>
@@ -21,7 +21,7 @@
 
         <br>
         <app-table-grid 
-            [placeholderSearch]="'Categoria de Despesa'"
+            [placeholderSearch]="'Receitas'"
             [items]="items" 
             [cols]="cols" 
             (eventEdit)="editItem($event)" 
@@ -29,6 +29,7 @@
             (itemsSelected)="selection($event)" 
             [rowsPerPageOptions]="[5,10,20]"
             [rows]="5"
+            [buttonsCrud]="false"
         >   
         </app-table-grid>
     </p-panel>

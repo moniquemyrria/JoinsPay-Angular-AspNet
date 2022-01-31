@@ -1,0 +1,170 @@
+<app-navbar (window:resized)="onResize($event)"></app-navbar>
+
+<div class="main container" (window:resized)="onResize($event)">
+    <p-panel>
+
+        <ng-template pTemplate="header">
+            <div class="row">
+                <div class="col-12">
+                    <span><b>Receita Pessoal</b></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span> {{ this.revenue.id == undefined ? 'Inserindo nova Receita' : "Editando de dados da Receita"}}
+                    </span>
+                </div>
+            </div>
+        </ng-template>
+
+        <div class="modal-body g-3 needs-validation" novalidate>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2" style="float: right;">
+                        <div class="input-group">
+                            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                                <span [class]="!mobile ? 'input-group-text amount' : ''" id="nome">Valor da Receita (R$)
+                                    *</span>
+                            </div>
+                            <input 
+                                currencyMask 
+                                [options]="{ prefix: '', thousands: '.', decimal: ',' }"
+                                [class]="!mobile ? 'form-control' : 'form-control amount-mobile'"
+                                [(ngModel)]="revenue.amount" required placeholder="0,00" 
+                                [disabled]="revenue.id !== undefined"
+                            >
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+                    <div class="input-group">
+                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Categoria *</span>
+                        </div>
+                        <select 
+                            class="form-select" 
+                            [(ngModel)]="revenue.idRevenueCategory"
+                            (ngModelChange)="revenue.idRevenueCategory=$event && +$event" id="etat"
+                            [disabled]="revenue.id !== undefined"
+                        >
+                            <option 
+                                [value]="item.id" 
+                                *ngFor="let item of itemsRevenueCategory"
+                                style="width: 100%; height: 50px;"
+                            >
+                                {{item.description + " (" + item.initials + ")"}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+                    <div class="input-group">
+                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Conta *</span>
+                        </div>
+                        <select 
+                            class="form-select" 
+                            [(ngModel)]="revenue.idAccount"
+                            (ngModelChange)="revenue.idAccount=$event && +$event" id="etat"
+                            [disabled]="revenue.id !== undefined"
+                        >
+                            <option 
+                                [value]="item.id" *ngFor="let item of itemsAccount"
+                                style="width: 100%; height: 50px;"
+                            >
+                                {{item.name + ' (' + item.accountCategory + ")"}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2">
+                    <div class="input-group">
+                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Loja / Empresa / Terceiro
+                                *</span>
+                        </div>
+                        <select 
+                            class="form-select"
+                            [(ngModel)]="revenue.idDepartment" 
+                            (ngModelChange)="revenue.idDepartment=$event && +$event"
+                            id="etat"
+                            [disabled]="revenue.id !== undefined"
+                        >
+                            <option 
+                                [value]="item.id" 
+                                *ngFor="let item of itemsDepartment"
+                                style="width: 100%; height: 50px;"
+                            >
+                                {{item.name + " (" + item.departmentCategory + ")"}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2">
+                    <div class="input-group">
+                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Descrição / Observações
+                                </span>
+                        </div>
+                        <textarea [disabled]="revenue.id !== undefined" class="md-textarea form-control" rows="3"></textarea>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="modal-footer">
+                <div *ngIf="!mobile; else noDesk">
+                    <p-button 
+                        [style]="{'width': '150px', 'height': '50px'}" 
+                        class="mx-2"
+                        styleClass="p-button-raised p-button-sm p-button-danger" 
+                        [label]="revenue.id == undefined ? 'Cancelar' : 'Voltar'"
+                        (click)="onRouterLinkRevenueList()"
+                    ></p-button>
+
+                    <p-button 
+                        [style]="{'width': '150px', 'height': '50px'}"
+                        styleClass="p-button-raised p-button-sm p-button-success" 
+                        label="Salvar" 
+                        (click)="onSubmit()"
+                        *ngIf="revenue.id == undefined"
+                    >
+                    </p-button>
+                </div>
+                <ng-template #noDesk>
+                    <p-button 
+                        [style]="{'width': '100%', 'height': '50px'}" 
+                        class="w-100"
+                        styleClass="p-button-raised p-button-sm p-button-success" 
+                        label="Salvar" 
+                        (click)="onSubmit()"
+                        *ngIf="revenue.id == undefined"
+                    >
+                    </p-button>
+
+                    <p-button 
+                        [style]="{'width': '100%', 'height': '50px'}" 
+                        class="w-100"
+                        styleClass="p-button-raised p-button-sm p-button-danger" 
+                        [label]="revenue.id == undefined ? 'Cancelar' : 'Voltar'"
+                        (click)="onRouterLinkRevenueList()"
+                    ></p-button>
+
+                </ng-template>
+            </div>
+        </div>
+    </p-panel>
+</div>
+
+<app-loading [display]="displayLoading"></app-loading>
+
+<app-modal-alerts-message [display]="displayAlertMessage" (eventEmmiter)="eventEmmiter($event)"
+    (eventEmmiterConfirm)="closeAlertMessage()" [alertMesssage]="alertMesssage"></app-modal-alerts-message>

@@ -20,6 +20,7 @@ export class TableGridComponent implements OnInit {
   @Input() rowsPerPageOptions : any     = [5,10]
   @Input() rows                         = 5;
   @Input() placeholderSearch            = 'Produtos'
+  @Input() buttonsCrud        : boolean = true
 
   selected: any[] = []
 

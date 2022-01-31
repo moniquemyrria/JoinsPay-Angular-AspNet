@@ -44,7 +44,7 @@
         <span class="sub-menu-item-text">{{ itemMenu.title }}</span>
         <div class="menu-item" *ngFor="let item of itemMenu.items">
           <button (click)="onSelectionRouterLink(item)" pButton pRipple type="button"
-            class="p-button-secondary item-menu p-button-text"><i [ngClass]="item.icon"></i><span
+            class="p-button-secondary item-menu p-button-text"><i class="icons-item-menu" [ngClass]="item.icon"></i><span
               class="menu-item-text">{{ item.text }}</span></button>
         </div>
         <div class="row divider"></div>

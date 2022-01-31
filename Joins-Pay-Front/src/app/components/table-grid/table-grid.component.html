@@ -85,10 +85,19 @@
                         </ng-template>
                     </td>
                     <td>
-                        <button pButton pRipple icon="pi pi-pencil" [disabled]="rowData.standard == 'Y'"
-                            class="p-button-sm p-button-rounded p-button-text p-button-success p-mr-2"
-                            (click)="editItem(rowData)" [title]="rowData.standard == 'Y' ? 'Não é permitido editar dados padrões do sistema' : 'Editar'"></button>
-                        <button pButton pRipple icon="pi pi-trash" [title]="rowData.standard == 'Y' ? 'Não é permitido excluír dados padrões do sistema' : 'Excluír'" [disabled]="rowData.standard == 'Y'"
+                        <button 
+                            pButton 
+                            pRipple 
+                            [icon]="buttonsCrud ? 'pi pi-pencil' : 'pi pi-eye'" [disabled]="rowData.standard == 'Y'"
+                            class="p-button-sm p-button-rounded p-button-text p-mr-2"
+                            [ngClass]="buttonsCrud ? 'p-button-success' : 'p-button-info'"
+                            (click)="editItem(rowData)" 
+                            [title]="(rowData.standard == 'Y' && buttonsCrud)? 'Não é permitido editar dados padrões do sistema' : !buttonsCrud ? 'Visualizar' :'Editar'"></button>
+                        <button 
+                            pButton 
+                            pRipple 
+                            [icon]="buttonsCrud ? 'pi pi-trash' : 'pi pi-ban'" 
+                            [title]="(rowData.standard == 'Y' && buttonsCrud) ? 'Não é permitido excluír dados padrões do sistema' : !buttonsCrud ? 'Cancelar' : 'Excluír'" [disabled]="rowData.standard == 'Y'"
                             class="p-button-sm p-button-rounded p-button-text p-button-danger"
                             (click)="deleteItem(rowData)"></button>
                     </td>

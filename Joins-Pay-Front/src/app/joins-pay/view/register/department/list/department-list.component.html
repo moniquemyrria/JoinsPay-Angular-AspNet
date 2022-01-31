@@ -21,6 +21,7 @@
 
         <br>
         <app-table-grid 
+            [placeholderSearch]="descriptionTitle"
             [items]="items" 
             [cols]="cols" 
             (eventEdit)="editItem($event)" 

@@ -20,6 +20,12 @@ export class NavbarComponent implements OnInit {
 
   itensMenu: any = [
     {
+      title: "Controle Financeiro",
+      items: [
+        { icon: "bi bi-piggy-bank", text: "Receitas",  routerLink: '/joinspay/revenue' },
+      ]
+    },
+    {
       title: "Cadastros",
       items: [
         { icon: "bi bi-ui-checks", text: "Categoria de Receitas", routerLink: '/joinspay/revenuecategory' },
@@ -31,13 +37,6 @@ export class NavbarComponent implements OnInit {
         { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
       ]
     },
-    {
-      title: "Sub-Menu 2",
-      items: [
-        { icon: "pi pi-comments", text: "Texto 3",  routerLink: '' },
-        { icon: "pi pi-comments", text: "Texto 4",  routerLink: '' }
-      ]
-    }
   ]
 
   constructor(
