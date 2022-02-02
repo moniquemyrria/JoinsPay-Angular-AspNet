@@ -47,7 +47,7 @@ textarea:disabled {
     font-family: inherit;
 }
 
-input matInput:disabled {
+.mat-form-field:disabled {
     background: $readonly;
 }
 
