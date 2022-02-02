@@ -1,5 +1,8 @@
 ﻿
+using JoinsPay_BackService.Models.Register.Revenue;
 using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace JoinsPay_BackService.Models.Register.Department
 {
@@ -12,6 +15,9 @@ namespace JoinsPay_BackService.Models.Register.Department
         public DateTime dateCreated { get; set; }
 
         public DepartmentCategoryDTO departmentCategory { get; set; }
+
+        [JsonIgnore]
+        public List<RevenueDTO> Income { get; set; }
 
     }
 

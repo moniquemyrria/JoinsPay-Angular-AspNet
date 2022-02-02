@@ -7,4 +7,5 @@ export interface IAccount{
     accountNumber: string 
     dateCreated: Date
     deleted: string
+    accountCategory: string
 }

@@ -126,7 +126,7 @@ export class DepartmentListComponent implements OnInit {
   getListDepartment(departmentCategory:  string) {
     this.displayLoading = true
     this.registerService
-      .GetListDepartment(departmentCategory)
+      .GetListDepartmentForCategory(departmentCategory)
       .subscribe((response: IDepartment[]) => {
         this.items = response;
         this.displayLoading = false
@@ -149,11 +149,11 @@ export class DepartmentListComponent implements OnInit {
     
     switch (routerName) {
       case 'store':
-        this.descriptionTitle = "Loja";
+        this.descriptionTitle = "Lojas";
         this.titleButtonNew = "Nova Loja";
         break;
       case 'company':
-        this.descriptionTitle = "Empresa";
+        this.descriptionTitle = "Empresas";
         this.titleButtonNew = "Nova Empresa";
         break;
       case 'people':

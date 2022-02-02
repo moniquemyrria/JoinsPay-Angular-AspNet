@@ -21,6 +21,7 @@
 
         <br>
         <app-table-grid 
+            [placeholderSearch]="'Categoria de Despesa'"
             [items]="items" 
             [cols]="cols" 
             (eventEdit)="editItem($event)" 

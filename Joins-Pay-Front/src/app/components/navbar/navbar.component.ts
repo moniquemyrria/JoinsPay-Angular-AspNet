@@ -20,24 +20,23 @@ export class NavbarComponent implements OnInit {
 
   itensMenu: any = [
     {
-      title: "Cadastros",
+      title: "Controle Financeiro",
       items: [
-        { icon: "bi bi-ui-checks", text: "Categoria de Receita", routerLink: '/joinspay/revenuecategory' },
-        { icon: "bi bi-ui-radios", text: "Categoria de Despesa", routerLink: '/joinspay/expensecategory' },
-        { icon: "bi bi-collection", text: "Tipo de Conta", routerLink: '/joinspay/accountcategory' },
-        { icon: "bi bi-collection-fill", text: "Conta", routerLink: '/joinspay/account' },
-        { icon: "bi bi-shop", text: "Loja", routerLink: '/joinspay/department/store' },
-        { icon: "bi bi-building", text: "Empresa", routerLink: '/joinspay/department/company' },
-        { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        { icon: "bi bi-piggy-bank", text: "Receitas",  routerLink: '/joinspay/revenue' },
       ]
     },
     {
-      title: "Sub-Menu 2",
+      title: "Cadastros",
       items: [
-        { icon: "pi pi-comments", text: "Texto 3",  routerLink: '' },
-        { icon: "pi pi-comments", text: "Texto 4",  routerLink: '' }
+        { icon: "bi bi-ui-checks", text: "Categoria de Receitas", routerLink: '/joinspay/revenuecategory' },
+        { icon: "bi bi-ui-radios", text: "Categoria de Despesas", routerLink: '/joinspay/expensecategory' },
+        { icon: "bi bi-collection", text: "Tipo de Contas", routerLink: '/joinspay/accountcategory' },
+        { icon: "bi bi-collection-fill", text: "Contas", routerLink: '/joinspay/account' },
+        { icon: "bi bi-shop", text: "Lojas", routerLink: '/joinspay/department/store' },
+        { icon: "bi bi-building", text: "Empresas", routerLink: '/joinspay/department/company' },
+        { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
       ]
-    }
+    },
   ]
 
   constructor(

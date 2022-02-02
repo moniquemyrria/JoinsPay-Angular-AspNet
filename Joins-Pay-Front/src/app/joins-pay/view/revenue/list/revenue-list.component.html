@@ -1,0 +1,91 @@
+<app-navbar class="navbar"></app-navbar>
+
+
+<div class="main container-fluid" (window:resized)="onResize($event)">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <div class="card text-dark bg-warning mb-3 card-revenue-total"  *ngIf="!displayFilterPeriodDate">
+                <div class="card-header">{{'Top 3 Categorias de Receita de ' +  revenue.currentMounth  }}</div>
+                <div class="card-body">
+                    
+                    <tr *ngFor="let item of revenue.dataTop3SumByCurrentMonthRevenueCategory">
+                        <td class="description-category">
+                            <span class="card-title">{{ item.descriptionRevenueCategory }}</span> 
+                        </td>
+                        <td class="total-category">
+                            <span class="card-title ">{{ item.totalAmountRevenueCategory | currency }}</span>
+                        </td>
+                    </tr>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <div class="card text-white bg-primary mb-3 card-revenue-total" *ngIf="!displayFilterPeriodDate">
+                <div class="card-header">{{ 'Total de Receitas ' + revenue.currentMounth }}</div>
+                <div class="card-body">
+                    <h5 class="card-title total-amount-current-month">{{ revenue.totalAmountCurrentMounth | currency }}</h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+            <div class="card text-white bg-success mb-3" [ngClass]="!displayFilterPeriodDate ? 'card-revenue-total' : 'card-revenue-total-filter-period-date'">
+                <div class="card-header">{{ !displayFilterPeriodDate ? 'Total de Receitas ' + revenue.currentYear : 'Total de Receitas no Periodo: ' + stringPeriodDate }} </div>
+                <div class="card-body">
+                    <h5  class="card-title total-amount-current-month" >{{ !displayFilterPeriodDate ? (revenue.totalAmountCurrentYear | currency) :  (revenue.totalAmount | currency)}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br *ngIf="displayFilterPeriodDate">
+
+    <div class="row">
+        <div class="col-12">
+            <p-panel header="Receitas Pessoais">
+
+                <p-toolbar [style]="{'background':'transparent'}">
+                    <div class="p-toolbar-group-right">
+
+                        <p-button label="Listar Receitas" icon="pi pi-list"
+                            styleClass="p-button-sm p-button-raised p-button-info p-mr-2"
+                            title="Listar todas as Receitas" (click)="getListRevenue()"></p-button>
+
+
+                        <p-button label="Consulta Período" icon="pi pi-calendar" 
+                            [style]="{'margin-left':'10px'}"
+                            styleClass="p-button-sm p-button-raised p-button-info p-mr-2" title="Consulta por Período"
+                            (click)="showFilterPeriodDate()"
+                        >
+                        </p-button>
+
+                    </div>
+                    <p-button label="Nova Receita" icon="pi pi-plus"
+                        styleClass="p-button-sm p-button-raised p-button-success p-mr-2" title="Nova Receita"
+                        (click)="onSelectionRouterLink()"></p-button>
+
+                </p-toolbar>
+
+                <div id="collapseBasic" [collapse]="!displayCollapsePeriodDate" [isAnimated]="true" >
+                    <br>
+                    <app-period-date (periodDate)="filterPeriodDate($event)"></app-period-date>
+                </div>
+
+                <br>
+                <app-table-grid [placeholderSearch]="'Receitas'" [items]="revenue.dataIncomes" [cols]="cols"
+                    (eventEdit)="editItem($event)" (eventDelete)="deleteItem($event)"
+                    (itemsSelected)="selection($event)" [rowsPerPageOptions]="[5,10,20]" [rows]="5"
+                    [buttonsCrud]="false">
+                </app-table-grid>
+            </p-panel>
+        </div>
+    </div>
+</div>
+
+<app-loading [display]="displayLoading"></app-loading>
+
+<app-modal-alerts-message [display]="displayAlertMessage" (eventEmmiterConfirm)="eventEmmiterConfirm()"
+    (eventEmmiterConfirmYes)="eventEmmiterConfirmYes()" (eventEmmiterDanger)="eventEmmiterNotConfirm()"
+    [alertMesssage]="alertMesssage"></app-modal-alerts-message>

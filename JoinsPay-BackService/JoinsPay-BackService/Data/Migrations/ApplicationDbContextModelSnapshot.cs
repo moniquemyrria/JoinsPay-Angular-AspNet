@@ -183,6 +183,47 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.ToTable("Register.Expense_Category");
                 });
 
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Revenue.RevenueDTO", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("amount")
+                        .HasColumnType("float");
+
+                    b.Property<DateTime>("dateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("deleted")
+                        .HasColumnType("nvarchar(1)")
+                        .HasMaxLength(1);
+
+                    b.Property<string>("description")
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.Property<long>("idAccount")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("idDepartment")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("idRevenueCategory")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("idAccount");
+
+                    b.HasIndex("idDepartment");
+
+                    b.HasIndex("idRevenueCategory");
+
+                    b.ToTable("Revenue");
+                });
+
             modelBuilder.Entity("JoinsPay_BackService.Models.Register.RevenueCategory.RevenueCategoryDTO", b =>
                 {
                     b.Property<long>("id")
@@ -430,6 +471,27 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.HasOne("JoinsPay_BackService.Models.Register.Department.DepartmentCategoryDTO", "departmentCategory")
                         .WithMany("Departments")
                         .HasForeignKey("idDepartamentCategory")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("JoinsPay_BackService.Models.Register.Revenue.RevenueDTO", b =>
+                {
+                    b.HasOne("JoinsPay_BackService.Models.Register.Account.AccountDTO", "account")
+                        .WithMany("Income")
+                        .HasForeignKey("idAccount")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JoinsPay_BackService.Models.Register.Department.DepartmentDTO", "department")
+                        .WithMany("Income")
+                        .HasForeignKey("idDepartment")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JoinsPay_BackService.Models.Register.RevenueCategory.RevenueCategoryDTO", "revenueCategory")
+                        .WithMany("Income")
+                        .HasForeignKey("idRevenueCategory")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

@@ -1,0 +1,55 @@
+@import "../../../../../variablesCSS/variables";
+
+:host ::ng-deep p-panel {
+    .p-panel-header {
+        display: flow-root;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+mat-form-field {
+    margin-right: 12px;
+}
+
+.amount {
+    background-color: $info;
+    color: $white;
+}
+
+.amount-mobile {
+    border: 1px solid $info;
+}
+
+.input-group-text {
+    height: 100%;
+}
+
+input:disabled {
+    background: $readonly;
+}
+
+select:disabled {
+    background: $readonly;
+}
+
+textarea:disabled {
+    background: $readonly;
+}
+
+.input-group-prepend-date{
+    margin-top: 3px;
+    height: 48px;
+}
+
+.mat-form-field {
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.mat-form-field:disabled {
+    background: $readonly;
+}
+
+
+

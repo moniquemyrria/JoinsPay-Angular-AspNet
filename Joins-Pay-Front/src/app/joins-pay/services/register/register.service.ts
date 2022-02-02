@@ -107,7 +107,7 @@ export class RegisterService {
   }
 
    //department
-   GetListDepartment(departmentCategory: string): Observable<IDepartment[]>  {
+   GetListDepartmentForCategory(departmentCategory: string): Observable<IDepartment[]>  {
 
     let httpOptionsGetListDepartment = {
       headers: new HttpHeaders({
@@ -117,6 +117,11 @@ export class RegisterService {
     };
 
     return this.httpClient.get<IDepartment[]>(`${environment.baseURL}Department/`, httpOptionsGetListDepartment);
+  }
+
+  GetListDepartment(): Observable<IDepartment[]>  {
+
+    return this.httpClient.get<IDepartment[]>(`${environment.baseURL}Department/Departments`, this.httpOptions);
   }
 
   GetIdDepartment(id: number): Observable<IDepartment>  {

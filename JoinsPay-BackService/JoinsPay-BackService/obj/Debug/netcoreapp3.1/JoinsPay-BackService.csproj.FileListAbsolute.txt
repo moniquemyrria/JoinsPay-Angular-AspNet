@@ -472,7 +472,6 @@ C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Deb
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csprojAssemblyReference.cache
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfoInputs.cache
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.AssemblyInfo.cs
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csproj.CoreCompileInputs.cache
@@ -502,3 +501,5 @@ C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Deb
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.dll
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.pdb
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.genruntimeconfig.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csprojAssemblyReference.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Dapper.dll

@@ -21,6 +21,7 @@
 
         <br>
         <app-table-grid 
+            [placeholderSearch]="'Tipo de Conta'"
             [items]="items" 
             [cols]="cols" 
             (eventEdit)="editItem($event)" 

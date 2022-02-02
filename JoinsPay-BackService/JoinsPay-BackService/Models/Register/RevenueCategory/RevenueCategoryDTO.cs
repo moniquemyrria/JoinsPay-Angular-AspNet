@@ -1,7 +1,7 @@
-﻿using System;
+﻿using JoinsPay_BackService.Models.Register.Revenue;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
 
 namespace JoinsPay_BackService.Models.Register.RevenueCategory
 {
@@ -13,6 +13,9 @@ namespace JoinsPay_BackService.Models.Register.RevenueCategory
         public string color { get; set; }
         public string deleted { get; set; }
         public DateTime dateCreated { get; set; }
+
+        [JsonIgnore]
+        public List<RevenueDTO> Income { get; set; }
     }
 
 
