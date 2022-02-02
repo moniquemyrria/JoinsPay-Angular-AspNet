@@ -1,12 +1,13 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 import { CheckMobile } from 'src/app/check-mobile';
 import { GetAlertMessage } from 'src/app/components/modal/modal-alerts-message/modal-alerts-message';
 import { AlertMessageModel } from 'src/app/components/modal/modal-alerts-message/modal-alerts-message-model';
 import { IContractResponse } from 'src/app/contract-response/contract-response';
 import { RevenueService } from 'src/app/joins-pay/services/revenue/revenue.service';
 import { IRevenue } from '../revenue-model';
-
 
 @Component({
   selector: 'app-revenue-category-list',
@@ -16,19 +17,19 @@ import { IRevenue } from '../revenue-model';
 
 export class RevenueListComponent implements OnInit {
 
-  items: IRevenue[] = [];
+  revenue: IRevenue = {} as IRevenue ;
   cols: any = []
   selected: any[] = []
   alertMesssage: AlertMessageModel = {} as AlertMessageModel
-
   mobile: boolean = false;
-
   displayLoading: boolean = false
-
   displayAlertMessage: boolean = false;
-
   idItemDelete: number = 0
+  displayCollapsePeriodDate: boolean = false
+  displayFilterPeriodDate: boolean = false
 
+  stringPeriodDate: string = ""
+  
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     if (event.target.innerWidth <= 768) {
@@ -39,7 +40,53 @@ export class RevenueListComponent implements OnInit {
     }
   }
 
+  openSnackBar(message: string, action: string) {
+    let snackBarRef = this._snackBar.open(message, action);
+    snackBarRef.afterDismissed().subscribe(() => { });
+    snackBarRef.onAction().subscribe(() => { })
+  }
 
+
+  showFilterPeriodDate() {
+    this.displayCollapsePeriodDate = !this.displayCollapsePeriodDate
+  }
+
+  checkValidationPeriodDate(dates: any) {
+
+    if (dates.dateFinal < dates.dateInicial || dates.inicial > dates.dateInicial){
+      this.openSnackBar("O período selecionado está incorreto ou inválido.", "Ok")
+      return true
+    } 
+
+    return false
+  }
+
+  filterPeriodDate(event: any) {
+    if (!this.checkValidationPeriodDate(event)) {
+      this.displayLoading = true
+      this.stringPeriodDate = moment(event.dateInicial).format('DD/MM/YYYY')  + " a " + moment(event.dateFinal).format('DD/MM/YYYY')  
+      this.revenueService
+        .GetListRevenuePeriodDate(moment(event.dateInicial).format('YYYY-MM-DD'), moment(event.dateFinal).format('YYYY-MM-DD'))
+        .subscribe((response: IRevenue) => {
+          this.revenue = response;
+          this.displayLoading = false
+          this.displayCollapsePeriodDate = false
+          this.displayFilterPeriodDate = true
+        }, (error) => {
+          this.alertMesssage = GetAlertMessage(
+            "Erro de Conexão",
+            "Não foi possível carregar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
+            false,
+            true,
+            500
+          )
+          this.displayLoading = false
+          this.displayAlertMessage = true
+        }
+        );
+    }
+
+  }
 
   onSelectionRouterLink() {
     this.router.navigateByUrl('/joinspay/revenue/new');
@@ -48,7 +95,7 @@ export class RevenueListComponent implements OnInit {
   constructor(
     private revenueService: RevenueService,
     private router: Router,
-
+    private _snackBar: MatSnackBar
   ) { }
 
   selection(items: any) {
@@ -131,9 +178,11 @@ export class RevenueListComponent implements OnInit {
     this.displayLoading = true
     this.revenueService
       .GetListRevenue()
-      .subscribe((response: IRevenue[]) => {
-        this.items = response;
+      .subscribe((response: IRevenue) => {
+        this.revenue = response;
         this.displayLoading = false
+        this.displayCollapsePeriodDate = false
+        this.displayFilterPeriodDate = false
       }, (error) => {
         this.alertMesssage = GetAlertMessage(
           "Erro de Conexão",
@@ -155,11 +204,12 @@ export class RevenueListComponent implements OnInit {
     this.getListRevenue()
 
     this.cols = [
-      { field: 'id', header: 'Id' },
-      { field: 'amountFormatted', header: 'Valor (R$)' },
+      { field: 'color', header: '' },
       { field: 'revenueCategory', header: 'Categoria' },
       { field: 'account', header: 'Conta' },
       { field: 'department', header: 'Empresa, Loja ou Terceiro' },
+      { field: 'amountFormatted', header: 'Valor (R$)' },
+      { field: 'dateCreatedFormatted', header: 'Data' },
     ];
 
   }

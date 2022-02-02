@@ -1,0 +1,36 @@
+<div class="card card-body w-100">
+    <div class="modal-header">
+        <h5 class="card-title">Consulta por Período</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-calendar-week" style="font-size: 2rem;"></i></h6>
+
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Data Inicial</mat-label>
+                <input matInput [matDatepicker]="picker1" [formControl]="dInitial" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3">
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Data Final</mat-label>
+                <input matInput [matDatepicker]="picker2" [formControl]="dFinal" readonly>
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+    </div>
+
+    <div class="modal-footer">
+        <p-button label="Filtrar" icon="pi pi-calendar" styleClass="p-button-sm p-button-raised p-button-help p-mr-2"
+            [style]="{'width':'150px'}" title="Filtrar" (click)="filter()">
+        </p-button>
+
+    </div>
+</div>

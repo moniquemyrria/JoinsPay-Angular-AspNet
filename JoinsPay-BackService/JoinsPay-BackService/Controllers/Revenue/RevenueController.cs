@@ -8,6 +8,9 @@ using JoinsPay_BackService.Data;
 using JoinsPay_BackService.Models.ContractResponse;
 using JoinsPay_BackService.Models.Register.Revenue;
 using System.Globalization;
+using Dapper;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Data.SqlClient;
 
 namespace JoinsPay_BackService.Controllers.Register.Revenue
 {
@@ -16,15 +19,17 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
     public class RevenueController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IConfiguration _config;
 
-        public RevenueController(ApplicationDbContext context)
+        public RevenueController(ApplicationDbContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
 
         // GET: api/Revenue
         [HttpGet]
-        public async Task<List<RevenueModelView>> GetRevenues()
+        public async Task<RevenueModelView> GetRevenues()
         {
             var incomes = await _context.Incomes
                                     .Where(t => t.deleted == "N")
@@ -32,36 +37,148 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
                                     .Include(t => t.account)
                                     .Include(t => t.department)
                                     .Include(t => t.department)
+                                    .OrderByDescending(t => t.id)
                                     .ToListAsync();
 
-            List<RevenueModelView> accountModelView = new List<RevenueModelView>();
+            RevenueModelView revenueModelView = new RevenueModelView();
+            List<DataIncomes> dataIncomes = new List<DataIncomes>();
+
+            revenueModelView.dataTop3SumByCurrentMonthRevenueCategory = await showTop3SumByCurrentMonthRevenueCategory();
 
 
             if (incomes != null)
             {
                 foreach (var income in incomes)
                 {
-                    accountModelView.Add(
-                        new RevenueModelView
-                        {
-                            id                  = income.id,
-                            idRevenueCategory   = income.idRevenueCategory,
-                            idAccount           = income.idAccount,
-                            idDepartment        = income.idDepartment,
-                            amount              = income.amount,
-                            amountFormatted     = income.amount.ToString("C", CultureInfo.CurrentCulture),
-                            description         = income.description,
-                            deleted             = income.deleted,
-                            dateCreated         = income.dateCreated,
-                            revenueCategory     = income.revenueCategory.initials + " - " + income.revenueCategory.description,
-                            account             = income.account.name + " - Ag." + income.account.agency + " / Conta: " + income.account.accountNumber,
-                            department          = income.department.name
-                        }
-                    );; ;
+
+                    if (income.dateCreated.Month == DateTime.Now.Month)
+                    {
+                        revenueModelView.totalAmountCurrentMounth = revenueModelView.totalAmountCurrentMounth + income.amount;
+                    }
+
+                    if (income.dateCreated.Year == DateTime.Now.Year)
+                    {
+                        revenueModelView.totalAmountCurrentYear = revenueModelView.totalAmountCurrentYear + income.amount;
+                    }
+
+
+                    dataIncomes.Add(
+                            new DataIncomes
+                            {
+                                id = income.id,
+                                idRevenueCategory = income.idRevenueCategory,
+                                idAccount = income.idAccount,
+                                idDepartment = income.idDepartment,
+                                amount = income.amount,
+                                amountFormatted = income.amount.ToString("C", CultureInfo.CurrentCulture),
+                                description = income.description,
+                                deleted = income.deleted,
+                                dateCreated = income.dateCreated,
+                                dateCreatedFormatted = income.dateCreated.Date.ToString("dd/MM/yyyy").ToString(new CultureInfo("pt-BR")).ToUpper(),
+                                revenueCategory = income.revenueCategory.initials + " - " + income.revenueCategory.description,
+                                account = income.account.name + " - Ag." + income.account.agency + " / Conta: " + income.account.accountNumber,
+                                department = income.department.name,
+                                color = income.revenueCategory.color
+                            }
+                        );
                 }
+
+                revenueModelView.dataIncomes = dataIncomes;
+                revenueModelView.currentMounth = DateTime.Now.ToString("MMMM").ToString(new CultureInfo("pt-BR")).ToUpper();
+                revenueModelView.currentYear = DateTime.Now.ToString("yyyy").ToString();
+
             }
 
-            return accountModelView;
+            return revenueModelView;
+        }
+
+        private async Task<List<DataTop3SumByCurrentMonthRevenueCategory>> showTop3SumByCurrentMonthRevenueCategory()
+        {
+            List <DataTop3SumByCurrentMonthRevenueCategory> dataTop3SumByCurrentMonthRevenueCategory = new List<DataTop3SumByCurrentMonthRevenueCategory>();
+
+
+            string xSql =
+                " DECLARE @monthCurrent AS int                                                              " +
+                " SET @monthCurrent = DATEPART(MONTH, GETDATE());                                           " +
+                " SELECT                                                                                    " +
+                "   TOP(3) R.idRevenueCategory                      ,                                       " +
+                "   RRC.description	AS [descriptionRevenueCategory] ,                                       " +
+                "   SUM(R.amount)   AS [totalAmountRevenueCategory]                                         " +
+                " FROM          Revenue                     R   (NOLOCK)                                    " +
+                " INNER JOIN    [Register.Revenue_Category] RRC (NOLOCK) ON (RRC.id = R.idRevenueCategory)  " +
+                " WHERE DATEPART(MONTH, R.dateCreated) = @monthCurrent                                      " +
+                " GROUP BY RRC.description, R.idRevenueCategory                                             " +
+                " ORDER BY [totalAmountRevenueCategory] DESC                                                ";
+
+            try
+            {
+                using SqlConnection conexao = new SqlConnection(
+                    _config.GetConnectionString("DefaultConnection"));
+                dataTop3SumByCurrentMonthRevenueCategory = conexao.Query<DataTop3SumByCurrentMonthRevenueCategory>(xSql, commandTimeout: 600).ToList();
+
+            }
+            catch (Exception Ex)
+            {
+
+            }
+
+            return dataTop3SumByCurrentMonthRevenueCategory;
+        }
+
+        // GET: api/Revenue/PeriodDate
+        [HttpGet("PeriodDate/{dateInitial}/{dateFinal}")]
+        public async Task<RevenueModelView> GetRevenuePeriodDate(DateTime dateInitial, DateTime dateFinal)
+        {
+            var incomes = await _context.Incomes
+                                    .Where(
+                                        t => t.deleted == "N" &&
+                                        t.dateCreated.Date >= dateInitial.Date && 
+                                        t.dateCreated.Date <= dateFinal.Date
+                                     )
+                                    .Include(t => t.revenueCategory)
+                                    .Include(t => t.account)
+                                    .Include(t => t.department)
+                                    .Include(t => t.department)
+                                    .ToListAsync();
+
+            RevenueModelView revenueModelView = new RevenueModelView();
+            List<DataIncomes> dataIncomes = new List<DataIncomes>();
+
+            if (incomes != null)
+            {
+                foreach (var income in incomes)
+                {
+
+                    revenueModelView.totalAmount = revenueModelView.totalAmount + income.amount;
+
+                    dataIncomes.Add(
+                        new DataIncomes
+                        {
+                            id = income.id,
+                            idRevenueCategory = income.idRevenueCategory,
+                            idAccount = income.idAccount,
+                            idDepartment = income.idDepartment,
+                            amount = income.amount,
+                            amountFormatted = income.amount.ToString("C", CultureInfo.CurrentCulture),
+                            description = income.description,
+                            deleted = income.deleted,
+                            dateCreated = income.dateCreated,
+                            dateCreatedFormatted = income.dateCreated.Date.ToString("dd/MM/yyyy").ToString(new CultureInfo("pt-BR")).ToUpper(),
+                            revenueCategory = income.revenueCategory.initials + " - " + income.revenueCategory.description,
+                            account = income.account.name + " - Ag." + income.account.agency + " / Conta: " + income.account.accountNumber,
+                            department = income.department.name,
+                            color = income.revenueCategory.color
+                        }
+                    ); 
+                }
+
+                revenueModelView.dataIncomes = dataIncomes;
+                revenueModelView.currentMounth = DateTime.Now.ToString("MMMM").ToString(new CultureInfo("pt-BR")).ToUpper();
+                revenueModelView.currentYear = DateTime.Now.ToString("yyyy").ToString();
+
+            }
+
+            return revenueModelView;
         }
 
         // GET: api/Revenue/5
@@ -236,6 +353,19 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
 
     public class RevenueModelView
     {
+        public Double totalAmount { get; set; }
+        public Double totalAmountCurrentMounth { get; set; }
+        public Double totalAmountCurrentYear { get; set; }
+        public string currentMounth { get; set; }
+        public string currentYear { get; set; }
+
+        public List<DataIncomes> dataIncomes { get; set; }
+
+        public List<DataTop3SumByCurrentMonthRevenueCategory> dataTop3SumByCurrentMonthRevenueCategory { get; set; }
+    }
+
+    public class DataIncomes
+    {
         public long id { get; set; }
         public long idRevenueCategory { get; set; }
         public long idAccount { get; set; }
@@ -245,9 +375,18 @@ namespace JoinsPay_BackService.Controllers.Register.Revenue
         public string description { get; set; }
         public string deleted { get; set; }
         public DateTime dateCreated { get; set; }
+        public string dateCreatedFormatted { get; set; }
         public string revenueCategory { get; set; }
         public string account { get; set; }
         public string department { get; set; }
+        public string color { get; set; }
 
+    }
+
+    public class DataTop3SumByCurrentMonthRevenueCategory
+    {
+        public long idRevenueCategory { get; set; }
+        public string descriptionRevenueCategory { get; set; }
+        public Double totalAmountRevenueCategory { get; set; }
     }
 }

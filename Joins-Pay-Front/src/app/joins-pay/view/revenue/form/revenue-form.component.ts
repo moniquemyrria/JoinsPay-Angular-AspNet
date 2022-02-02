@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CheckMobile } from 'src/app/check-mobile';
@@ -11,7 +12,7 @@ import { Validation, ValidationSchema } from 'src/app/validation-fields/validati
 import { IAccount } from '../../register/account/account-model';
 import { IDepartment } from '../../register/department/department-model';
 import { IRevenueCategory } from '../../register/revenue-category/revenue-category-model';
-import { IRevenue } from '../revenue-model';
+import { DataIncomes } from '../revenue-model';
 
 @Component({
   selector: 'app-revenue-form',
@@ -20,7 +21,7 @@ import { IRevenue } from '../revenue-model';
 })
 export class RevenueFormComponent implements OnInit {
 
-  revenue: IRevenue = {} as IRevenue
+  revenue: DataIncomes = {} as DataIncomes
   alertMesssage: AlertMessageModel = {} as AlertMessageModel
   mobile: boolean = false;
   displayLoading: boolean = false
@@ -28,7 +29,8 @@ export class RevenueFormComponent implements OnInit {
   itemsAccount: IAccount[] = [] as IAccount[];
   itemsRevenueCategory: IRevenueCategory[] = [] as IRevenueCategory[];
   itemsDepartment: IDepartment[] = [] as IDepartment[];
-
+  dateCreated = new FormControl(new Date());
+  
   constructor(
     private router: Router,
     private activeRoute: ActivatedRoute,
@@ -67,7 +69,7 @@ export class RevenueFormComponent implements OnInit {
       if (this.revenue.id == undefined) {
         this.displayLoading = true
         this.revenue.deleted = "N"
-        this.revenue.dateCreated = new Date()
+        this.revenue.dateCreated = this.dateCreated.value
         this.revenueService
           .PostRevenue(this.revenue)
           .subscribe((response: IContractResponse) => {
@@ -119,7 +121,7 @@ export class RevenueFormComponent implements OnInit {
       this.displayLoading = true
       this.revenueService
         .GetIdRevenue(this.revenue.id)
-        .subscribe((response: IRevenue) => {
+        .subscribe((response: DataIncomes) => {
           this.revenue = response;
           this.displayLoading = false
         }, (error) => {

@@ -37,3 +37,19 @@ textarea:disabled {
     background: $readonly;
 }
 
+.input-group-prepend-date{
+    margin-top: 3px;
+    height: 48px;
+}
+
+.mat-form-field {
+    font-size: 13px;
+    font-family: inherit;
+}
+
+input matInput:disabled {
+    background: $readonly;
+}
+
+
+

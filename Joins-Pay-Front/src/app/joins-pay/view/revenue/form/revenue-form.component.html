@@ -26,36 +26,51 @@
                                 <span [class]="!mobile ? 'input-group-text amount' : ''" id="nome">Valor da Receita (R$)
                                     *</span>
                             </div>
-                            <input 
-                                currencyMask 
-                                [options]="{ prefix: '', thousands: '.', decimal: ',' }"
+                            <input currencyMask [options]="{ prefix: '', thousands: '.', decimal: ',' }"
                                 [class]="!mobile ? 'form-control' : 'form-control amount-mobile'"
-                                [(ngModel)]="revenue.amount" required placeholder="0,00" 
-                                [disabled]="revenue.id !== undefined"
-                            >
+                                [(ngModel)]="revenue.amount" required placeholder="0,00"
+                                [disabled]="revenue.id !== undefined">
 
                         </div>
                     </div>
                 </div>
             </div>
-            <br>
-            <div class="row">
+
+            <div class="row" style="position: relative; top: -10px">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2" style="float: right;">
+                        <div class="input-group">
+                            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                                <div [class]="!mobile ? 'input-group-prepend input-group-prepend-date' : 'input-group'">
+                                    <span [class]="!mobile ? 'input-group-text' : ''" id="nome">Data da Receita *</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+                                <div>
+                                    <mat-form-field appearance="outline" class="w-100">
+                                        <input matInput [matDatepicker]="picker1" [formControl]="dateCreated" readonly>
+                                        <mat-datepicker-toggle matSuffix [for]="picker1" [disabled]="revenue.id !== undefined"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker1></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row"  style="position: relative; top: -20px">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
                     <div class="input-group">
                         <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                             <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Categoria *</span>
                         </div>
-                        <select 
-                            class="form-select" 
-                            [(ngModel)]="revenue.idRevenueCategory"
+                        <select class="form-select" [(ngModel)]="revenue.idRevenueCategory"
                             (ngModelChange)="revenue.idRevenueCategory=$event && +$event" id="etat"
-                            [disabled]="revenue.id !== undefined"
-                        >
-                            <option 
-                                [value]="item.id" 
-                                *ngFor="let item of itemsRevenueCategory"
-                                style="width: 100%; height: 50px;"
-                            >
+                            [disabled]="revenue.id !== undefined">
+                            <option [value]="item.id" *ngFor="let item of itemsRevenueCategory"
+                                style="width: 100%; height: 50px;">
                                 {{item.description + " (" + item.initials + ")"}}
                             </option>
                         </select>
@@ -66,16 +81,11 @@
                         <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                             <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Conta *</span>
                         </div>
-                        <select 
-                            class="form-select" 
-                            [(ngModel)]="revenue.idAccount"
+                        <select class="form-select" [(ngModel)]="revenue.idAccount"
                             (ngModelChange)="revenue.idAccount=$event && +$event" id="etat"
-                            [disabled]="revenue.id !== undefined"
-                        >
-                            <option 
-                                [value]="item.id" *ngFor="let item of itemsAccount"
-                                style="width: 100%; height: 50px;"
-                            >
+                            [disabled]="revenue.id !== undefined">
+                            <option [value]="item.id" *ngFor="let item of itemsAccount"
+                                style="width: 100%; height: 50px;">
                                 {{item.name + ' (' + item.accountCategory + ")"}}
                             </option>
                         </select>
@@ -89,18 +99,11 @@
                             <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Loja / Empresa / Terceiro
                                 *</span>
                         </div>
-                        <select 
-                            class="form-select"
-                            [(ngModel)]="revenue.idDepartment" 
-                            (ngModelChange)="revenue.idDepartment=$event && +$event"
-                            id="etat"
-                            [disabled]="revenue.id !== undefined"
-                        >
-                            <option 
-                                [value]="item.id" 
-                                *ngFor="let item of itemsDepartment"
-                                style="width: 100%; height: 50px;"
-                            >
+                        <select class="form-select" [(ngModel)]="revenue.idDepartment"
+                            (ngModelChange)="revenue.idDepartment=$event && +$event" id="etat"
+                            [disabled]="revenue.id !== undefined">
+                            <option [value]="item.id" *ngFor="let item of itemsDepartment"
+                                style="width: 100%; height: 50px;">
                                 {{item.name + " (" + item.departmentCategory + ")"}}
                             </option>
                         </select>
@@ -113,50 +116,36 @@
                     <div class="input-group">
                         <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                             <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Descrição / Observações
-                                </span>
+                            </span>
                         </div>
-                        <textarea [disabled]="revenue.id !== undefined" class="md-textarea form-control" rows="3"></textarea>
+                        <textarea class="form-control" [disabled]="revenue.id !== undefined"
+                            class="md-textarea form-control" rows="3"></textarea>
                     </div>
                 </div>
                 <br>
             </div>
             <div class="modal-footer">
                 <div *ngIf="!mobile; else noDesk">
-                    <p-button 
-                        [style]="{'width': '150px', 'height': '50px'}" 
-                        class="mx-2"
-                        styleClass="p-button-raised p-button-sm p-button-danger" 
-                        [label]="revenue.id == undefined ? 'Cancelar' : 'Voltar'"
-                        (click)="onRouterLinkRevenueList()"
-                    ></p-button>
+                    <p-button [style]="{'width': '150px', 'height': '50px'}" class="mx-2"
+                        styleClass="p-button-raised p-button-sm p-button-danger"
+                        [label]="revenue.id == undefined ? 'Cancelar' : 'Voltar'" (click)="onRouterLinkRevenueList()">
+                    </p-button>
 
-                    <p-button 
-                        [style]="{'width': '150px', 'height': '50px'}"
-                        styleClass="p-button-raised p-button-sm p-button-success" 
-                        label="Salvar" 
-                        (click)="onSubmit()"
-                        *ngIf="revenue.id == undefined"
-                    >
+                    <p-button [style]="{'width': '150px', 'height': '50px'}"
+                        styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()"
+                        *ngIf="revenue.id == undefined">
                     </p-button>
                 </div>
                 <ng-template #noDesk>
-                    <p-button 
-                        [style]="{'width': '100%', 'height': '50px'}" 
-                        class="w-100"
-                        styleClass="p-button-raised p-button-sm p-button-success" 
-                        label="Salvar" 
-                        (click)="onSubmit()"
-                        *ngIf="revenue.id == undefined"
-                    >
+                    <p-button [style]="{'width': '100%', 'height': '50px'}" class="w-100"
+                        styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()"
+                        *ngIf="revenue.id == undefined">
                     </p-button>
 
-                    <p-button 
-                        [style]="{'width': '100%', 'height': '50px'}" 
-                        class="w-100"
-                        styleClass="p-button-raised p-button-sm p-button-danger" 
-                        [label]="revenue.id == undefined ? 'Cancelar' : 'Voltar'"
-                        (click)="onRouterLinkRevenueList()"
-                    ></p-button>
+                    <p-button [style]="{'width': '100%', 'height': '50px'}" class="w-100"
+                        styleClass="p-button-raised p-button-sm p-button-danger"
+                        [label]="revenue.id == undefined ? 'Cancelar' : 'Voltar'" (click)="onRouterLinkRevenueList()">
+                    </p-button>
 
                 </ng-template>
             </div>
