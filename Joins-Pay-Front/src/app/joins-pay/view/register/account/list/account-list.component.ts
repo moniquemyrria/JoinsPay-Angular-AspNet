@@ -155,12 +155,12 @@ export class AccountListComponent implements OnInit {
     this.getListAccount()
 
     this.cols = [
-      { field: 'id', header: 'Id' },
       { field: 'code', header: 'Código' },
       { field: 'name', header: 'Nome' },
       { field: 'agency', header: 'Agência' },
       { field: 'accountNumber', header: 'Conta' },
       { field: 'accountCategory', header: 'Tipo de Conta' },
+      { field: 'department', header: 'Empresa' },
     ];
 
   }

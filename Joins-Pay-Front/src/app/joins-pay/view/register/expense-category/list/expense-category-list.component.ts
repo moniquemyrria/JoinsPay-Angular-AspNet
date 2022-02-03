@@ -155,7 +155,6 @@ export class ExpenseCategoryListComponent implements OnInit {
     this.getListExpenseCategory()
 
     this.cols = [
-      { field: 'id', header: 'Id' },
       { field: 'initials', header: 'Sigla' },
       { field: 'description', header: 'Descrição' },
       { field: 'color', header: 'Cor' }

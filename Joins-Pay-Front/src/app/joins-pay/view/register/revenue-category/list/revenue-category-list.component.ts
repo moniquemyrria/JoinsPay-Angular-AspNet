@@ -155,7 +155,6 @@ export class RevenueCategoryListComponent implements OnInit {
     this.getListRevenueCategory()
 
     this.cols = [
-      { field: 'id', header: 'Id' },
       { field: 'initials', header: 'Sigla' },
       { field: 'description', header: 'Descrição' },
       { field: 'color', header: 'Cor' }

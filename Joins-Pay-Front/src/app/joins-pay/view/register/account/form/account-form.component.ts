@@ -8,6 +8,7 @@ import { IContractResponse } from 'src/app/contract-response/contract-response';
 import { RegisterService } from 'src/app/joins-pay/services/register/register.service';
 import { Validation, ValidationSchema } from 'src/app/validation-fields/validation';
 import { IAccountCategory } from '../../account-category/account-category-model';
+import { IDepartment } from '../../department/department-model';
 import { IAccount } from '../account-model';
 
 @Component({
@@ -22,7 +23,8 @@ export class AccountFormComponent implements OnInit {
   mobile: boolean = false;
   displayLoading: boolean = false
   displayAlertMessage: boolean = false;
-  itemsAccountCategory: IAccountCategory[] = [] as IAccountCategory[]
+  itemsAccountCategory: IAccountCategory[] = [] as IAccountCategory[];
+  itemsDepartment: IDepartment[] = [] as IDepartment[];
 
   constructor(
     private router: Router,
@@ -174,11 +176,12 @@ export class AccountFormComponent implements OnInit {
   checkValidationFields() {
     let schema: ValidationSchema[] = [];
 
-    schema.push(new ValidationSchema("name", "Nome", "string", true, 50));
     schema.push(new ValidationSchema("code", "Código", "string", true, 10));
+    schema.push(new ValidationSchema("name", "Nome", "string", true, 50));
+    schema.push(new ValidationSchema("idDepartment", "Empresa", "number", true));
+    schema.push(new ValidationSchema("idAccountCategory", "Tipo de Conta", "number", true));
     schema.push(new ValidationSchema("agency", "Agência", "string", true, 10));
     schema.push(new ValidationSchema("accountNumber", "Número da Conta", "string", true, 10));
-    schema.push(new ValidationSchema("idAccountCategory", "Tipo de Conta", "number", true, 10));
 
     let result = new Validation().ValidSchema(schema, this.account);
 
@@ -217,11 +220,34 @@ export class AccountFormComponent implements OnInit {
 
   }
 
+  getListDepartment(departmentCategory:  string) {
+    this.displayLoading = true
+    this.registerService
+      .GetListDepartmentForCategory(departmentCategory)
+      .subscribe((response: IDepartment[]) => {
+        this.itemsDepartment = response;
+        this.displayLoading = false
+      }, (error) => {
+        this.alertMesssage = GetAlertMessage(
+          "Erro de Conexão",
+          "Não foi possível carregar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
+          false,
+          true,
+          500
+        )
+        this.displayLoading = false
+        this.displayAlertMessage = true
+      }
+      );
+
+  }
+
 
   ngOnInit(): void {
     this.initEdit()
     this.mobile = CheckMobile()
     this.getListAccountCategory()
+    this.getListDepartment('COMPANY')
   }
 
 }

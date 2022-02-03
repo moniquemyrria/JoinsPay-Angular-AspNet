@@ -4,14 +4,16 @@ using JoinsPay_BackService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoinsPay_BackService.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220202235017_hash_payment_method_category_and_payment_method")]
+    partial class hash_payment_method_category_and_payment_method
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,6 +234,9 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.Property<long>("idAccount")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("idPaymentMethodCategory")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("intervalDaysInstallments")
                         .HasColumnType("int");
 
@@ -246,6 +251,8 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("idAccount");
+
+                    b.HasIndex("idPaymentMethodCategory");
 
                     b.ToTable("Register.Payment_Method");
                 });
@@ -578,6 +585,12 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.HasOne("JoinsPay_BackService.Models.Register.Account.AccountDTO", "account")
                         .WithMany("PaymentMethods")
                         .HasForeignKey("idAccount")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("JoinsPay_BackService.Models.Register.PaymentMethod.PaymentMethodCategoryDTO", "paymentMethodCategory")
+                        .WithMany("PaymentMethods")
+                        .HasForeignKey("idPaymentMethodCategory")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
