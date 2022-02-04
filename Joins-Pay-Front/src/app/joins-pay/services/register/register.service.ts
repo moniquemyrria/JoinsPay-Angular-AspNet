@@ -8,6 +8,8 @@ import { IAccount } from '../../view/register/account/account-model';
 import { IDepartmentCategory } from '../../view/register/department/department-category-model';
 import { IDepartment } from '../../view/register/department/department-model';
 import { IExpenseCategory } from '../../view/register/expense-category/expense-category-model';
+import { IPaymentMethodCategory } from '../../view/register/payment-method/payment-method-category-model';
+import { IPaymentMethod } from '../../view/register/payment-method/payment-method-model';
 import { IRevenueCategory } from '../../view/register/revenue-category/revenue-category-model';
 
 @Injectable({
@@ -138,6 +140,35 @@ export class RegisterService {
 
   DeleteDepartment(id: number): Observable<IContractResponse>  {
     return this.httpClient.delete<IContractResponse>(`${environment.baseURL}Department/` + id, this.httpOptions);
+  }
+
+  //payment method
+  GetListPaymentMethod(): Observable<IPaymentMethod[]>  {
+    return this.httpClient.get<IPaymentMethod[]>(`${environment.baseURL}PaymentMethod`, this.httpOptions);
+  }
+
+  GetListPaymentMethodCategory(): Observable<IPaymentMethodCategory[]>  {
+    return this.httpClient.get<IPaymentMethodCategory[]>(`${environment.baseURL}PaymentMethod/PaymentMethodCategory`, this.httpOptions);
+  }
+  
+  GetIdPaymentMethod(id: number): Observable<IPaymentMethod>  {
+    return this.httpClient.get<IPaymentMethod>(`${environment.baseURL}PaymentMethod/` + id, this.httpOptions);
+  }
+
+  PostPaymentMethod(paymentMethod: IPaymentMethod): Observable<IContractResponse>  {
+    return this.httpClient.post<IContractResponse>(`${environment.baseURL}PaymentMethod`, paymentMethod, this.httpOptions);
+  }
+
+  PutPaymentMethod(paymentMethod: IPaymentMethod): Observable<IContractResponse>  {
+    return this.httpClient.put<IContractResponse>(`${environment.baseURL}PaymentMethod/` + paymentMethod.id, paymentMethod, this.httpOptions);
+  }
+
+  DeletePaymentMethod(id: number): Observable<IContractResponse>  {
+    return this.httpClient.delete<IContractResponse>(`${environment.baseURL}PaymentMethod/` + id, this.httpOptions);
+  }
+
+  DeletePaymentMethodCategory(idPaymentMethod: number, idPaymentMethodCategory: number): Observable<IContractResponse>  {
+    return this.httpClient.delete<IContractResponse>(`${environment.baseURL}PaymentMethod/PaymentMethodCategory/` + idPaymentMethod + "/" + idPaymentMethodCategory, this.httpOptions);
   }
 
 }

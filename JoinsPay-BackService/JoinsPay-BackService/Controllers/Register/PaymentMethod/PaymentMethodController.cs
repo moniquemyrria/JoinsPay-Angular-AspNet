@@ -21,13 +21,14 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
             _context = context;
         }
 
-        // GET: api/Account
+        // GET: api/PaymentMethods
         [HttpGet]
-        public async Task<List<PaymentMethodModelView>> GetAccounts()
+        public async Task<List<PaymentMethodModelView>> GetPaymentMethods()
         {
             var paymentMethod = await _context.PaymentMethods
                                     .Where(t => t.deleted == "N")
                                     .Include(t => t.account)
+                                    .ThenInclude(t => t.accountCategory)
                                     .ToListAsync();
 
             List<PaymentMethodModelView> paymentMethodModelView = new List<PaymentMethodModelView>();
@@ -47,7 +48,7 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
                             numberInstallments          = payment.numberInstallments,
                             deleted                     = payment.deleted,
                             dateCreated                 = payment.dateCreated,
-                            account                     = payment.account.name
+                            account                     = payment.account.name + " (" + payment.account.accountCategory.initials + " - " + payment.account.accountCategory.description + ")"
                         }
                     ); ;
                 }
@@ -56,21 +57,64 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
             return paymentMethodModelView;
         }
 
-        // GET: api/Account/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<PaymentMethodDTO>> GetPaymentMethodDTO(long id)
+        // GET: api/PaymentMethod/PaymentMethodCategory
+        [HttpGet("PaymentMethodCategory")]
+        public async Task<List<PaymentMethodCategoryDTO>> GetPaymentMethodCategory()
         {
-            var paymentMethodDTO = await _context.PaymentMethods.FindAsync(id);
+            var paymentMethodCategory = await _context.PaymentMethodCategories.Where(t => t.deleted == "N").ToListAsync();
 
-            if (paymentMethodDTO == null)
+
+            return paymentMethodCategory;
+        }
+
+        // GET: api/PaymentMethod/5
+        [HttpGet("{id}")]
+        public PaymentMethodDTO GetPaymentMethodDTO(long id)
+        {
+            var paymentMethodDTO = _context.PaymentMethods
+                                        //.Include(t => t.account)
+                                        //.ThenInclude(t => t.accountCategory)
+                                        .Include(t => t.paymentMethodsPaymentMethodCategories)
+                                        .ThenInclude(t => t.paymentMethodCategory)
+                                        .FirstOrDefault(t=> t.id == id);
+
+            List<PaymentMethodCategoryDTO> listPaymentMethodCategory = new List<PaymentMethodCategoryDTO>();
+            foreach (var aux in paymentMethodDTO.paymentMethodsPaymentMethodCategories.ToList())
             {
-                return NotFound();
+                if (aux.paymentMethodCategory.deleted == "N")
+                {
+                    listPaymentMethodCategory.Add(aux.paymentMethodCategory);
+                }
             }
+
+            paymentMethodDTO.paymentMethodCategory = listPaymentMethodCategory;
+
+            /* PaymentMethodModelView paymentMethodModelView = new PaymentMethodModelView();
+            List<PaymentMethodCategoryDTO> listPaymentMethodCategory = new List<PaymentMethodCategoryDTO>();
+
+            foreach(var aux in paymentMethodDTO.paymentMethodsPaymentMethodCategories.ToList())
+            {
+                if (aux.paymentMethodCategory.deleted == "N")
+                {
+                    listPaymentMethodCategory.Add(aux.paymentMethodCategory);
+                }
+            }
+
+            paymentMethodModelView.id                       = paymentMethodDTO.id;
+            paymentMethodModelView.idAccount                = paymentMethodDTO.idAccount;
+            paymentMethodModelView.name                     = paymentMethodDTO.name;
+            paymentMethodModelView.acceptInstallment        = paymentMethodDTO.acceptInstallment;
+            paymentMethodModelView.numberInstallments       = paymentMethodDTO.numberInstallments;
+            paymentMethodModelView.intervalDaysInstallments = paymentMethodDTO.intervalDaysInstallments;
+            paymentMethodModelView.deleted                  = paymentMethodDTO.deleted;
+            paymentMethodModelView.dateCreated              = paymentMethodDTO.dateCreated;
+            paymentMethodModelView.account                  = paymentMethodDTO.account.name + " (" + paymentMethodDTO.account.accountCategory.description + ")";
+            paymentMethodModelView.paymentMethodCategory    = listPaymentMethodCategory;*/
 
             return paymentMethodDTO;
         }
 
-        // PUT: api/Account/5
+        // PUT: api/PaymentMethod/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -96,6 +140,26 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
                     paymentMethodDTO.numberInstallments     = paymentMethodDTO.numberInstallments;
                     paymentMethodDTO.account                = account;
                     _context.Entry(paymentMethodDTO).State = EntityState.Modified;
+
+                    foreach (var aux in paymentMethodDTO.paymentMethodsPaymentMethodCategories)
+                    {
+                        _context.PaymentMethodsPaymentMethodCategories.Remove(aux);
+                    }
+
+                    foreach (var aux in paymentMethodDTO.paymentMethodCategory)
+                    {
+                        var paymentMethodCategory = _context.PaymentMethodCategories.FirstOrDefault(t => t.id == aux.id);
+
+                        _context.PaymentMethodsPaymentMethodCategories.Add(
+                            new PaymentMethod_PaymentMethodCategoryDTO
+                            {
+                                paymentMethod           = paymentMethodDTO,
+                                paymentMethodCategory   = paymentMethodCategory,
+                                dateCreated             = paymentMethodDTO.dateCreated
+                            }
+                        );
+
+                    }
 
                     iContractResponse.success = true;
                     iContractResponse.data = paymentMethodDTO;
@@ -127,7 +191,7 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
             return iContractResponse;
         }
 
-        // POST: api/Account
+        // POST: api/PaymentMethod
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
@@ -144,18 +208,21 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
                     paymentMethodDTO.name               = paymentMethodDTO.name.ToUpper();
                     paymentMethodDTO.acceptInstallment  = paymentMethodDTO.acceptInstallment;
                     paymentMethodDTO.numberInstallments = paymentMethodDTO.numberInstallments;
+                    paymentMethodDTO.deleted            = paymentMethodDTO.deleted;
+                    paymentMethodDTO.dateCreated        = paymentMethodDTO.dateCreated;
                     paymentMethodDTO.account            = account;
                     _context.PaymentMethods.Add(paymentMethodDTO);
 
-                    foreach (var aux in paymentMethodDTO.paymentMethodsPaymentMethodCategories)
+                    foreach (var aux in paymentMethodDTO.paymentMethodCategory)
                     {
-                        var paymentMethodCategory = _context.PaymentMethodCategories.FirstOrDefault(t => t.id == aux.idPaymentMethodCategory);
+                        var paymentMethodCategory = _context.PaymentMethodCategories.FirstOrDefault(t => t.id == aux.id);
 
                         _context.PaymentMethodsPaymentMethodCategories.Add(
                             new PaymentMethod_PaymentMethodCategoryDTO
                             {
                                 paymentMethod           = paymentMethodDTO,
-                                paymentMethodCategory   = paymentMethodCategory
+                                paymentMethodCategory   = paymentMethodCategory,
+                                dateCreated             = paymentMethodDTO.dateCreated
                             }
                         );
                         
@@ -190,11 +257,11 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
 
         }
 
-        // DELETE: api/Account/5
+        // DELETE: api/PaymentMethod/5
         [HttpDelete("{id}")]
         public async Task<IContractResponse> DeletePaymentMethodDTO(long id)
         {
-            var paymentMethodDTO = await _context.Accounts.FindAsync(id);
+            var paymentMethodDTO = await _context.PaymentMethods.FindAsync(id);
 
             var iContractResponse = new IContractResponse();
 
@@ -233,6 +300,43 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
             return iContractResponse;
         }
 
+        // DELETE: api/PaymentMethod/PaymentMethodCategory/5
+        [HttpDelete("PaymentMethodCategory/{idPaymentMethod}/{idPaymentMethodCategory}")]
+        public IContractResponse DeletePaymentMethodCategoryDTO(long idPaymentMethod, long idPaymentMethodCategory)
+        {
+            var paymentMethodDTO =  _context.PaymentMethodsPaymentMethodCategories.FirstOrDefault(t => t.idPaymentMethod == idPaymentMethod && t.idPaymentMethodCategory == idPaymentMethodCategory);
+
+            var iContractResponse = new IContractResponse();
+
+            if (paymentMethodDTO == null)
+            {
+                iContractResponse.success = false;
+                iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
+                iContractResponse.message = "Id não localizado";
+            }
+
+            try
+            {
+                _context.Remove(paymentMethodDTO);
+                _context.SaveChangesAsync();
+
+                iContractResponse.success = true;
+                iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
+                iContractResponse.message = "Condição de pagamento selecionada excluída com sucesso.";
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                
+                iContractResponse.success = false;
+                iContractResponse.statusCode = this.HttpContext.Response.StatusCode;
+                iContractResponse.message = "Erro ao excluir Categoria de Pagamento.";
+
+
+            }
+
+            return iContractResponse;
+        }
+
         private bool PaymentMethodDTOExists(long id)
         {
             return _context.Accounts.Any(e => e.id == id);
@@ -242,7 +346,6 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
     public class PaymentMethodModelView
     {
         public long id { get; set; }
-        public long idPaymentMethodCategory { get; set; }
         public long idAccount { get; set; }
         public string name { get; set; }
         public Boolean acceptInstallment { get; set; }
@@ -250,8 +353,7 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
         public int intervalDaysInstallments { get; set; }
         public string deleted { get; set; }
         public DateTime dateCreated { get; set; } 
-        public string paymentMethodCategory { get; set; }
+        public List<PaymentMethodCategoryDTO> paymentMethodCategory { get; set; }
         public string account { get; set; }
-
     }
 }

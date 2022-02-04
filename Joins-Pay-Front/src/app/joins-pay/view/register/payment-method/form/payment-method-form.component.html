@@ -1,0 +1,229 @@
+<app-navbar (window:resized)="onResize($event)"></app-navbar>
+
+<div class="main container" (window:resized)="onResize($event)">
+  <p-panel>
+    <ng-template pTemplate="header">
+      <div class="row">
+        <div class="col-12">
+          <span><b>Forma de Pagamento</b></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span>
+            {{
+              this.paymentMethod.id == undefined
+                ? "Cadastro de Nova Condição de Pagamento"
+                : "Edição de dados da Condição de Pagamento"
+            }}
+          </span>
+        </div>
+      </div>
+    </ng-template>
+
+    <div class="modal-body g-3 needs-validation" novalidate>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="sigla"
+                >Nome *</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="paymentMethod.name"
+              required
+              [placeholder]="mobile ? 'Nome da Conta' : ''"
+              maxlength="30"
+            />
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Conta *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="paymentMethod.idAccount"
+              (ngModelChange)="paymentMethod.idAccount = $event && +$event"
+              id="etat"
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsAccount"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.name + " (" + item.accountCategory + ")" }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="sigla">
+                Aceita Parcelamento ? *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="paymentMethod.acceptInstallment"
+            >
+              <option selected [ngValue]="true" style="width: 100%; height: 50px">
+                Sim
+              </option>
+              <option [ngValue]="false" style="width: 100%; height: 50px">
+                Não
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="sigla">
+                Quantidade de Parcelas
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="paymentMethod.numberInstallments"
+              (ngModelChange)="paymentMethod.numberInstallments = $event && +$event"
+              id="etat"
+              required
+              [placeholder]="mobile ? 'Quantidade de Parcelas' : '0'"
+              type="number"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="sigla">
+                Intervalo de dias entre as Parcelas
+              </span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="paymentMethod.intervalDaysInstallments"
+              (ngModelChange)="paymentMethod.intervalDaysInstallments = $event && +$event"
+              id="etat"
+              required
+              [placeholder]="mobile ? 'Intervalo de dias (Parcelas)' : '0'"
+              type="number"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Tipo de Forma de Pagamento *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="itemSelectedPaymentMethodCategory"
+            >
+              <option
+                [ngValue]="item"
+                *ngFor="let item of itemsPaymentMethodCategory"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.description }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 my-2">
+          <p-button
+            [style]="{ width: '100%', height: '40px' }"
+            styleClass="p-button-raised p-button-sm p-button-help"
+            label="Adcionar Condição"
+            icon="pi pi-plus"
+            (click)="addPaymentMethod()"
+          ></p-button>
+        </div>
+      </div>
+      <div class="row my-3">
+        <span>Condições de Pagamento</span>
+      </div>
+      <div class="row my-3" >
+        <app-table-grid
+          [showPlaceholderSearch]="false"
+          [showButtonCrudEdit]="false"
+          [items]="paymentMethod.paymentMethodCategory"
+          [cols]="cols"
+          [rowsPerPageOptions]="[5, 10, 20]"
+          [rows]="5"
+          (eventDelete)="deleteItem($event)"
+        >
+        </app-table-grid>
+      </div>
+
+      <br />
+    </div>
+    <div class="modal-footer">
+      <div *ngIf="!mobile; else noDesk">
+        <p-button
+          [style]="{ width: '150px', height: '50px' }"
+          class="mx-2"
+          styleClass="p-button-raised p-button-sm p-button-danger"
+          label="Cancelar"
+          (click)="onRouterLinkPaymentMethodList()"
+        ></p-button>
+
+        <p-button
+          [style]="{ width: '150px', height: '50px' }"
+          styleClass="p-button-raised p-button-sm p-button-success"
+          label="Salvar"
+          (click)="onSubmit()"
+        >
+        </p-button>
+      </div>
+      <ng-template #noDesk>
+        <p-button
+          [style]="{ width: '100%', height: '50px' }"
+          class="w-100"
+          styleClass="p-button-raised p-button-sm p-button-success"
+          label="Salvar"
+          (click)="onSubmit()"
+        >
+        </p-button>
+
+        <p-button
+          [style]="{ width: '100%', height: '50px' }"
+          class="w-100"
+          styleClass="p-button-raised p-button-sm p-button-danger"
+          label="Cancelar"
+          (click)="onRouterLinkPaymentMethodList()"
+        ></p-button>
+      </ng-template>
+    </div>
+  </p-panel>
+</div>
+
+<app-loading [display]="displayLoading"></app-loading>
+
+<app-modal-alerts-message
+  [display]="displayAlertMessage"
+  (eventEmmiter)="eventEmmiter($event)"
+  (eventEmmiterConfirm)="closeAlertMessage()"
+  (eventEmmiterConfirmYes)="eventEmmiterConfirmYes($event)"
+  (eventEmmiterDanger)="eventEmmiterNotConfirm()"
+  [alertMesssage]="alertMesssage"
+></app-modal-alerts-message>
