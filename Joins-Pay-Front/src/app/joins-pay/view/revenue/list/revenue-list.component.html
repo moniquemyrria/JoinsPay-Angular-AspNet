@@ -6,8 +6,7 @@
         <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
             <div class="card text-dark bg-warning mb-3 card-revenue-total"  *ngIf="!displayFilterPeriodDate">
                 <div class="card-header">{{'Top 3 Categorias de Receita de ' +  revenue.currentMounth  }}</div>
-                <div class="card-body">
-                    
+                <div class="card-body" *ngIf="revenue.dataTop3SumByCurrentMonthRevenueCategory.length > 0; else noDataTop3">
                     <tr *ngFor="let item of revenue.dataTop3SumByCurrentMonthRevenueCategory">
                         <td class="description-category">
                             <span class="card-title">{{ item.descriptionRevenueCategory }}</span> 
@@ -16,8 +15,13 @@
                             <span class="card-title ">{{ item.totalAmountRevenueCategory | currency }}</span>
                         </td>
                     </tr>
-                    
                 </div>
+                <ng-template #noDataTop3>
+                    <div class="col-12 flex-column text-center align-items-center no-data-top-3">
+                        <span>Não há dados para exibição.</span>
+                    </div>
+                </ng-template>
+
             </div>
         </div>
 

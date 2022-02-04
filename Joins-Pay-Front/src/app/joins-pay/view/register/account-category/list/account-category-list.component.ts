@@ -155,7 +155,6 @@ export class AccountCategoryListComponent implements OnInit {
     this.getListAccountCategory()
 
     this.cols = [
-      { field: 'id', header: 'Id' },
       { field: 'initials', header: 'Sigla' },
       { field: 'description', header: 'Descrição' },
     ];

@@ -5,19 +5,19 @@ import { GetAlertMessage } from 'src/app/components/modal/modal-alerts-message/m
 import { AlertMessageModel } from 'src/app/components/modal/modal-alerts-message/modal-alerts-message-model';
 import { IContractResponse } from 'src/app/contract-response/contract-response';
 import { RegisterService } from 'src/app/joins-pay/services/register/register.service';
-import { IRevenueCategory } from '../revenue-category-model';
+import { IPaymentMethod } from '../payment-method-model';
 
 
 @Component({
   selector: 'app-revenue-category-list',
-  templateUrl: './revenue-category-list.component.html',
-  styleUrls: ['./revenue-category-list.component.scss'],
+  templateUrl: './payment-method-list.component.html',
+  styleUrls: ['./payment-method-list.component.scss'],
 })
 
-export class RevenueCategoryListComponent implements OnInit {
+export class PaymentMethodListComponent implements OnInit {
 
-  items: IRevenueCategory[] = [];
-  cols: any[] = []
+  items: IPaymentMethod[] = [];
+  cols: any = []
   selected: any[] = []
   alertMesssage: AlertMessageModel = {} as AlertMessageModel
 
@@ -42,7 +42,7 @@ export class RevenueCategoryListComponent implements OnInit {
 
 
   onSelectionRouterLink() {
-    this.router.navigateByUrl('/joinspay/revenuecategory/new');
+    this.router.navigateByUrl('/joinspay/paymentmethod/new');
   }
 
   constructor(
@@ -58,7 +58,7 @@ export class RevenueCategoryListComponent implements OnInit {
 
   editItem(item: any) {
     console.log(item)
-    this.router.navigateByUrl('/joinspay/revenuecategory/edit/' + item.id);
+    this.router.navigateByUrl('/joinspay/paymentmethod/edit/' + item.id);
   }
 
   deleteItem(item: any) {
@@ -80,12 +80,12 @@ export class RevenueCategoryListComponent implements OnInit {
   }
 
   eventEmmiterConfirmYes() {
-    this.deleteRevenueCategory(this.idItemDelete)
+    this.deletePaymentMethod(this.idItemDelete)
   }
 
   eventEmmiterConfirm() {
     this.displayAlertMessage = false
-    this.getListRevenueCategory()
+    this.getListPaymentMethod()
   }
 
 
@@ -94,10 +94,10 @@ export class RevenueCategoryListComponent implements OnInit {
     this.displayAlertMessage = false;
   }
 
-  deleteRevenueCategory(id: number) {
+  deletePaymentMethod(id: number) {
     this.displayLoading = true
     this.registerService
-      .DeleteRevenueCategory(id)
+      .DeletePaymentMethod(id)
       .subscribe((response: IContractResponse) => {
         if (response.success) {
           this.alertMesssage = GetAlertMessage(
@@ -108,7 +108,7 @@ export class RevenueCategoryListComponent implements OnInit {
             undefined,
             false,
             "Ok",
-            { routerLink: '/joinspay/revenuecategory' }
+            { routerLink: '/joinspay/paymentmethod' }
           )
           this.displayAlertMessage = true
 
@@ -127,11 +127,11 @@ export class RevenueCategoryListComponent implements OnInit {
       );
   }
 
-  getListRevenueCategory() {
+  getListPaymentMethod() {
     this.displayLoading = true
     this.registerService
-      .GetListRevenueCategory()
-      .subscribe((response: IRevenueCategory[]) => {
+      .GetListPaymentMethod()
+      .subscribe((response: IPaymentMethod[]) => {
         this.items = response;
         this.displayLoading = false
       }, (error) => {
@@ -152,12 +152,12 @@ export class RevenueCategoryListComponent implements OnInit {
   ngOnInit(): void {
     this.mobile = CheckMobile()
 
-    this.getListRevenueCategory()
+    this.getListPaymentMethod()
 
     this.cols = [
-      { field: 'initials', header: 'Sigla' },
-      { field: 'description', header: 'Descrição' },
-      { field: 'color', header: 'Cor' }
+      { field: 'name', header: 'Condição de Pagamento' },
+      { field: 'account', header: 'Conta (Tipo de Conta)' },
+
     ];
 
   }

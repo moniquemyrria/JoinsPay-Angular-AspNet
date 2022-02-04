@@ -1,120 +1,197 @@
 <app-navbar (window:resized)="onResize($event)"></app-navbar>
 
 <div class="main container" (window:resized)="onResize($event)">
-    <p-panel>
-
-        <ng-template pTemplate="header">
-            <div class="row">
-                <div class="col-12">
-                    <span><b>Conta</b></span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <span> {{ this.account.id == undefined ? 'Cadastro de Nova Conta' : "Edição de dados da Conta"}}
-                    </span>
-                </div>
-            </div>
-        </ng-template>
-
-        <div class="modal-body g-3 needs-validation" novalidate>
-
-
-            <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="sigla">Nome *</span>
-                        </div>
-                        <input type="text" class="form-control" [(ngModel)]="account.name" required
-                            [placeholder]="mobile ? 'Nome da Conta' : ''" maxlength="50">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Código *</span>
-                        </div>
-                        <input type="text" class="form-control" [(ngModel)]="account.code" required
-                            [placeholder]="mobile ? 'Código' : ''" maxlength="10">
-
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Agencia *</span>
-                        </div>
-                        <input type="text" class="form-control" [(ngModel)]="account.agency" required
-                            [placeholder]="mobile ? 'Agência' : ''" maxlength="10">
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Número da Conta *</span>
-                        </div>
-                        <input type="text" class="form-control" [(ngModel)]="account.accountNumber" required
-                            [placeholder]="mobile ? 'Número da Conta' : ''" maxlength="10">
-
-                    </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-                    <div class="input-group">
-                        <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-                            <span [class]="!mobile ? 'input-group-text' : ''" id="descricao">Tipo de Conta *</span>
-                        </div>
-                        <select class="form-select" aria-label="Default select example" [(ngModel)]="account.idAccountCategory"  (ngModelChange)="account.idAccountCategory=$event && +$event" id="etat">
-                            <option [value]="item.id" *ngFor="let item of itemsAccountCategory" style="width: 100%; height: 50px;">
-                                {{item.initials + ': ' + item.description}}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <br>
-
+  <p-panel>
+    <ng-template pTemplate="header">
+      <div class="row">
+        <div class="col-12">
+          <span><b>Conta</b></span>
         </div>
-        <div class="modal-footer">
-            <div *ngIf="!mobile; else noDesk">
-                <p-button [style]="{'width': '150px', 'height': '50px'}" class="mx-2"
-                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar"
-                    (click)="onRouterLinkAccountList()"></p-button>
-
-                <p-button [style]="{'width': '150px', 'height': '50px'}"
-                    styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()">
-                </p-button>
-            </div>
-            <ng-template #noDesk>
-                <p-button [style]="{'width': '100%', 'height': '50px'}" class="w-100"
-                    styleClass="p-button-raised p-button-sm p-button-success" label="Salvar" (click)="onSubmit()">
-                </p-button>
-
-                <p-button [style]="{'width': '100%', 'height': '50px'}" class="w-100"
-                    styleClass="p-button-raised p-button-sm p-button-danger" label="Cancelar"
-                    (click)="onRouterLinkAccountList()"></p-button>
-
-            </ng-template>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span>
+            {{
+              this.account.id == undefined
+                ? "Cadastro de Nova Conta"
+                : "Edição de dados da Conta"
+            }}
+          </span>
         </div>
-    </p-panel>
+      </div>
+    </ng-template>
+
+    <div class="modal-body g-3 needs-validation" novalidate>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Código *</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="account.code"
+              required
+              [placeholder]="mobile ? 'Código' : ''"
+              maxlength="10"
+            />
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 col-xxl-9 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="sigla"
+                >Nome *</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="account.name"
+              required
+              [placeholder]="mobile ? 'Nome da Conta' : ''"
+              maxlength="50"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Empresa *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="account.idDepartment"
+              (ngModelChange)="account.idDepartment = $event && +$event"
+              id="etat"
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsDepartment"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Tipo de Conta *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="account.idAccountCategory"
+              (ngModelChange)="account.idAccountCategory = $event && +$event"
+              id="etat"
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsAccountCategory"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.initials + ": " + item.description }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Agencia *</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="account.agency"
+              required
+              [placeholder]="mobile ? 'Agência' : ''"
+              maxlength="10"
+            />
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Número da Conta *</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              [(ngModel)]="account.accountNumber"
+              required
+              [placeholder]="mobile ? 'Número da Conta' : ''"
+              maxlength="10"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+    </div>
+    <div class="modal-footer">
+      <div *ngIf="!mobile; else noDesk">
+        <p-button
+          [style]="{ width: '150px', height: '50px' }"
+          class="mx-2"
+          styleClass="p-button-raised p-button-sm p-button-danger"
+          label="Cancelar"
+          (click)="onRouterLinkAccountList()"
+        ></p-button>
+
+        <p-button
+          [style]="{ width: '150px', height: '50px' }"
+          styleClass="p-button-raised p-button-sm p-button-success"
+          label="Salvar"
+          (click)="onSubmit()"
+        >
+        </p-button>
+      </div>
+      <ng-template #noDesk>
+        <p-button
+          [style]="{ width: '100%', height: '50px' }"
+          class="w-100"
+          styleClass="p-button-raised p-button-sm p-button-success"
+          label="Salvar"
+          (click)="onSubmit()"
+        >
+        </p-button>
+
+        <p-button
+          [style]="{ width: '100%', height: '50px' }"
+          class="w-100"
+          styleClass="p-button-raised p-button-sm p-button-danger"
+          label="Cancelar"
+          (click)="onRouterLinkAccountList()"
+        ></p-button>
+      </ng-template>
+    </div>
+  </p-panel>
 </div>
 
 <app-loading [display]="displayLoading"></app-loading>
 
-<app-modal-alerts-message 
-    [display]="displayAlertMessage" 
-    (eventEmmiter)="eventEmmiter($event)"
-    (eventEmmiterConfirm)="closeAlertMessage()"
-    [alertMesssage]="alertMesssage"
+<app-modal-alerts-message
+  [display]="displayAlertMessage"
+  (eventEmmiter)="eventEmmiter($event)"
+  (eventEmmiterConfirm)="closeAlertMessage()"
+  [alertMesssage]="alertMesssage"
 ></app-modal-alerts-message>

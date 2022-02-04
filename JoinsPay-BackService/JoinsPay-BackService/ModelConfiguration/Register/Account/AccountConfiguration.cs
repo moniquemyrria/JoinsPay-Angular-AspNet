@@ -27,6 +27,8 @@ namespace JoinsPay_BackService.ModelConfiguration.Register.Account
                 //FK - Account Category
                 entity.HasOne(t => t.accountCategory).WithMany(t => t.Account).HasForeignKey(t => t.idAccountCategory).HasPrincipalKey(t => t.id);
 
+                //FK - Department
+                entity.HasOne(t => t.department).WithMany(t => t.Account).HasForeignKey(t => t.idDepartment).HasPrincipalKey(t => t.id).OnDelete(DeleteBehavior.Restrict) ;
 
 
             }

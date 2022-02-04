@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using JoinsPay_BackService.ModelConfiguration.Revenue;
 using JoinsPay_BackService.Models.Register.Revenue;
+using JoinsPay_BackService.Models.Register.PaymentMethod;
+using JoinsPay_BackService.ModelConfiguration.Register.PaymentMethod;
+using JoinsPay_BackService.ModelConfiguration.Register.PaymentMethodCategory;
 
 namespace JoinsPay_BackService.Data
 {
@@ -39,6 +42,12 @@ namespace JoinsPay_BackService.Data
                 _ = new DepartmentConfiguration(modelBuilder.Entity<DepartmentDTO>());
 
                 _ = new RevenueConfiguration(modelBuilder.Entity<RevenueDTO>());
+                
+                _ = new PaymentMethodCategoryConfiguration(modelBuilder.Entity<PaymentMethodCategoryDTO>());
+                
+                _ = new PaymentMethodConfiguration(modelBuilder.Entity<PaymentMethodDTO>());
+                
+                _ = new PaymentMethod_PaymentMethodCategoryConfiguration(modelBuilder.Entity<PaymentMethod_PaymentMethodCategoryDTO>());
 
             }
         }
@@ -56,5 +65,12 @@ namespace JoinsPay_BackService.Data
         public DbSet<DepartmentDTO> Departments { get; set; }
         
         public DbSet<RevenueDTO> Incomes { get; set; }
+
+        public DbSet<PaymentMethodCategoryDTO> PaymentMethodCategories { get; set; }
+
+        public DbSet<PaymentMethodDTO> PaymentMethods { get; set; }
+        
+        public DbSet<PaymentMethod_PaymentMethodCategoryDTO> PaymentMethodsPaymentMethodCategories { get; set; }
+
     }
 }

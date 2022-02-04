@@ -28,6 +28,7 @@ namespace JoinsPay_BackService.Controllers.Register.Account
             var accounts = await _context.Accounts
                                     .Where(t => t.deleted == "N")
                                     .Include(t => t.accountCategory)
+                                    .Include(t => t.department)
                                     .ToListAsync();
 
             List<AccountModelView> accountModelView = new List<AccountModelView>();
@@ -48,7 +49,8 @@ namespace JoinsPay_BackService.Controllers.Register.Account
                             accountNumber       = account.accountNumber,
                             deleted             = account.deleted,
                             dateCreated         = account.dateCreated,
-                            accountCategory     = account.accountCategory.initials + " - " + account.accountCategory.description
+                            accountCategory     = account.accountCategory.initials + " - " + account.accountCategory.description,
+                            department          = account.department.name
                         }
                     ); ;
                 }
@@ -239,6 +241,8 @@ namespace JoinsPay_BackService.Controllers.Register.Account
         public DateTime dateCreated { get; set; }
 
         public string accountCategory { get; set; }
+        
+        public string department { get; set; }
 
     }
 }

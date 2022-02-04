@@ -7,26 +7,29 @@ import { AlertMessageModel } from 'src/app/components/modal/modal-alerts-message
 import { IContractResponse } from 'src/app/contract-response/contract-response';
 import { RegisterService } from 'src/app/joins-pay/services/register/register.service';
 import { Validation, ValidationSchema } from 'src/app/validation-fields/validation';
-import { IAccountCategory } from '../../account-category/account-category-model';
-import { IDepartment } from '../../department/department-model';
-import { IAccount } from '../account-model';
+import { IPaymentMethodCategory } from '../../payment-method/payment-method-category-model';
+import { IPaymentMethod } from '../payment-method-model';
+import { IAccount } from '../../account/account-model';
 
 @Component({
-  selector: 'app-account-form',
-  templateUrl: './account-form.component.html',
-  styleUrls: ['./account-form.component.scss']
+  selector: 'app-payment-method-form',
+  templateUrl: './payment-method-form.component.html',
+  styleUrls: ['./payment-method-form.component.scss']
 })
-export class AccountFormComponent implements OnInit {
+export class PaymentMethodFormComponent implements OnInit {
 
-  account: IAccount = {} as IAccount
+  paymentMethod: IPaymentMethod = {} as IPaymentMethod
   alertMesssage: AlertMessageModel = {} as AlertMessageModel
   mobile: boolean = false;
   displayLoading: boolean = false
   displayAlertMessage: boolean = false;
-  itemsAccountCategory: IAccountCategory[] = [] as IAccountCategory[];
-  itemsDepartment: IDepartment[] = [] as IDepartment[];
-
+  itemsPaymentMethodCategory: IPaymentMethodCategory[] = [] as IPaymentMethodCategory[];
+  itemsAccount: IAccount[] = [] as IAccount[];
+  itemSelectedPaymentMethodCategory: any;
+  idItemDelete: number = 0
+  cols: any[] = []
   constructor(
+
     private router: Router,
     private activeRoute: ActivatedRoute,
     private registerService: RegisterService,
@@ -43,6 +46,60 @@ export class AccountFormComponent implements OnInit {
     }
   }
 
+  eventEmmiterConfirmYes(event: any) {
+    if (event.delete) {
+      this.deletePaymentMethodCategory(this.idItemDelete)
+    }
+
+    if (event.closeDisplayAlertMessage) {
+      this.displayAlertMessage = false
+    }
+
+  }
+
+  eventEmmiterConfirm() {
+    this.displayAlertMessage = false
+  }
+
+  eventEmmiterNotConfirm() {
+    this.displayLoading = false
+    this.displayAlertMessage = false;
+    this.idItemDelete
+  }
+
+
+  deleteItem(item: any) {
+    this.idItemDelete = item.id
+    this.alertMesssage = GetAlertMessage(
+      "Exclusão de Categoria",
+      "Deseja realmente excluír a receita selecioanda?",
+      false,
+      false,
+      undefined,
+      true,
+      'Sim',
+      { delete: true },
+      'Não',
+      {}
+    )
+    this.displayLoading = false
+    this.displayAlertMessage = true;
+  }
+
+  checkFindPaymentMethodCategoryInsert(paymentMethodCategory: IPaymentMethodCategory) {
+    let paymentMethodCategoryResult = this.paymentMethod.paymentMethodCategory.find((item: any) => item == paymentMethodCategory)
+
+    return paymentMethodCategoryResult == null ? false : true
+  }
+
+  addPaymentMethod() {
+    if (!this.checkFindPaymentMethodCategoryInsert(this.itemSelectedPaymentMethodCategory)) {
+      this.paymentMethod.paymentMethodCategory.push(this.itemSelectedPaymentMethodCategory)
+    } else {
+      this.openSnackBar("Tipo de Pagamento já inserido.", "Ok")
+    }
+  }
+
   closeAlertMessage() {
     this.displayAlertMessage = false
   }
@@ -53,19 +110,19 @@ export class AccountFormComponent implements OnInit {
     snackBarRef.onAction().subscribe(() => { })
   }
 
-  onRouterLinkAccountList() {
-    this.router.navigateByUrl('/joinspay/account');
+  onRouterLinkPaymentMethodList() {
+    this.router.navigateByUrl('/joinspay/paymentmethod');
   }
 
   onSubmit() {
-    console.log(this.account)
+
     if (!this.checkValidationFields()) {
-      if (this.account.id == undefined) {
+      if (this.paymentMethod.id == undefined) {
         this.displayLoading = true
-        this.account.deleted = "N"
-        this.account.dateCreated = new Date()
+        this.paymentMethod.deleted = "N"
+        this.paymentMethod.dateCreated = new Date()
         this.registerService
-          .PostAccount(this.account)
+          .PostPaymentMethod(this.paymentMethod)
           .subscribe((response: IContractResponse) => {
             if (response.success) {
               this.alertMesssage = GetAlertMessage(
@@ -76,7 +133,7 @@ export class AccountFormComponent implements OnInit {
                 undefined,
                 false,
                 "Ok",
-                { routerLink: '/joinspay/account' }
+                { routerLink: '/joinspay/paymentmethod' }
               )
             } else {
               this.alertMesssage = GetAlertMessage(
@@ -104,7 +161,7 @@ export class AccountFormComponent implements OnInit {
           );
       } else {
         this.registerService
-          .PutAccount(this.account)
+          .PutPaymentMethod(this.paymentMethod)
           .subscribe((response: IContractResponse) => {
             if (response.success) {
               this.alertMesssage = GetAlertMessage(
@@ -115,7 +172,7 @@ export class AccountFormComponent implements OnInit {
                 undefined,
                 false,
                 "Ok",
-                { routerLink: '/joinspay/account' }
+                { routerLink: '/joinspay/paymentmethod' }
               )
             } else {
               this.alertMesssage = GetAlertMessage(
@@ -149,14 +206,14 @@ export class AccountFormComponent implements OnInit {
 
   initEdit() {
     let routerId: any = this.activeRoute.snapshot.params
-    this.account.id = routerId.id;
+    this.paymentMethod.id = routerId.id;
 
-    if (this.account.id !== undefined) {
+    if (this.paymentMethod.id !== undefined) {
       this.displayLoading = true
       this.registerService
-        .GetIdAccount(this.account.id)
-        .subscribe((response: IAccount) => {
-          this.account = response;
+        .GetIdPaymentMethod(this.paymentMethod.id)
+        .subscribe((response: IPaymentMethod) => {
+          this.paymentMethod = response;
           this.displayLoading = false
         }, (error) => {
           this.alertMesssage = GetAlertMessage(
@@ -173,20 +230,79 @@ export class AccountFormComponent implements OnInit {
     }
   }
 
+  removeItemPaymentMethodCategory(id: number) {
+
+    if (id != null) {
+      let paymentMethodCategory: any = this.paymentMethod.paymentMethodCategory.find((t: any) => t.id == id)
+
+      let indexOf: number = this.paymentMethod.paymentMethodCategory.indexOf(paymentMethodCategory);
+
+      this.paymentMethod.paymentMethodCategory.splice(indexOf, 1)
+
+      this.displayAlertMessage = false
+    }
+
+  }
+
+  deletePaymentMethodCategory(id: number) {
+
+    // if (this.paymentMethod.id == undefined) {
+      this.removeItemPaymentMethodCategory(id)
+    // } else {
+    //   this.displayLoading = true
+    //   this.registerService
+    //     .DeletePaymentMethodCategory(this.paymentMethod.id, id)
+    //     .subscribe((response: IContractResponse) => {
+    //       if (response.success) {
+    //         this.alertMesssage = GetAlertMessage(
+    //           "Confirmação de Exclusão",
+    //           response.message,
+    //           true,
+    //           true,
+    //           undefined,
+    //           false,
+    //           "Ok",
+    //           { routerLink: '/joinspay/paymentmethod' }
+    //         )
+    //         this.displayAlertMessage = true
+
+    //       }
+    //       this.displayLoading = false
+    //     }, (error) => {
+    //       this.alertMesssage = GetAlertMessage(
+    //         "Erro de Conexão",
+    //         "Não foi possível carregar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
+    //         false,
+    //         true,
+    //         500
+    //       )
+
+    //     }
+    //     );
+    // }
+
+  }
+
   checkValidationFields() {
     let schema: ValidationSchema[] = [];
 
-    schema.push(new ValidationSchema("code", "Código", "string", true, 10));
-    schema.push(new ValidationSchema("name", "Nome", "string", true, 50));
-    schema.push(new ValidationSchema("idDepartment", "Empresa", "number", true));
-    schema.push(new ValidationSchema("idAccountCategory", "Tipo de Conta", "number", true));
-    schema.push(new ValidationSchema("agency", "Agência", "string", true, 10));
-    schema.push(new ValidationSchema("accountNumber", "Número da Conta", "string", true, 10));
+    if (this.paymentMethod.acceptInstallment == null) {
+      this.openSnackBar("É necessário informar se aceita parcelamento, (Sim) ou (Não)", "Ok")
+      return true
+    }
 
-    let result = new Validation().ValidSchema(schema, this.account);
+    schema.push(new ValidationSchema("name", "Nome", "string", true, 10));
+    schema.push(new ValidationSchema("idAccount", "Conta", "number", true));
+
+    let result = new Validation().ValidSchema(schema, this.paymentMethod);
 
     if (!result.success) {
       this.openSnackBar(result.message, "Ok")
+      return true
+    }
+
+    if (this.paymentMethod.paymentMethodCategory.length == 0) {
+      this.openSnackBar("É necessário inserir ao menos uma Condição de Pagamento.", "Ok")
       return true
     }
 
@@ -198,12 +314,12 @@ export class AccountFormComponent implements OnInit {
     this.displayAlertMessage = false
   }
 
-  getListAccountCategory() {
+  getListPaymentMethodCategory() {
     this.displayLoading = true
     this.registerService
-      .GetListAccountCategory()
-      .subscribe((response: IAccountCategory[]) => {
-        this.itemsAccountCategory = response;
+      .GetListPaymentMethodCategory()
+      .subscribe((response: IPaymentMethodCategory[]) => {
+        this.itemsPaymentMethodCategory = response;
         this.displayLoading = false
       }, (error) => {
         this.alertMesssage = GetAlertMessage(
@@ -220,12 +336,12 @@ export class AccountFormComponent implements OnInit {
 
   }
 
-  getListDepartment(departmentCategory:  string) {
+  getListAccount() {
     this.displayLoading = true
     this.registerService
-      .GetListDepartmentForCategory(departmentCategory)
-      .subscribe((response: IDepartment[]) => {
-        this.itemsDepartment = response;
+      .GetListAccount()
+      .subscribe((response: IAccount[]) => {
+        this.itemsAccount = response;
         this.displayLoading = false
       }, (error) => {
         this.alertMesssage = GetAlertMessage(
@@ -241,13 +357,19 @@ export class AccountFormComponent implements OnInit {
       );
 
   }
-
 
   ngOnInit(): void {
     this.initEdit()
     this.mobile = CheckMobile()
-    this.getListAccountCategory()
-    this.getListDepartment('COMPANY')
+    this.getListPaymentMethodCategory()
+    this.getListAccount()
+
+    this.cols = [
+      { field: 'description', header: 'Descrição' },
+
+    ];
+
+    this.paymentMethod.paymentMethodCategory = []
   }
 
 }

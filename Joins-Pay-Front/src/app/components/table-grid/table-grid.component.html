@@ -28,7 +28,7 @@
             [(selection)]="selected" 
             selectionMode="single"
         >
-            <ng-template pTemplate="caption">
+            <ng-template pTemplate="caption" *ngIf="showPlaceholderSearch">
                 <div class="row">
                     <div class="col-12">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 col-xxl-5" style="float: right;">
@@ -85,7 +85,7 @@
                         </ng-template>
                     </td>
                     <td>
-                        <button 
+                        <button *ngIf="showButtonCrudEdit"
                             pButton 
                             pRipple 
                             [icon]="buttonsCrud ? 'pi pi-pencil' : 'pi pi-eye'" [disabled]="rowData.standard == 'Y'"

@@ -17,6 +17,16 @@
     <Compile Remove="Data\Migrations\20220125152701_revenue_Category.Designer.cs" />
     <Compile Remove="Data\Migrations\20220126182838_expense_Category2.cs" />
     <Compile Remove="Data\Migrations\20220126182838_expense_Category2.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220202200717_insert_department_in_account.cs" />
+    <Compile Remove="Data\Migrations\20220202200717_insert_department_in_account.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220202215308_insert_department_in_account_and_payment_method_category_and_payment_method.cs" />
+    <Compile Remove="Data\Migrations\20220202215308_insert_department_in_account_and_payment_method_category_and_payment_method.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220202215851_insert_department_in_account_and_payment_method_category_and_payment_method.cs" />
+    <Compile Remove="Data\Migrations\20220202215851_insert_department_in_account_and_payment_method_category_and_payment_method.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220202220202_insert_department_in_account_and_payment_method_category_and_payment_method.cs" />
+    <Compile Remove="Data\Migrations\20220202220202_insert_department_in_account_and_payment_method_category_and_payment_method.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220202234712_hash_payment_method_category_and_payment_method.cs" />
+    <Compile Remove="Data\Migrations\20220202234712_hash_payment_method_category_and_payment_method.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +41,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\Expense\" />
   </ItemGroup>
 
 </Project>

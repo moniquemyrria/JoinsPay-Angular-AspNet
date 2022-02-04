@@ -4,14 +4,16 @@ using JoinsPay_BackService.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace JoinsPay_BackService.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220202220337_insert_department_in_account_and_payment_method_category_and_payment_method")]
+    partial class insert_department_in_account_and_payment_method_category_and_payment_method
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -232,6 +234,9 @@ namespace JoinsPay_BackService.Data.Migrations
                     b.Property<long>("idAccount")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("idPaymentMethodCategory")
+                        .HasColumnType("bigint");
+
                     b.Property<int>("intervalDaysInstallments")
                         .HasColumnType("int");
 
@@ -247,32 +252,9 @@ namespace JoinsPay_BackService.Data.Migrations
 
                     b.HasIndex("idAccount");
 
-                    b.ToTable("Register.Payment_Method");
-                });
-
-            modelBuilder.Entity("JoinsPay_BackService.Models.Register.PaymentMethod.PaymentMethod_PaymentMethodCategoryDTO", b =>
-                {
-                    b.Property<long>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("dateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long>("idPaymentMethod")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("idPaymentMethodCategory")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("idPaymentMethod");
-
                     b.HasIndex("idPaymentMethodCategory");
 
-                    b.ToTable("Register.Payment_Method_Payment_Method_Category");
+                    b.ToTable("Register.Payment_Method");
                 });
 
             modelBuilder.Entity("JoinsPay_BackService.Models.Register.Revenue.RevenueDTO", b =>
@@ -580,20 +562,11 @@ namespace JoinsPay_BackService.Data.Migrations
                         .HasForeignKey("idAccount")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("JoinsPay_BackService.Models.Register.PaymentMethod.PaymentMethod_PaymentMethodCategoryDTO", b =>
-                {
-                    b.HasOne("JoinsPay_BackService.Models.Register.PaymentMethod.PaymentMethodDTO", "paymentMethod")
-                        .WithMany("paymentMethodsPaymentMethodCategories")
-                        .HasForeignKey("idPaymentMethod")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
 
                     b.HasOne("JoinsPay_BackService.Models.Register.PaymentMethod.PaymentMethodCategoryDTO", "paymentMethodCategory")
-                        .WithMany("paymentMethodsPaymentMethodCategories")
+                        .WithMany("PaymentMethods")
                         .HasForeignKey("idPaymentMethodCategory")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
