@@ -10,12 +10,75 @@
     position: fixed;
     top: 0;
     width: 100%;
-  }
-
-.icons-item-menu{
-  color: $white;  
 }
-  
+
+.icons-item-menu {
+    color: $white;
+}
+
+.row-sidebar-header {
+    background: $secondary !important;
+    height: 130px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 332px;
+    align-items: center;
+    z-index: 1;
+    cursor: pointer;
+    border-bottom: 0.1px $border groove;
+}
+
+.col-sidebar-header {
+    background: $secondary !important;
+}
+
+.title-joins-pay {
+    letter-spacing: 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: $title-headers-light;
+    font-family: $custom-2;
+}
+
+.sub-title-joins-pay {
+    font-size: 50px;
+    letter-spacing: 10px;
+    color: $warning;
+    font-family: $title-headers-light;
+}
+
+.scroll-items-menu {
+    position: relative;
+    top: 100px;
+    height: calc(100% - 100px);
+    overflow-y: auto;
+    width: 330px;
+}
+
+.row-items-menu {
+    height: 100%;
+    height: calc(100vh - 53px);
+}
+
+.button-sidebar {
+    position: relative;
+    left: -10px;
+}
+
+:host ::ng-deep p-sidebar {
+    .p-sidebar {
+        background: $primary !important;
+    }
+
+    .p-sidebar-header {
+        visibility: none;
+    }
+
+    .p-sidebar-content {
+        overflow: hidden !important;
+    }
+}
 
 :host ::ng-deep nav {
     .customDialog {
@@ -62,7 +125,7 @@
 
     .p-chip {
         background-color: transparent;
-        color: white;
+        color: $white;
         border-radius: 16px;
         padding: 0 0.75rem;
         height: 20px;
@@ -71,7 +134,7 @@
 
 .sub-menu-item-text {
     font-size: 14px;
-    color: white;
+    color: $white;
     font-weight: bold;
 }
 
@@ -82,16 +145,27 @@
 
 .menu-item-text {
     font-size: 14px;
-    color: white;
+    color: $white;
     margin-left: 10px;
     text-align: left;
 }
 
 .pi-icon-item-menu {
-    color: white;
+    color: $white;
 }
 
 .divider {
-    border-bottom: 0.1px #ffffdd31 groove;
+    border-top: 0.1px $border groove;
     height: 10px;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    background: $secondary;
+}
+::-webkit-scrollbar-thumb:vertical {
+    background: $title-headers-light;
+    border-radius: 10px;
 }

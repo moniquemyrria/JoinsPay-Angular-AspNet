@@ -200,7 +200,7 @@ export class RevenueListComponent implements OnInit {
 
   ngOnInit(): void {
     this.mobile = CheckMobile()
-
+    this.displayLoading = true
     this.getListRevenue()
 
     this.cols = [

@@ -27,6 +27,12 @@
     <Compile Remove="Data\Migrations\20220202220202_insert_department_in_account_and_payment_method_category_and_payment_method.Designer.cs" />
     <Compile Remove="Data\Migrations\20220202234712_hash_payment_method_category_and_payment_method.cs" />
     <Compile Remove="Data\Migrations\20220202234712_hash_payment_method_category_and_payment_method.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220206001051_expense_expense_status_expense_type.cs" />
+    <Compile Remove="Data\Migrations\20220206001051_expense_expense_status_expense_type.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220206004852_expense_expense_status_expense_type_payment_method_category.cs" />
+    <Compile Remove="Data\Migrations\20220206004852_expense_expense_status_expense_type_payment_method_category.Designer.cs" />
+    <Compile Remove="Data\Migrations\20220206005016_expense_expense_status_expense_type_payment_method_category.cs" />
+    <Compile Remove="Data\Migrations\20220206005016_expense_expense_status_expense_type_payment_method_category.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,10 +47,6 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Models\Expense\" />
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,6 @@
 ﻿
 using JoinsPay_BackService.Models.Register.Account;
+using JoinsPay_BackService.Models.Expense;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -22,6 +23,9 @@ namespace JoinsPay_BackService.Models.Register.PaymentMethod
         public AccountDTO account { get; set; }
 
         public List<PaymentMethod_PaymentMethodCategoryDTO> paymentMethodsPaymentMethodCategories { get; set; }
+
+        [JsonIgnore]
+        public List<ExpenseDTO> Expenses { get; set; }
 
         [NotMapped]
         public List<PaymentMethodCategoryDTO> paymentMethodCategory { get; set; }

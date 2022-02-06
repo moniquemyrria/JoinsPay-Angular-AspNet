@@ -1,4 +1,5 @@
-﻿using System;
+﻿using JoinsPay_BackService.Models.Expense;
+using System;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
@@ -13,6 +14,9 @@ namespace JoinsPay_BackService.Models.Register.PaymentMethod
 
         [JsonIgnore]
         public List<PaymentMethod_PaymentMethodCategoryDTO> paymentMethodsPaymentMethodCategories { get; set; }
+
+        [JsonIgnore]
+        public List<Expense_PaymentMethodCategoryDTO> expensePaymentMethodCategories { get; set; }
     }
 
 

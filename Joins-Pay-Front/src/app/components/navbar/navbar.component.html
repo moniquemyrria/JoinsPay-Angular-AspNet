@@ -1,12 +1,75 @@
-<nav (window:resized)="onResize($event)" class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-  <p-button [hidden]="hiddenButton" icon="pi pi-bars"
-    styleClass="p-button-rounded p-button-secondary p-button-text show-menu-bar" (onClick)="showMenuToolbar()">
+<p-sidebar
+  (window:resized)="onResize($event)"
+  [(visible)]="display"
+  [baseZIndex]="10000"
+  [showCloseIcon]="false"
+  *ngIf="!mobile"
+>
+  <div class="row row-sidebar-header" (click)="closeMenuToolbar()">
+    <div class="col-12 col-sidebar-header text-center">
+      <div class="row">
+        <span class="title-joins-pay">JOINS</span>
+      </div>
+      <div class="row">
+        <span class="sub-title-joins-pay">PAY</span>
+      </div>
+    </div>
+    <!-- <div class="col-2 button-sidebar">
+      <button
+        type="button"
+        class="p-button-rounded p-button-text"
+        (click)="closeMenuToolbar()"
+        (keydown.enter)="closeMenuToolbar()"
+        title="Fechar Menu"
+        pButton
+        pRipple
+        icon="pi pi-chevron-left"
+        [style]="{ color: '#B5AFA6' }"
+      ></button>
+    </div> -->
+  </div>
+
+  <div class="row row-items-menu">
+    <div class="scroll-items-menu">
+      <div class="p-d-flex p-flex-column" *ngFor="let itemMenu of itensMenu">
+        <span class="sub-menu-item-text">{{ itemMenu.title }}</span>
+        <div class="menu-item" *ngFor="let item of itemMenu.items">
+          <button
+            (click)="onSelectionRouterLink(item)"
+            pButton
+            pRipple
+            type="button"
+            class="p-button-secondary item-menu p-button-text"
+            [style]="{ width: '100%' }"
+          >
+            <i [ngClass]="item.icon" class="icons-item-menu"></i
+            ><span class="menu-item-text">{{ item.text }}</span>
+          </button>
+        </div>
+        <hr width = 100%>
+      </div>
+    </div>
+  </div>
+</p-sidebar>
+
+<nav
+  (window:resized)="onResize($event)"
+  class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
+>
+  <p-button
+    [hidden]="hiddenButton"
+    icon="pi pi-bars"
+    styleClass="p-button-rounded p-button-secondary p-button-text show-menu-bar"
+    (onClick)="showMenuToolbar()"
+  >
   </p-button>
 
-  <a *ngIf="!mobile" class="navbar-brand" (click)="showMenuToolbar()">Joins Pay</a>
+  <a *ngIf="!mobile" class="navbar-brand" (click)="showMenuToolbar()"
+    >Joins Pay</a
+  >
   <a *ngIf="mobile" class="navbar-brand">Joins Pay</a>
 
-  <p-dialog _ngcontent-c0 (click)="closeMenuToolbar()" header="Joins Pay" styleClass="customDialog"
+  <!-- <p-dialog _ngcontent-c0 (click)="closeMenuToolbar()" header="Joins Pay" styleClass="customDialog"
     [(visible)]="display" [position]="'left'" [modal]="true" [closable]="false" [showHeader]="true" [responsive]="true"
     [draggable]="false" [resizable]="false" [style]="{'background-color': 'red'}">
 
@@ -20,10 +83,17 @@
       </div>
       <div class="row divider"></div>
     </div>
-  </p-dialog>
+  </p-dialog> -->
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -43,9 +113,16 @@
       <div class="p-d-flex p-flex-column" *ngFor="let itemMenu of itensMenu">
         <span class="sub-menu-item-text">{{ itemMenu.title }}</span>
         <div class="menu-item" *ngFor="let item of itemMenu.items">
-          <button (click)="onSelectionRouterLink(item)" pButton pRipple type="button"
-            class="p-button-secondary item-menu p-button-text"><i class="icons-item-menu" [ngClass]="item.icon"></i><span
-              class="menu-item-text">{{ item.text }}</span></button>
+          <button
+            (click)="onSelectionRouterLink(item)"
+            pButton
+            pRipple
+            type="button"
+            class="p-button-secondary item-menu p-button-text"
+          >
+            <i class="icons-item-menu" [ngClass]="item.icon"></i
+            ><span class="menu-item-text">{{ item.text }}</span>
+          </button>
         </div>
         <div class="row divider"></div>
       </div>
@@ -53,11 +130,16 @@
     </ng-template>
   </div>
 
-  <p-chip [hidden]="hiddenButton" label="Usuario" icon="pi pi-user" styleClass="p-mr-0"></p-chip>
+  <p-chip
+    [hidden]="hiddenButton"
+    label="Usuario"
+    icon="pi pi-user"
+    styleClass="p-mr-0"
+  ></p-chip>
 </nav>
 
-
-
-
-<app-modal-alerts-message [display]="displayAlertMessage" (eventEmmiter)="eventEmmiter($event)"
-  [alertMesssage]="alertMesssage"></app-modal-alerts-message>
+<app-modal-alerts-message
+  [display]="displayAlertMessage"
+  (eventEmmiter)="eventEmmiter($event)"
+  [alertMesssage]="alertMesssage"
+></app-modal-alerts-message>

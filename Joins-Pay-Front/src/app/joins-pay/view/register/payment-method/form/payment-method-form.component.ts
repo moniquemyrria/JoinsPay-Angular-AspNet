@@ -48,7 +48,7 @@ export class PaymentMethodFormComponent implements OnInit {
 
   eventEmmiterConfirmYes(event: any) {
     if (event.delete) {
-      this.deletePaymentMethodCategory(this.idItemDelete)
+      this.removeItemPaymentMethodCategory(this.idItemDelete)
     }
 
     if (event.closeDisplayAlertMessage) {
@@ -87,14 +87,22 @@ export class PaymentMethodFormComponent implements OnInit {
   }
 
   checkFindPaymentMethodCategoryInsert(paymentMethodCategory: IPaymentMethodCategory) {
+
     let paymentMethodCategoryResult = this.paymentMethod.paymentMethodCategory.find((item: any) => item == paymentMethodCategory)
 
     return paymentMethodCategoryResult == null ? false : true
   }
 
   addPaymentMethod() {
+    
+    if (this.itemSelectedPaymentMethodCategory == undefined) {
+      this.openSnackBar("Selecione um Tipo de Pagamento para inserir a condição.", "Ok")
+      return
+    }
+
     if (!this.checkFindPaymentMethodCategoryInsert(this.itemSelectedPaymentMethodCategory)) {
       this.paymentMethod.paymentMethodCategory.push(this.itemSelectedPaymentMethodCategory)
+      this.itemSelectedPaymentMethodCategory = undefined
     } else {
       this.openSnackBar("Tipo de Pagamento já inserido.", "Ok")
     }
@@ -244,44 +252,6 @@ export class PaymentMethodFormComponent implements OnInit {
 
   }
 
-  deletePaymentMethodCategory(id: number) {
-
-    // if (this.paymentMethod.id == undefined) {
-      this.removeItemPaymentMethodCategory(id)
-    // } else {
-    //   this.displayLoading = true
-    //   this.registerService
-    //     .DeletePaymentMethodCategory(this.paymentMethod.id, id)
-    //     .subscribe((response: IContractResponse) => {
-    //       if (response.success) {
-    //         this.alertMesssage = GetAlertMessage(
-    //           "Confirmação de Exclusão",
-    //           response.message,
-    //           true,
-    //           true,
-    //           undefined,
-    //           false,
-    //           "Ok",
-    //           { routerLink: '/joinspay/paymentmethod' }
-    //         )
-    //         this.displayAlertMessage = true
-
-    //       }
-    //       this.displayLoading = false
-    //     }, (error) => {
-    //       this.alertMesssage = GetAlertMessage(
-    //         "Erro de Conexão",
-    //         "Não foi possível carregar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
-    //         false,
-    //         true,
-    //         500
-    //       )
-
-    //     }
-    //     );
-    // }
-
-  }
 
   checkValidationFields() {
     let schema: ValidationSchema[] = [];

@@ -1,5 +1,6 @@
 ﻿
 using JoinsPay_BackService.Models.Register.Account;
+using JoinsPay_BackService.Models.Expense;
 using JoinsPay_BackService.Models.Register.Revenue;
 using System;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ namespace JoinsPay_BackService.Models.Register.Department
 
         [JsonIgnore]
         public List<AccountDTO> Account { get; set; }
+
+        [JsonIgnore]
+        public List<ExpenseDTO> Expenses { get; set; }
 
 
     }

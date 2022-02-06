@@ -72,8 +72,6 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
         public PaymentMethodDTO GetPaymentMethodDTO(long id)
         {
             var paymentMethodDTO = _context.PaymentMethods
-                                        //.Include(t => t.account)
-                                        //.ThenInclude(t => t.accountCategory)
                                         .Include(t => t.paymentMethodsPaymentMethodCategories)
                                         .ThenInclude(t => t.paymentMethodCategory)
                                         .FirstOrDefault(t=> t.id == id);
@@ -88,28 +86,6 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
             }
 
             paymentMethodDTO.paymentMethodCategory = listPaymentMethodCategory;
-
-            /* PaymentMethodModelView paymentMethodModelView = new PaymentMethodModelView();
-            List<PaymentMethodCategoryDTO> listPaymentMethodCategory = new List<PaymentMethodCategoryDTO>();
-
-            foreach(var aux in paymentMethodDTO.paymentMethodsPaymentMethodCategories.ToList())
-            {
-                if (aux.paymentMethodCategory.deleted == "N")
-                {
-                    listPaymentMethodCategory.Add(aux.paymentMethodCategory);
-                }
-            }
-
-            paymentMethodModelView.id                       = paymentMethodDTO.id;
-            paymentMethodModelView.idAccount                = paymentMethodDTO.idAccount;
-            paymentMethodModelView.name                     = paymentMethodDTO.name;
-            paymentMethodModelView.acceptInstallment        = paymentMethodDTO.acceptInstallment;
-            paymentMethodModelView.numberInstallments       = paymentMethodDTO.numberInstallments;
-            paymentMethodModelView.intervalDaysInstallments = paymentMethodDTO.intervalDaysInstallments;
-            paymentMethodModelView.deleted                  = paymentMethodDTO.deleted;
-            paymentMethodModelView.dateCreated              = paymentMethodDTO.dateCreated;
-            paymentMethodModelView.account                  = paymentMethodDTO.account.name + " (" + paymentMethodDTO.account.accountCategory.description + ")";
-            paymentMethodModelView.paymentMethodCategory    = listPaymentMethodCategory;*/
 
             return paymentMethodDTO;
         }

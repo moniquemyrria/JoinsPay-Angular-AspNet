@@ -13,6 +13,8 @@ using JoinsPay_BackService.Models.Register.Revenue;
 using JoinsPay_BackService.Models.Register.PaymentMethod;
 using JoinsPay_BackService.ModelConfiguration.Register.PaymentMethod;
 using JoinsPay_BackService.ModelConfiguration.Register.PaymentMethodCategory;
+using JoinsPay_BackService.ModelConfiguration.Expense;
+using JoinsPay_BackService.Models.Expense;
 
 namespace JoinsPay_BackService.Data
 {
@@ -48,6 +50,14 @@ namespace JoinsPay_BackService.Data
                 _ = new PaymentMethodConfiguration(modelBuilder.Entity<PaymentMethodDTO>());
                 
                 _ = new PaymentMethod_PaymentMethodCategoryConfiguration(modelBuilder.Entity<PaymentMethod_PaymentMethodCategoryDTO>());
+                
+                _ = new ExpenseStatusConfiguration(modelBuilder.Entity<ExpenseStatusDTO>());
+                
+                _ = new ExpenseTypeConfiguration(modelBuilder.Entity<ExpenseTypeDTO>());
+                
+                _ = new ExpenseConfiguration(modelBuilder.Entity<ExpenseDTO>());
+                
+                _ = new Expense_PaymentMethodCategoryConfiguration(modelBuilder.Entity<Expense_PaymentMethodCategoryDTO>());
 
             }
         }
@@ -71,6 +81,14 @@ namespace JoinsPay_BackService.Data
         public DbSet<PaymentMethodDTO> PaymentMethods { get; set; }
         
         public DbSet<PaymentMethod_PaymentMethodCategoryDTO> PaymentMethodsPaymentMethodCategories { get; set; }
+
+        public DbSet<ExpenseStatusDTO> ExpenseStatus { get; set; }
+        
+        public DbSet<ExpenseTypeDTO> ExpenseType { get; set; }
+        
+        public DbSet<ExpenseDTO> Expenses { get; set; }
+
+        public DbSet<Expense_PaymentMethodCategoryDTO> ExpensePaymentMethodCategories { get; set; }
 
     }
 }

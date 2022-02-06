@@ -503,3 +503,8 @@ C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Deb
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.genruntimeconfig.cache
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\bin\Debug\netcoreapp3.1\Dapper.dll
 C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\JoinsPay-BackService.csprojAssemblyReference.cache
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Expense\Create.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Expense\Delete.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Expense\Details.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Expense\Edit.cshtml.g.cs
+C:\wamp64\www\JoinsPay-Angular\JoinsPay-BackService\JoinsPay-BackService\obj\Debug\netcoreapp3.1\Razor\Views\Expense\Index.cshtml.g.cs

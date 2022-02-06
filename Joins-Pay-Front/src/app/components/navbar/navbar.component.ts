@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
     {
       title: "Controle Financeiro",
       items: [
-        { icon: "bi bi-piggy-bank", text: "Receitas",  routerLink: '/joinspay/revenue' },
+        { icon: "bi bi-piggy-bank", text: "Receitas", routerLink: '/joinspay/revenue' },
       ]
     },
     {
@@ -36,6 +36,15 @@ export class NavbarComponent implements OnInit {
         { icon: "bi bi-shop", text: "Lojas", routerLink: '/joinspay/department/store' },
         { icon: "bi bi-building", text: "Empresas", routerLink: '/joinspay/department/company' },
         { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+        // { icon: "bi bi-person-circle", text: "Terceiros (Pessoa Física)", routerLink: '/joinspay/department/people' },
+
       ]
     },
   ]
@@ -45,17 +54,17 @@ export class NavbarComponent implements OnInit {
     private activeRoute: ActivatedRoute,
   ) { }
 
-  onSelectionRouterLink(item: any){
+  onSelectionRouterLink(item: any) {
     this.router.navigateByUrl(item.routerLink);
   }
 
-  eventEmmiter(event: Event){
+  eventEmmiter(event: Event) {
     console.log(event)
     this.displayAlertMessage = false
   }
 
 
-  showAlertMessage(){
+  showAlertMessage() {
     this.alertMesssage = GetAlertMessage(
       "Teste Titulo",
       "Texto do body",
@@ -64,9 +73,9 @@ export class NavbarComponent implements OnInit {
       undefined,
       true,
       "Sim",
-      {text: "Teste objeto"},
+      { text: "Teste objeto" },
       "Não",
-      {text: "Teste objeto Não"},
+      { text: "Teste objeto Não" },
     )
     this.displayAlertMessage = true
   }

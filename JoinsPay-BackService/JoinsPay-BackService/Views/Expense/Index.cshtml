@@ -1,0 +1,125 @@
+﻿@model IEnumerable<JoinsPay_BackService.Models.Expense.ExpenseDTO>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.interest)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.discount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtyInstallment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.installment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dueDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paymentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expenseCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.paymentMethod)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.department)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.account)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expenseStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.expenseType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.interest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtyInstallment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.installment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expenseCategory.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paymentMethod.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.department.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.account.accountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expenseStatus.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.expenseType.description)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
