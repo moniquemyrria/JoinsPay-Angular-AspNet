@@ -23,6 +23,7 @@ export class NavbarComponent implements OnInit {
       title: "Controle Financeiro",
       items: [
         { icon: "bi bi-piggy-bank", text: "Receitas", routerLink: '/joinspay/revenue' },
+        { icon: "bi bi-wallet2", text: "Despesas", routerLink: '/joinspay/expense' },
       ]
     },
     {

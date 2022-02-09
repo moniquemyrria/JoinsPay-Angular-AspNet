@@ -3,4 +3,6 @@ export interface IPaymentMethodCategory{
     description: string
     dateCreated: Date
     deleted: string
+
+    amountCategory: number
 }

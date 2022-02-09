@@ -5,6 +5,7 @@ using JoinsPay_BackService.Models.Register.ExpenseCategory;
 using JoinsPay_BackService.Models.Register.PaymentMethod;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace JoinsPay_BackService.Models.Expense
@@ -42,6 +43,9 @@ namespace JoinsPay_BackService.Models.Expense
 
         [JsonIgnore]
         public List<Expense_PaymentMethodCategoryDTO> expensePaymentMethodCategories { get; set; }
+
+        [NotMapped]
+        public List<PaymentMethodCategoryDTO> paymentMethodCategory { get; set; }
 
     }
 

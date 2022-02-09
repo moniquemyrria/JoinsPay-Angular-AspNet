@@ -261,7 +261,7 @@ export class PaymentMethodFormComponent implements OnInit {
       return true
     }
 
-    schema.push(new ValidationSchema("name", "Nome", "string", true, 10));
+    schema.push(new ValidationSchema("name", "Nome", "string", true, 30));
     schema.push(new ValidationSchema("idAccount", "Conta", "number", true));
 
     let result = new Validation().ValidSchema(schema, this.paymentMethod);

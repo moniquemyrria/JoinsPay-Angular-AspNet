@@ -1,0 +1,362 @@
+<app-navbar (window:resized)="onResize($event)"></app-navbar>
+
+<div class="main container" (window:resized)="onResize($event)">
+  <p-panel>
+    <ng-template pTemplate="header">
+      <div class="row">
+        <div class="col-12">
+          <span><b>Despesa Fixa</b></span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <span>
+            {{
+              this.expenseFixed.id == undefined
+                ? "Inserindo nova Despesa Fixa"
+                : "Visualização da Despesa Fixa: " + expenseFixed.id
+            }}
+          </span>
+        </div>
+      </div>
+    </ng-template>
+
+    <div class="modal-body g-3 needs-validation" novalidate>
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
+        >
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2"
+          >
+            <div class="input-group">
+              <div
+                class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+              >
+                <div
+                  [class]="
+                    !mobile
+                      ? 'input-group-prepend input-group-prepend-date'
+                      : 'input-group'
+                  "
+                >
+                  <span [class]="!mobile ? 'input-group-text' : ''" id="nome"
+                    >Data da Despesa *</span
+                  >
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8"
+              >
+                <div>
+                  <mat-form-field
+                    appearance="outline"
+                    [class]="mobile ? 'w-100' : ''"
+                  >
+                    <input
+                      matInput
+                      [matDatepicker]="picker1"
+                      [formControl]="dateCreated"
+                      readonly
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker1"
+                      [disabled]="expenseFixed.id !== undefined"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
+        >
+          <div
+            class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            style="float: right"
+          >
+            <div class="input-group input-group-lg">
+              <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                <span [class]="!mobile ? 'input-group-text' : ''" id="nome"
+                  >Status</span
+                >
+              </div>
+              <select
+                class="form-select"
+                [(ngModel)]="expenseFixed.idExpenseStatus"
+                (ngModelChange)="
+                  expenseFixed.idExpenseStatus = $event && +$event
+                "
+                id="etat"
+                [disabled]="expenseFixed.id !== undefined"
+              >
+                <option
+                  [ngValue]="item.id"
+                  *ngFor="let item of itemsExpenseStatus"
+                  style="width: 100%; height: 50px"
+                >
+                  {{ item.description }}
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br *ngIf="!mobile" />
+
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group input-group-lg">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Categoria *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="expenseFixed.idExpenseCategory"
+              (ngModelChange)="
+                expenseFixed.idExpenseCategory = $event && +$event
+              "
+              id="etat"
+              [disabled]="expenseFixed.id !== undefined"
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsExpenseCategory"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.description + " (" + item.initials + ")" }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group input-group-lg">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Conta *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="expenseFixed.idAccount"
+              (ngModelChange)="expenseFixed.idAccount = $event && +$event"
+              id="etat"
+              [disabled]="expenseFixed.id !== undefined"
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsAccount"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.name + " (" + item.accountCategory + ")" }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group input-group-lg">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Loja / Empresa / Terceiro *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="expenseFixed.idDepartment"
+              (ngModelChange)="expenseFixed.idDepartment = $event && +$event"
+              id="etat"
+              [disabled]="expenseFixed.id !== undefined"
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsDepartment"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.name + " (" + item.departmentCategory + ")" }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
+          <div class="input-group input-group-lg">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Forma de Pagamento *</span
+              >
+            </div>
+            <select
+              class="form-select"
+              [(ngModel)]="expenseFixed.idPaymentMethod"
+              (ngModelChange)="expenseFixed.idPaymentMethod = $event && +$event"
+              id="etat"
+              [disabled]="expenseFixed.id !== undefined"
+              (change)="
+                changePaymentMethodCategory(expenseFixed.idPaymentMethod)
+              "
+            >
+              <option
+                [value]="item.id"
+                *ngFor="let item of itemsPaymentMethod"
+                style="width: 100%; height: 50px"
+              >
+                {{ item.name }}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="row" *ngIf="expenseFixed.idPaymentMethod != undefined">
+        <span>Valor da despesa por condição de pagamento</span>
+      </div>
+
+      <hr width="100%" *ngIf="expenseFixed.idPaymentMethod != undefined" />
+
+      <div class="row" *ngIf="expenseFixed.idPaymentMethod != undefined">
+        <div
+          class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2"
+          *ngFor="let item of itemsPaymentMethodCategory"
+        >
+          <div class="input-group input-group-lg">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span
+                [class]="
+                  !mobile ? 'input-group-text amount-payment-method' : ''
+                "
+                id="nome"
+                >{{ item.description }}</span
+              >
+            </div>
+            <input
+              currencyMask
+              [options]="{ prefix: '', thousands: '.', decimal: ',' }"
+              [class]="
+                !mobile ? 'form-control' : 'form-control amount-payment-method'
+              "
+              [(ngModel)]="item.amountCategory"
+              required
+              placeholder="0,00"
+              (keypress)="changeSumAmountPaymentMethodCategory()"
+            />
+          </div>
+        </div>
+
+        <div
+          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
+        >
+          <div
+            class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
+            style="float: right"
+          >
+            <div class="input-group input-group-lg">
+              <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+                <span
+                  [class]="!mobile ? 'input-group-text amount' : ''"
+                  id="nome"
+                  >Total da Despesa (R$)</span
+                >
+              </div>
+              <input
+                currencyMask
+                [options]="{ prefix: '', thousands: '.', decimal: ',' }"
+                [class]="
+                  !mobile ? 'form-control' : 'form-control amount-mobile'
+                "
+                [(ngModel)]="expenseFixed.amount"
+                required
+                placeholder="0,00"
+                [disabled]="expenseFixed.id !== undefined"
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr width="100%" />
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
+        >
+          <div class="input-group input-group-lg">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Descrição / Observações
+              </span>
+            </div>
+            <textarea
+              class="form-control"
+              [disabled]="expenseFixed.id !== undefined"
+              class="md-textarea form-control"
+              rows="2"
+            ></textarea>
+          </div>
+        </div>
+        <br />
+      </div>
+
+      <div class="modal-footer">
+        <div *ngIf="!mobile; else noDesk">
+          <p-button
+            [style]="{ width: '150px', height: '50px' }"
+            class="mx-2"
+            styleClass="p-button-raised p-button-sm p-button-danger"
+            [label]="expenseFixed.id == undefined ? 'Cancelar' : 'Voltar'"
+            (click)="onRouterLinkExpenseList()"
+          >
+          </p-button>
+
+          <p-button
+            [style]="{ width: '150px', height: '50px' }"
+            styleClass="p-button-raised p-button-sm p-button-success"
+            label="Salvar"
+            (click)="onSubmit()"
+            *ngIf="expenseFixed.id == undefined"
+          >
+          </p-button>
+        </div>
+        <ng-template #noDesk>
+          <p-button
+            [style]="{ width: '100%', height: '50px' }"
+            class="w-100"
+            styleClass="p-button-raised p-button-sm p-button-success"
+            label="Salvar"
+            (click)="onSubmit()"
+            *ngIf="expenseFixed.id == undefined"
+          >
+          </p-button>
+
+          <p-button
+            [style]="{ width: '100%', height: '50px' }"
+            class="w-100"
+            styleClass="p-button-raised p-button-sm p-button-danger"
+            [label]="expenseFixed.id == undefined ? 'Cancelar' : 'Voltar'"
+            (click)="onRouterLinkExpenseList()"
+          >
+          </p-button>
+        </ng-template>
+      </div>
+    </div>
+  </p-panel>
+</div>
+
+<app-loading [display]="displayLoading"></app-loading>
+
+<app-modal-alerts-message
+  [display]="displayAlertMessage"
+  (eventEmmiter)="eventEmmiter($event)"
+  (eventEmmiterConfirm)="closeAlertMessage()"
+  [alertMesssage]="alertMesssage"
+></app-modal-alerts-message>

@@ -27,6 +27,7 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
         {
             var paymentMethod = await _context.PaymentMethods
                                     .Where(t => t.deleted == "N")
+                                    .Include(t => t.paymentMethodsPaymentMethodCategories)
                                     .Include(t => t.account)
                                     .ThenInclude(t => t.accountCategory)
                                     .ToListAsync();
@@ -38,6 +39,25 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
             {
                 foreach (var payment in paymentMethod)
                 {
+                    List<PaymentMethodCategoryDTO> listPaymentMethodCategories = new List<PaymentMethodCategoryDTO>();
+
+                    if (payment.paymentMethodsPaymentMethodCategories.Count() > 0)
+                    {
+                        foreach(var category in payment.paymentMethodsPaymentMethodCategories.ToList())
+                        {
+
+                            var paymentMethodCategory = _context.PaymentMethodCategories.FirstOrDefault(t => t.id == category.idPaymentMethodCategory);
+
+                            if (paymentMethodCategory != null)
+                            {
+                                listPaymentMethodCategories.Add(paymentMethodCategory);
+                            }
+                            
+                        }
+                        
+                        
+                    }
+
                     paymentMethodModelView.Add(
                         new PaymentMethodModelView
                         {
@@ -48,7 +68,8 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
                             numberInstallments          = payment.numberInstallments,
                             deleted                     = payment.deleted,
                             dateCreated                 = payment.dateCreated,
-                            account                     = payment.account.name + " (" + payment.account.accountCategory.initials + " - " + payment.account.accountCategory.description + ")"
+                            account                     = payment.account.name + " (" + payment.account.accountCategory.initials + " - " + payment.account.accountCategory.description + ")",
+                            paymentMethodCategory       = listPaymentMethodCategories
                         }
                     ); ;
                 }

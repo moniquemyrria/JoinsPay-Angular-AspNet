@@ -13,6 +13,10 @@ namespace JoinsPay_BackService.ModelConfiguration.Expense
                 entity.ToTable("Expense.Expense_Type").HasKey(t => t.id);
 
                 entity.Property(t => t.description).HasMaxLength(30).IsRequired();
+                
+                entity.Property(t => t.routerLink).HasMaxLength(100);
+                
+                entity.Property(t => t.icon).HasMaxLength(30);
 
                 entity.Property(t => t.deleted).HasMaxLength(1);
 
