@@ -22,7 +22,7 @@ export interface IExpense {
 
     dateCreated: Date
     dueDate: Date//vencimento / primeiro vencimento
-    paymentDate: Date//data de pagamento
+    paymentDate?: Date//data de pagamento
 
     paymentMethodCategory: IPaymentMethodCategory[]
 

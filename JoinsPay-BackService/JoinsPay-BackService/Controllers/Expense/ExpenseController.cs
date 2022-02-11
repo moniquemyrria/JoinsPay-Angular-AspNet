@@ -42,6 +42,13 @@ namespace JoinsPay_BackService.Controllers.Expense
             return await _context.ExpenseStatus.ToListAsync();
         }
 
+        // GET: api/Expense/ExpenseStatus/NewExpense
+        [HttpGet("ExpenseStatus/NewExpense")]
+        public async Task<ActionResult<IEnumerable<ExpenseStatusDTO>>> GetExpenseStatusNew()
+        {
+            return await _context.ExpenseStatus.Where(t => t.description.ToUpper() == "EM ABERTO" || t.description.ToUpper() == "PAGO").ToListAsync();
+        }
+
         // GET: api/Expense/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ExpenseDTO>> GetExpenseDTO(long id)

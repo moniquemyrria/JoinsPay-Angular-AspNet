@@ -28,6 +28,7 @@ export class ExpenseFixedFormComponent implements OnInit {
   mobile: boolean = false;
   displayLoading: boolean = false
   displayAlertMessage: boolean = false;
+  displayDatePayment: boolean = false;
   itemsAccount: IAccount[] = [] as IAccount[];
   itemsExpenseCategory: IExpenseCategory[] = [] as IExpenseCategory[];
   itemsDepartment: IDepartment[] = [] as IDepartment[];
@@ -35,6 +36,7 @@ export class ExpenseFixedFormComponent implements OnInit {
   itemsPaymentMethod: IPaymentMethod[] = [] as IPaymentMethod[]
   itemsPaymentMethodCategory: IPaymentMethodCategory[] = [] as IPaymentMethodCategory[]
   dateCreated = new FormControl(new Date());
+  datePayment = new FormControl(new Date());
 
   constructor(
     private router: Router,
@@ -71,48 +73,51 @@ export class ExpenseFixedFormComponent implements OnInit {
   onSubmit() {
     console.log(this.expenseFixed)
     if (!this.checkValidationFields()) {
-      if (this.expenseFixed.id == undefined) {
-        this.displayLoading = true
-        this.expenseFixed.dateCreated = this.dateCreated.value
-        this.expenseService
-          .PostExpense(this.expenseFixed)
-          .subscribe((response: IContractResponse) => {
-            if (response.success) {
-              this.alertMesssage = GetAlertMessage(
-                "Nova Receita",
-                response.message,
-                true,
-                true,
-                undefined,
-                false,
-                "Ok",
-                { routerLink: '/joinspay/expense' }
-              )
-            } else {
-              this.alertMesssage = GetAlertMessage(
-                "Erro ao inserir a Receita",
-                response.message,
-                false,
-                true,
-                undefined,
-                true
-              )
-            }
-            this.displayLoading = false
-            this.displayAlertMessage = true
-          }, (error) => {
+      this.displayLoading = true
+      this.expenseFixed.dateCreated = this.dateCreated.value
+      if (this.displayDatePayment) {
+        this.expenseFixed.paymentDate = this.datePayment.value
+      }
+      this.expenseFixed.paymentMethodCategory = this.itemsPaymentMethodCategory.filter((t: any) => t.amountCategory !== null)
+      this.expenseService
+        .PostExpense(this.expenseFixed)
+        .subscribe((response: IContractResponse) => {
+          if (response.success) {
             this.alertMesssage = GetAlertMessage(
-              "Erro de Conexão",
-              "Não foi possível salvar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
+              "Nova Receita",
+              response.message,
+              true,
+              true,
+              undefined,
+              false,
+              "Ok",
+              { routerLink: '/joinspay/expense' }
+            )
+          } else {
+            this.alertMesssage = GetAlertMessage(
+              "Erro ao inserir a Receita",
+              response.message,
               false,
               true,
-              500
+              undefined,
+              true
             )
-            this.displayLoading = false
-            this.displayAlertMessage = true
           }
-          );
-      }
+          this.displayLoading = false
+          this.displayAlertMessage = true
+        }, (error) => {
+          this.alertMesssage = GetAlertMessage(
+            "Erro de Conexão",
+            "Não foi possível salvar os dados. Verifique a conexão ou tente novamente em alguns minutos.",
+            false,
+            true,
+            500
+          )
+          this.displayLoading = false
+          this.displayAlertMessage = true
+        }
+        );
+
     }
 
   }
@@ -148,15 +153,21 @@ export class ExpenseFixedFormComponent implements OnInit {
   checkValidationFields() {
     let schema: ValidationSchema[] = [];
 
-    schema.push(new ValidationSchema("amount", "Valor da Receita", "number", true));
     schema.push(new ValidationSchema("idExpenseCategory", "Categoria", "number", true));
     schema.push(new ValidationSchema("idAccount", "Conta", "number", true));
     schema.push(new ValidationSchema("idDepartment", "Loja / Empresa / Terceiros", "number", true));
+    schema.push(new ValidationSchema("idPaymentMethod", "Forma de Pagamento", "number", true));
 
     let result = new Validation().ValidSchema(schema, this.expenseFixed);
 
     if (!result.success) {
       this.openSnackBar(result.message, "Ok")
+      return true
+    }
+
+    let paymentMethodCategory = this.itemsPaymentMethodCategory.filter((t: any) => t.amountCategory !== null)
+    if (paymentMethodCategory.length == 0){
+      this.openSnackBar("Informe o valor ao menos a uma das Condições de Pagamento", "Ok")
       return true
     }
 
@@ -253,10 +264,10 @@ export class ExpenseFixedFormComponent implements OnInit {
       );
   }
 
-  getListExpenseStatus() {
+  getListExpenseStatusNew() {
     this.displayLoading = true
     this.expenseService
-      .GetListExpenseStatus()
+      .GetListExpenseStatusNew()
       .subscribe((response: IExpenseStatus[]) => {
         this.itemsExpenseStatus = response;
         this.displayLoading = false
@@ -280,7 +291,6 @@ export class ExpenseFixedFormComponent implements OnInit {
       (item: any) => item.id == idPaymentMethod
     );
 
-
     if (paymentMethod != null) {
       this.itemsPaymentMethodCategory = paymentMethod.paymentMethodCategory
     }
@@ -288,24 +298,19 @@ export class ExpenseFixedFormComponent implements OnInit {
   }
 
   changeSumAmountPaymentMethodCategory() {
-
-    console.log(this.itemsPaymentMethodCategory)
-
     let sum = 0
-
     this.itemsPaymentMethodCategory.forEach((item: IPaymentMethodCategory) => {
-
-      if(!!item.amountCategory){
+      if (item.amountCategory != null) {
         sum = sum + item.amountCategory
-        this.expenseFixed.amount = sum;
       }
-        
-      if (item.amountCategory == 0){
-        this.expenseFixed.amount = sum;
-      }
-    
     });
+    this.expenseFixed.amount = sum;
+  }
 
+  changeShowDatePayment(item: any) {
+    let itemExpenseStatus = this.itemsExpenseStatus.find((t: IExpenseStatus) => t.id == item)
+
+    this.displayDatePayment = itemExpenseStatus?.description == 'PAGO' ? true : false;
   }
 
 
@@ -315,7 +320,7 @@ export class ExpenseFixedFormComponent implements OnInit {
     this.getListAccount();
     this.getListExpenseCategory()
     this.getListDepartment()
-    this.getListExpenseStatus()
+    this.getListExpenseStatusNew()
     this.getListPaymentMethod();
   }
 

@@ -19,6 +19,7 @@ namespace JoinsPay_BackService.ModelConfiguration.Register.PaymentMethodCategory
                 entity.Property(t => t.dateCreated);
 
 
+                entity.Ignore(t => t.amountCategory);
             }
         }
     }

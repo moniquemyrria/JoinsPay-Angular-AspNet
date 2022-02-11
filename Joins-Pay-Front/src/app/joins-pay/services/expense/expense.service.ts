@@ -29,6 +29,11 @@ export class ExpenseService {
     return this.httpClient.get<IExpenseStatus[]>(`${environment.baseURL}Expense/ExpenseStatus`, this.httpOptions);
   }
 
+  
+  GetListExpenseStatusNew(): Observable<IExpenseStatus[]>  {
+    return this.httpClient.get<IExpenseStatus[]>(`${environment.baseURL}Expense/ExpenseStatus/NewExpense`, this.httpOptions);
+  }
+
   GetListExpenseType(): Observable<IExpenseType[]>  {
     return this.httpClient.get<IExpenseType[]>(`${environment.baseURL}Expense/ExpenseType`, this.httpOptions);
   }

@@ -81,10 +81,10 @@
             class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
             style="float: right"
           >
-            <div class="input-group input-group-lg">
+            <div class="input-group">
               <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                 <span [class]="!mobile ? 'input-group-text' : ''" id="nome"
-                  >Status</span
+                  >Status *</span
                 >
               </div>
               <select
@@ -93,6 +93,7 @@
                 (ngModelChange)="
                   expenseFixed.idExpenseStatus = $event && +$event
                 "
+                (ngModelChange)="changeShowDatePayment($event)"
                 id="etat"
                 [disabled]="expenseFixed.id !== undefined"
               >
@@ -112,8 +113,28 @@
       <br *ngIf="!mobile" />
 
       <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
+        >
+          <div class="input-group">
+            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
+              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
+                >Descrição / Observações
+              </span>
+            </div>
+            <textarea
+              class="form-control"
+              [disabled]="expenseFixed.id !== undefined"
+              class="md-textarea form-control"
+              rows="1"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-          <div class="input-group input-group-lg">
+          <div class="input-group">
             <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
               <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
                 >Categoria *</span
@@ -139,7 +160,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-          <div class="input-group input-group-lg">
+          <div class="input-group">
             <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
               <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
                 >Conta *</span
@@ -165,7 +186,7 @@
       </div>
       <div class="row">
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-          <div class="input-group input-group-lg">
+          <div class="input-group">
             <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
               <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
                 >Loja / Empresa / Terceiro *</span
@@ -189,7 +210,7 @@
           </div>
         </div>
         <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2">
-          <div class="input-group input-group-lg">
+          <div class="input-group">
             <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
               <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
                 >Forma de Pagamento *</span
@@ -219,40 +240,75 @@
       <br />
       <br />
       <div class="row" *ngIf="expenseFixed.idPaymentMethod != undefined">
-        <span>Valor da despesa por condição de pagamento</span>
+        <div class="col-6">
+          <span>Dados e valores da despesa por condição de pagamento</span>
+        </div>
+        <div class="col-6">
+          <span
+            ><i class="text-info-span"
+              >É mecessário informar o valor ao menos uma das condições de
+              pagamento abaixo *</i
+            ></span
+          >
+        </div>
       </div>
 
       <hr width="100%" *ngIf="expenseFixed.idPaymentMethod != undefined" />
 
-      <div class="row" *ngIf="expenseFixed.idPaymentMethod != undefined">
+      <div
+        class="row"
+        *ngIf="expenseFixed.idPaymentMethod != undefined && displayDatePayment"
+      >
         <div
-          class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2"
-          *ngFor="let item of itemsPaymentMethodCategory"
+          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
         >
-          <div class="input-group input-group-lg">
-            <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-              <span
-                [class]="
-                  !mobile ? 'input-group-text amount-payment-method' : ''
-                "
-                id="nome"
-                >{{ item.description }}</span
+          <div
+            class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2"
+          >
+            <div class="input-group">
+              <div
+                class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
               >
+                <div
+                  [class]="
+                    !mobile
+                      ? 'input-group-prepend input-group-prepend-date'
+                      : 'input-group'
+                  "
+                >
+                  <span [class]="!mobile ? 'input-group-text' : ''" id="nome"
+                    >Data de Pagamento *</span
+                  >
+                </div>
+              </div>
+              <div
+                class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8"
+              >
+                <div>
+                  <mat-form-field
+                    appearance="outline"
+                    [class]="mobile ? 'w-100' : ''"
+                  >
+                    <input
+                      matInput
+                      [matDatepicker]="picker2"
+                      [formControl]="datePayment"
+                      readonly
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker2"
+                      [disabled]="expenseFixed.id !== undefined"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
             </div>
-            <input
-              currencyMask
-              [options]="{ prefix: '', thousands: '.', decimal: ',' }"
-              [class]="
-                !mobile ? 'form-control' : 'form-control amount-payment-method'
-              "
-              [(ngModel)]="item.amountCategory"
-              required
-              placeholder="0,00"
-              (keypress)="changeSumAmountPaymentMethodCategory()"
-            />
           </div>
         </div>
-
+      </div>
+      <div class="row" *ngIf="expenseFixed.idPaymentMethod != undefined">
         <div
           class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
         >
@@ -260,7 +316,7 @@
             class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-xxl-4"
             style="float: right"
           >
-            <div class="input-group input-group-lg">
+            <div class="input-group">
               <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
                 <span
                   [class]="!mobile ? 'input-group-text amount' : ''"
@@ -284,27 +340,39 @@
           </div>
         </div>
       </div>
-
-      <hr width="100%" />
-      <div class="row">
+      <br *ngIf="!mobile" />
+      <div class="row" *ngIf="expenseFixed.idPaymentMethod != undefined">
         <div
-          class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2"
+          [class]="
+            itemsPaymentMethodCategory.length == 1
+              ? 'col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 my-2'
+              : 'col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 my-2'
+          "
+          *ngFor="let item of itemsPaymentMethodCategory"
         >
-          <div class="input-group input-group-lg">
+          <div class="input-group">
             <div [class]="!mobile ? 'input-group-prepend' : 'input-group'">
-              <span [class]="!mobile ? 'input-group-text' : ''" id="descricao"
-                >Descrição / Observações
-              </span>
+              <span
+                [class]="
+                  !mobile ? 'input-group-text amount-payment-method' : ''
+                "
+                id="nome"
+                >{{ item.description }}</span
+              >
             </div>
-            <textarea
-              class="form-control"
-              [disabled]="expenseFixed.id !== undefined"
-              class="md-textarea form-control"
-              rows="2"
-            ></textarea>
+            <input
+              currencyMask
+              [options]="{ prefix: '', thousands: '.', decimal: ',' }"
+              [class]="
+                !mobile ? 'form-control' : 'form-control amount-payment-method'
+              "
+              [(ngModel)]="item.amountCategory"
+              required
+              placeholder="0,00"
+              (ngModelChange)="changeSumAmountPaymentMethodCategory()"
+            />
           </div>
         </div>
-        <br />
       </div>
 
       <div class="modal-footer">

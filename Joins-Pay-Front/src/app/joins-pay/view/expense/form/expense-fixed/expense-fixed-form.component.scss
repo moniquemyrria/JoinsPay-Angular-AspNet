@@ -18,10 +18,10 @@ mat-form-field {
 }
 
 .amount-payment-method {
-    background-color: #FBE9E7;
-    color: #E53935;
+    background-color: #fbe9e7;
+    color: #e53935;
 
-   border: 1px solid #FBE9E7;
+    border: 1px solid #fbe9e7;
 }
 
 .amount-mobile {
@@ -44,10 +44,16 @@ textarea:disabled {
     background: $readonly;
 }
 
-
-.input-group-prepend-date{
+.input-group-prepend-date {
     margin-top: 4px;
     height: 60px;
+}
+
+.text-info-span {
+    font-size: 10px;
+    float: right;
+    margin-top: 5px;
+    color: $danger;
 }
 
 // .mat-form-field {
@@ -58,6 +64,3 @@ textarea:disabled {
 .mat-form-field:disabled {
     background: $readonly;
 }
-
-
-

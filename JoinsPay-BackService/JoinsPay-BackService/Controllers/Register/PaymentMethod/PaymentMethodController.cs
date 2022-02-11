@@ -50,6 +50,7 @@ namespace JoinsPay_BackService.Controllers.Register.PaymentMethod
 
                             if (paymentMethodCategory != null)
                             {
+                                paymentMethodCategory.amountCategory = null;
                                 listPaymentMethodCategories.Add(paymentMethodCategory);
                             }
                             
