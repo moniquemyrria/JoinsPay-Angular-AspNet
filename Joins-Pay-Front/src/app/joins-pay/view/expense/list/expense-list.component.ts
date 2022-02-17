@@ -238,12 +238,15 @@ export class ExpenseListComponent implements OnInit {
     this.getListExpense()
 
     this.cols = [
-      { field: 'color', header: '' },
-      { field: 'revenueCategory', header: 'Categoria' },
-      { field: 'account', header: 'Conta' },
-      { field: 'department', header: 'Empresa, Loja ou Terceiro' },
-      { field: 'amountFormatted', header: 'Valor (R$)' },
-      { field: 'dateCreatedFormatted', header: 'Data' },
+      { field: 'color'                , header: '' },
+      { field: 'expenseType'          , header: 'Tipo' },
+      { field: 'status'               , header: 'Status' },
+      { field: 'department'           , header: 'Despesa' },
+      { field: 'dateCreatedFormat'    , header: 'Data' },
+      { field: 'expenseCategory'      , header: 'Categoria' },
+      { field: 'paymentMethod'        , header: 'Tipo de Pagamento' },
+      { field: 'account'              , header: 'Conta' },
+      { field: 'amountFormat'         , header: 'Valor (R$)' },
     ];
 
     this.getListExpenseTypes()

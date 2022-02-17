@@ -41,8 +41,12 @@ namespace JoinsPay_BackService.Models.Expense
         public ExpenseStatusDTO expenseStatus { get; set; }
         public ExpenseTypeDTO expenseType { get; set; }
 
+
         [JsonIgnore]
         public List<Expense_PaymentMethodCategoryDTO> expensePaymentMethodCategories { get; set; }
+
+        [NotMapped]
+        public string expenseTypeDescription { get; set; }
 
         [NotMapped]
         public List<PaymentMethodCategoryDTO> paymentMethodCategory { get; set; }

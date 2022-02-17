@@ -26,8 +26,8 @@ export interface IExpense {
 
     paymentMethodCategory: IPaymentMethodCategory[]
 
-    status: string
-
+    status: string;
+    expenseTypeDescription: string;
 
 }
 

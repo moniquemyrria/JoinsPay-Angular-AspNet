@@ -71,13 +71,13 @@ export class ExpenseFixedFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.expenseFixed)
     if (!this.checkValidationFields()) {
       this.displayLoading = true
       this.expenseFixed.dateCreated = this.dateCreated.value
       if (this.displayDatePayment) {
         this.expenseFixed.paymentDate = this.datePayment.value
       }
+      this.expenseFixed.expenseTypeDescription = "Despesa Fixa"
       this.expenseFixed.paymentMethodCategory = this.itemsPaymentMethodCategory.filter((t: any) => t.amountCategory !== null)
       this.expenseService
         .PostExpense(this.expenseFixed)

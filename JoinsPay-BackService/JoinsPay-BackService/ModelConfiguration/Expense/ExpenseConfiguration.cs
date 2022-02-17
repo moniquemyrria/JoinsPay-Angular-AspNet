@@ -32,7 +32,9 @@ namespace JoinsPay_BackService.ModelConfiguration.Expense
 
                 entity.Property(t => t.paymentDate);
 
-               
+                entity.Ignore(t => t.expenseTypeDescription);
+
+
                 //FK - Expense Category
                 entity.HasOne(t => t.expenseCategory).WithMany(t => t.Expenses).HasForeignKey(t => t.idExpenseCategory).HasPrincipalKey(t => t.id) ;
 
